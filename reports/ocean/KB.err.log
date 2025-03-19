@@ -1,0 +1,367 @@
+Traceback (most recent call last):
+  File "C:\Users\mgebremedhin\AppData\Local\miniconda3\Lib\site-packages\jupyter_cache\executors\utils.py", line 58, in single_nb_execution
+    executenb(
+  File "C:\Users\mgebremedhin\AppData\Local\miniconda3\Lib\site-packages\nbclient\client.py", line 1314, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mgebremedhin\AppData\Local\miniconda3\Lib\site-packages\jupyter_core\utils\__init__.py", line 165, in wrapped
+    return loop.run_until_complete(inner)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mgebremedhin\AppData\Local\miniconda3\Lib\asyncio\base_events.py", line 687, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\mgebremedhin\AppData\Local\miniconda3\Lib\site-packages\nbclient\client.py", line 709, in async_execute
+    await self.async_execute_cell(
+  File "C:\Users\mgebremedhin\AppData\Local\miniconda3\Lib\site-packages\nbclient\client.py", line 1062, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "C:\Users\mgebremedhin\AppData\Local\miniconda3\Lib\site-packages\nbclient\client.py", line 918, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+#[0] General
+end_of_year=2014
+Interpretation=2
+rule2=0.2
+
+#Options and flag
+data_plot_flag=1    #Raw data plot: [1] daily, [2] period 
+Start_KB_df_flag=1  #Start new data frame for saving results
+Plot_KB_Flag=1     #[1] Plot KB raw data and bloom analysis 
+Save_zos_res_Flag=1  #[1] Save resutls
+NewSeg=0
+
+for Period in ['W']:
+    print('Analysis from 1990 to {} with rule2 {} for period {}'.format(end_of_year,rule2,Period))
+
+    #Part 1: Karenia brevis bloom analysis
+    for min_bloom_length in [10]:              #If bloom larger than or equal: 10,14, 15
+        print('min_bloom_length:',min_bloom_length)  
+        for  max_gaps_days in [5]:              #If gaps more than: 3,4,5,6,7
+
+            #[1] Read data, set index, and select columns of interest 
+            df=pd.read_csv('Output/KB_daily_raw_{}.csv'.format(end_of_year))
+            df['date'] = pd.to_datetime(df['date'])
+            df['Sample Date'] = pd.to_datetime(df['Sample Date'])
+            df['idx']=np.arange(len(df))
+            df.set_index('date', inplace=True)
+            df=df[['idx','Sample Date','num_of_samples','max_cells/L_raw']]
+
+            #[2] Create new dataframe with samples with potential large_bloom
+            df['bloom1e5']=df.loc[(df['max_cells/L_raw']>=1e5),'max_cells/L_raw']   #iloc 4
+
+            #[3] Gap between two samples when large bloom is encountered
+            bloom_samples=df['bloom1e5'].notnull()
+            df.loc[bloom_samples,'gap_days']=df.loc[bloom_samples,'Sample Date'].diff().dt.days-1  #iloc 5
+
+            #[4] Count new blooms with 5 days and 20% rules
+            bl=df[bloom_samples].copy()
+            bloom=1
+            first_bloom=1
+
+            bl['bloom_lenght_inc']=''     #iloc 6
+            bl['20%_condition']=''    #iloc 7
+            bl['gap']=''              #iloc 8
+            bl['new_bloom']=''         #iloc 9
+            bl['new_bloom_idx']=''     #iloc 10
+            bl.iloc[0,10]=bloom
+
+            for cont in range(0,len(bl)):
+                #Start a new blooom
+                if first_bloom==1:
+                    loc1=0
+                    loc2=1
+                    idx1=bl.iloc[cont,0]
+                    #print('First bloom {} starts at {}'.format(bloom,idx))
+                    first_bloom=0
+                    sample_count=1
+                else:
+                    loc2 +=1
+
+                #Add bloom number
+                if bl.iloc[cont,5]>max_gaps_days:
+
+                    #bloom length
+                    idx2=bl.iloc[cont,0]
+                    bl.iloc[cont,6]=idx2-idx1   
+
+                    #20%_condition
+                    bl.iloc[cont,7]=bl.iloc[cont,6]*rule2
+
+                    #Gap/Gaps
+                    if Interpretation==1:
+                        bl.iloc[cont,8]= bl.iloc[cont,5]      
+                    elif Interpretation==2:
+                        bl.iloc[cont,8]= bl.iloc[loc1:loc2,5].sum() 
+                        #print(bl.iloc[cont,8])
+
+                    #Decision: Same bloom
+                    if bl.iloc[cont,8] <= bl.iloc[cont,7]:
+                        bl.iloc[cont,9]=0
+
+                    #Decision: New bloom
+                    elif bl.iloc[cont,8]> bl.iloc[cont,7]:
+                        bloom +=1 
+                        bl.iloc[cont,9]=1
+                        loc1=loc2
+                        idx1=bl.iloc[cont,0]
+
+                #New bloom index 
+                bl.iloc[cont,10]=bloom
+
+            #[5] Remove blooms less than 10 days 
+            bloom_number=0
+            bl=bl.resample('D').max()
+
+            for new_bloom_idx in range(1,bloom+1):
+
+                #Filter data for each new bloom
+                temp=bl[bl['new_bloom_idx'].eq(new_bloom_idx)]
+
+                #Bloom length days
+                idx1=temp.iloc[0,0]
+                idx2=temp.iloc[len(temp)-1,0]
+                bloom_length=idx2-idx1+1
+                if bloom_length>=min_bloom_length:
+                    bloom_number+=1
+
+                #Bloom start and end date
+                date1=temp[temp['idx']==idx1].index.values
+                date2=temp[temp['idx']==idx2].index.values
+
+                #Record bloom number and length 
+                if bloom_length>=min_bloom_length:
+                    mask=(bl.index >= date1[0]) & (bl.index <= date2[0]) 
+                    bl.loc[mask,'bloom_length']=bloom_length
+                    bl.loc[mask,'bloom_number']=bloom_number
+                    #print(new_bloom_idx,':',idx1,idx2,':',bloom_length,':',pd.to_datetime(date1[0]).date(),pd.to_datetime(date2[0]).date())
+                else:
+                    bl.loc[date1,'bloom_length']=''
+
+            #[6] Merge dataFrames with no_large bloom and large_bloom and save dataFrame
+            df = pd.concat([df, bl], axis=1, sort=False)
+            #print(df.columns.values)
+            df.columns =['idx', 'Sample Date', 'num_of_samples', 'max_cells/L_raw', 'bloom1e5', \
+                     'gap_days', 'idx_b1e5', 'Sample Date', 'num_of_samples_b1e5', 'max_cells/L_raw_b1e5', \
+                     'bloom1e5', 'gap_days', 'bloom_lenght_inc', '20%_condition', 'gap', \
+                     'new_bloom', 'new_bloom_idx', 'bloom_length', 'bloom_number']
+
+            #[7] Save KB daily output
+            df.to_csv('Output/KB_daily_{}.csv'.format(end_of_year))
+
+            #[8] Count number of periods with large_bloom and number of bloom per period 
+
+            #Data per period (Q or 2Q)
+            df=df[['max_cells/L_raw','max_cells/L_raw_b1e5','gap','bloom_length','bloom_number']]
+            Q=df.resample(Period,kind='period').mean()
+            n_periods=len(Q.copy())
+
+            #Count large_bloom and number of bloom per period 
+            for period in Q.index.values:
+
+                #Data per period
+                data=df[str(period)]
+
+                #Number of blooms per period
+                n_blooms=data.loc[data['bloom_number'].notnull(),'bloom_number'].unique()
+                Q.loc[str(period),'n_blooms']=len(n_blooms)
+
+                #Analysis of blooms larger than 10 days 
+                if len(n_blooms)>0:
+                    total_length=0       #total lenght of blooms per period
+                    n_large_blooms=0     #number of large blooms 
+
+                    for n_bloom in n_blooms:
+                        #Data per bloom
+                        mask=data['bloom_number']==n_bloom
+                        temp=data.loc[mask,'bloom_number']
+                        bloom_lenght=len(temp)
+
+                        #Flag for large blooms
+                        if bloom_lenght>=min_bloom_length:
+                            #Count large blooms
+                            n_large_blooms+=1
+
+                            #Total bloom lenght 
+                            total_length=total_length+bloom_lenght
+
+                #Number of large blooms per period and total days of blooms per period
+                if len(n_blooms)>0:
+                    if n_large_blooms==0:
+                        n_large_blooms=np.NaN
+                        total_length=np.NaN
+
+                    Q.loc[str(period),'n_large_blooms']=n_large_blooms
+                    Q.loc[str(period),'n_days_bloom']=total_length
+
+            #Number of blooms
+            n_large_blooms=Q['n_large_blooms'].sum()
+            n_large_bloom_periods=Q['n_large_blooms'].count()
+
+            #Ratio of periods with bloom(s) ratio
+            bloom_periods_ratio=n_large_bloom_periods/n_periods
+
+            print('min-bloom-length {} days with max-gaps {} days: \
+large-blooms, periods-with-large-bloom(s), and bloom-periods-ratio are {:0.0f}, {}, and {:0.2f}' \
+                  .format(min_bloom_length,max_gaps_days,n_large_blooms,n_large_bloom_periods,bloom_periods_ratio))
+
+            #[9] Save KB period output 
+            Q.to_csv('Output/KB_period_{}{}L{}G{}.csv'.format(Period,end_of_year,min_bloom_length,max_gaps_days))
+
+            #[10] Plot KB blooms
+            if Plot_KB_Flag==1:
+                plot_KB(data_plot_flag,df,Q,min_bloom_length,max_gaps_days,n_large_blooms,n_large_bloom_periods,bloom_periods_ratio)
+
+    #Part2: zos analysis 
+
+            #[11] zos dataFrames
+            #(1) Results summary
+
+            if Start_KB_df_flag==1:
+                res=pd.DataFrame({'Setting':['Maze'],'period': ['Q'],'segment': ['0_0'], \
+                                  'max_gaps_days':[5], 'min_bloom_length':[10],'n_large_blooms': [13],'n_large_bloom_periods': [13],  \
+                                  'LC_N': [44],'LC_S': [16], 'LC_S_ratio': [''],\
+                                  'LC_N_NoBloom': [31],'LC_N_Bloom': [13], 'LC_S_NoBloom': [16],'LC_S_Bloom': [0], 'error':[0]})
+                res= res.set_index(['Setting'])
+                res.loc['Maze','LC_S_ratio']=res.loc['Maze','LC_S']/(res.loc['Maze','LC_S']+res.loc['Maze','LC_N'])
+                Start_KB_df_flag=0
+
+            #(2) Delta zos per setting
+            df_delta_zos=pd.DataFrame() 
+
+
+            #[12] zos data analysis
+            for lat in range(10,11):      #(-21,21)
+            #for lat in ['0']:
+                #for lon in ['0']:
+                for lon in range(1,2):  #(-21,21)
+
+                    #(0) General info
+                    idx='{}_L{}G{}_S{}_{}'.format(Period,min_bloom_length,max_gaps_days,lat,lon)
+                    res.loc[idx,'period']=Period
+                    res.loc[idx,'min_bloom_length']=min_bloom_length
+                    res.loc[idx,'n_large_bloom_periods']=n_large_bloom_periods
+                    res.loc[idx,'n_large_blooms']=n_large_blooms
+                    res.loc[idx,'max_gaps_days']=max_gaps_days
+                    res.loc[idx,'segment']='{}_{}'.format(lat,lon)
+
+
+                    #(1) Read data, and set index, 
+                    if NewSeg==0:
+                        folder='AVISIO'
+                        data_file='AVISO-1-1_phy-001-030_r0_{}-{}'.format(lat,lon)
+                    elif NewSeg==1:
+                        folder='per_member_10-1'
+                        data_file='AVISO-1-1_phy-001-030_r0'
+                        
+                    df_zos=pd.read_csv('Input/{}_{}.csv'.format(folder,data_file))
+                    df_zos['Date'] = pd.to_datetime(df_zos['Date'])
+                    df_zos.set_index('Date', inplace=True)
+                    df_zos=df_zos['1993-1-1':'{}-12-31'.format(end_of_year)]
+
+                    #(3)downsampling daily frequency to quarterly-period frequency
+                    df_zos=df_zos.resample(Period,kind='period').max()
+                    #df_zos.to_csv('KB_data/zos_Data_{}_{}-{}.csv'.format(resample,lat,lon))
+
+                    #(4) Number of north and south Loop Current
+                    res.loc[idx,'LC_N']=df_zos['delta'].gt(0).sum()
+                    res.loc[idx,'LC_S']=df_zos['delta'].le(0).sum()
+                    res.loc[idx,'LC_S_ratio']=res.loc[idx,'LC_S']/(res.loc[idx,'LC_N']+res.loc[idx,'LC_S'])
+
+                    #(5)Save zos delta per setting 
+                    Seg='{}_S{}_{}'.format(Period,lat,lon)
+                    df_delta_zos[Seg]=df_zos['delta'].copy()
+
+                    #(5)Count LC_S error 
+                    QQ=Q.copy()
+                    QQ['zos']=df_zos['delta']
+                    QQ.dropna(subset=['n_large_blooms'],inplace=True)
+                    res.loc[idx,'LC_S_Bloom']=QQ['zos'].lt(0).sum()
+                    res.loc[idx,'LC_S_NoBloom']=res.loc[idx,'LC_S']-res.loc[idx,'LC_S_Bloom']
+                    res.loc[idx,'LC_N_Bloom']=res.loc[idx,'n_large_bloom_periods']-res.loc[idx,'LC_S_Bloom']
+                    res.loc[idx,'LC_N_NoBloom']=res.loc[idx,'LC_N']-res.loc[idx,'LC_N_Bloom']
+
+                    #(6)Error
+                    res.loc[idx,'error']=(res.loc[idx,'LC_S_Bloom']/res.loc[idx,'LC_S'])*100
+
+            #[13] Save zos outputs
+            if Save_zos_res_Flag==1:
+                if NewSeg==0:
+                    df_delta_zos.to_csv('Output/zos_period_{}_{}.csv'.format(Period,end_of_year))
+                elif NewSeg==1:
+                    df_delta_zos.to_csv('Output/zos_period_{}_{}_10-1.csv'.format(Period,end_of_year))
+                
+            #(6) Plot zos for LC-N and LC-S  
+            zos_segment='{}_S{}_{}'.format(Period,lat,lon)  #e.g. Q_S6_4, 2Q_S0_0
+            plot_zos(Period,end_of_year,zos_segment,Q,lat,lon,n_large_bloom_periods,bloom_periods_ratio,NewSeg)
+            
+            #(6) Plot zos for LC-N and LC-S  
+            zos_segment='{}_S{}_{}'.format(Period,0,0)  #e.g. Q_S6_4, 2Q_S0_0
+            NewSeg=2
+            plot_zos(Period,end_of_year,zos_segment,Q,lat,lon,n_large_bloom_periods,bloom_periods_ratio,NewSeg)
+            
+            
+
+
+#[14] Save summary results of KB and zos analysis 
+if Save_zos_res_Flag==1:
+    if NewSeg==0:
+        res.to_csv('Output/results_{}.csv'.format(end_of_year))
+    elif NewSeg==1:
+        res.to_csv('Output/results_{}_10-1.csv'.format(end_of_year))
+display(res)
+------------------
+
+----- stdout -----
+Analysis from 1990 to 2014 with rule2 0.2 for period W
+min_bloom_length: 10
+------------------
+
+[1;31m---------------------------------------------------------------------------[0m
+[1;31mKeyError[0m                                  Traceback (most recent call last)
+File [1;32m~\AppData\Local\miniconda3\Lib\site-packages\pandas\core\indexes\base.py:3805[0m, in [0;36mIndex.get_loc[1;34m(self, key)[0m
+[0;32m   3804[0m [38;5;28;01mtry[39;00m:
+[1;32m-> 3805[0m     [38;5;28;01mreturn[39;00m [38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43m_engine[49m[38;5;241;43m.[39;49m[43mget_loc[49m[43m([49m[43mcasted_key[49m[43m)[49m
+[0;32m   3806[0m [38;5;28;01mexcept[39;00m [38;5;167;01mKeyError[39;00m [38;5;28;01mas[39;00m err:
+
+File [1;32mindex.pyx:167[0m, in [0;36mpandas._libs.index.IndexEngine.get_loc[1;34m()[0m
+
+File [1;32mindex.pyx:196[0m, in [0;36mpandas._libs.index.IndexEngine.get_loc[1;34m()[0m
+
+File [1;32mpandas\\_libs\\hashtable_class_helper.pxi:7081[0m, in [0;36mpandas._libs.hashtable.PyObjectHashTable.get_item[1;34m()[0m
+
+File [1;32mpandas\\_libs\\hashtable_class_helper.pxi:7089[0m, in [0;36mpandas._libs.hashtable.PyObjectHashTable.get_item[1;34m()[0m
+
+[1;31mKeyError[0m: 'Sample Date'
+
+The above exception was the direct cause of the following exception:
+
+[1;31mKeyError[0m                                  Traceback (most recent call last)
+Cell [1;32mIn[4], line 24[0m
+[0;32m     22[0m df[38;5;241m=[39mpd[38;5;241m.[39mread_csv([38;5;124m'[39m[38;5;124mOutput/KB_daily_raw_[39m[38;5;132;01m{}[39;00m[38;5;124m.csv[39m[38;5;124m'[39m[38;5;241m.[39mformat(end_of_year))
+[0;32m     23[0m df[[38;5;124m'[39m[38;5;124mdate[39m[38;5;124m'[39m] [38;5;241m=[39m pd[38;5;241m.[39mto_datetime(df[[38;5;124m'[39m[38;5;124mdate[39m[38;5;124m'[39m])
+[1;32m---> 24[0m df[[38;5;124m'[39m[38;5;124mSample Date[39m[38;5;124m'[39m] [38;5;241m=[39m pd[38;5;241m.[39mto_datetime([43mdf[49m[43m[[49m[38;5;124;43m'[39;49m[38;5;124;43mSample Date[39;49m[38;5;124;43m'[39;49m[43m][49m)
+[0;32m     25[0m df[[38;5;124m'[39m[38;5;124midx[39m[38;5;124m'[39m][38;5;241m=[39mnp[38;5;241m.[39marange([38;5;28mlen[39m(df))
+[0;32m     26[0m df[38;5;241m.[39mset_index([38;5;124m'[39m[38;5;124mdate[39m[38;5;124m'[39m, inplace[38;5;241m=[39m[38;5;28;01mTrue[39;00m)
+
+File [1;32m~\AppData\Local\miniconda3\Lib\site-packages\pandas\core\frame.py:4102[0m, in [0;36mDataFrame.__getitem__[1;34m(self, key)[0m
+[0;32m   4100[0m [38;5;28;01mif[39;00m [38;5;28mself[39m[38;5;241m.[39mcolumns[38;5;241m.[39mnlevels [38;5;241m>[39m [38;5;241m1[39m:
+[0;32m   4101[0m     [38;5;28;01mreturn[39;00m [38;5;28mself[39m[38;5;241m.[39m_getitem_multilevel(key)
+[1;32m-> 4102[0m indexer [38;5;241m=[39m [38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43mcolumns[49m[38;5;241;43m.[39;49m[43mget_loc[49m[43m([49m[43mkey[49m[43m)[49m
+[0;32m   4103[0m [38;5;28;01mif[39;00m is_integer(indexer):
+[0;32m   4104[0m     indexer [38;5;241m=[39m [indexer]
+
+File [1;32m~\AppData\Local\miniconda3\Lib\site-packages\pandas\core\indexes\base.py:3812[0m, in [0;36mIndex.get_loc[1;34m(self, key)[0m
+[0;32m   3807[0m     [38;5;28;01mif[39;00m [38;5;28misinstance[39m(casted_key, [38;5;28mslice[39m) [38;5;129;01mor[39;00m (
+[0;32m   3808[0m         [38;5;28misinstance[39m(casted_key, abc[38;5;241m.[39mIterable)
+[0;32m   3809[0m         [38;5;129;01mand[39;00m [38;5;28many[39m([38;5;28misinstance[39m(x, [38;5;28mslice[39m) [38;5;28;01mfor[39;00m x [38;5;129;01min[39;00m casted_key)
+[0;32m   3810[0m     ):
+[0;32m   3811[0m         [38;5;28;01mraise[39;00m InvalidIndexError(key)
+[1;32m-> 3812[0m     [38;5;28;01mraise[39;00m [38;5;167;01mKeyError[39;00m(key) [38;5;28;01mfrom[39;00m [38;5;21;01merr[39;00m
+[0;32m   3813[0m [38;5;28;01mexcept[39;00m [38;5;167;01mTypeError[39;00m:
+[0;32m   3814[0m     [38;5;66;03m# If we have a listlike key, _check_indexing_error will raise[39;00m
+[0;32m   3815[0m     [38;5;66;03m#  InvalidIndexError. Otherwise we fall through and re-raise[39;00m
+[0;32m   3816[0m     [38;5;66;03m#  the TypeError.[39;00m
+[0;32m   3817[0m     [38;5;28mself[39m[38;5;241m.[39m_check_indexing_error(key)
+
+[1;31mKeyError[0m: 'Sample Date'
+

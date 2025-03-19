@@ -1,0 +1,189 @@
+Traceback (most recent call last):
+  File "C:\Users\mgebremedhin\AppData\Local\miniconda3\Lib\site-packages\jupyter_cache\executors\utils.py", line 58, in single_nb_execution
+    executenb(
+  File "C:\Users\mgebremedhin\AppData\Local\miniconda3\Lib\site-packages\nbclient\client.py", line 1314, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mgebremedhin\AppData\Local\miniconda3\Lib\site-packages\jupyter_core\utils\__init__.py", line 165, in wrapped
+    return loop.run_until_complete(inner)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mgebremedhin\AppData\Local\miniconda3\Lib\asyncio\base_events.py", line 687, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\mgebremedhin\AppData\Local\miniconda3\Lib\site-packages\nbclient\client.py", line 709, in async_execute
+    await self.async_execute_cell(
+  File "C:\Users\mgebremedhin\AppData\Local\miniconda3\Lib\site-packages\nbclient\client.py", line 1062, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "C:\Users\mgebremedhin\AppData\Local\miniconda3\Lib\site-packages\nbclient\client.py", line 918, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+import pandas as pd
+import geopandas as gpd
+import matplotlib.pyplot as plt
+import contextily as ctx
+from shapely import wkb
+
+# Load the CSV file (update path if needed)
+file_path = 'data/DataDownload_4344079_row.csv'
+data = pd.read_csv(file_path)
+
+# Filter the data for Elevation and Flow parameters
+filtered_data = data[data['Parameter'].isin(['Level_FT_NAVD88', 'Flow_CFS'])]
+filtered_data = filtered_data.dropna(subset=['Latitude_DD', 'Longitude_DD'])
+
+# Convert to GeoDataFrame
+gdf = gpd.GeoDataFrame(
+    filtered_data, 
+    geometry=gpd.points_from_xy(filtered_data['Longitude_DD'], filtered_data['Latitude_DD']),
+    crs='EPSG:4326'
+)
+
+# ✅ Remove duplicates based on station location and name
+unique_stations = gdf[['StationName', 'geometry']].drop_duplicates()
+
+# ✅ Filter for stations close to the Gulf of Mexico
+gulf_stations = unique_stations[
+    (unique_stations.geometry.y <= 27.5) & 
+    (unique_stations.geometry.y >= 26.5) & 
+    (unique_stations.geometry.x >= -82.5) & 
+    (unique_stations.geometry.x <= -81.5)
+]
+
+# Load the Peace River Watershed shapefile
+watershed = gpd.read_file(f'{path}/Shape/WBDHU8.shp')
+
+# Load the NHD flowline data
+flowlines = gpd.read_file(f'{path}/Shape/NHDFlowline.shp')
+
+# ✅ Convert to 2D geometry (strip Z values)
+flowlines['geometry'] = flowlines['geometry'].apply(
+    lambda geom: wkb.loads(wkb.dumps(geom, output_dimension=2))
+)
+
+# ✅ Filter the flowlines to select only Peace River
+peace_river = flowlines[flowlines['gnis_name'].str.strip().str.lower() == 'peace river']
+
+# ✅ Define available basemaps
+basemaps = {
+    'OpenStreetMap': ctx.providers.OpenStreetMap.Mapnik,
+    'CartoDB Positron': ctx.providers.CartoDB.Positron,
+    'CartoDB DarkMatter': ctx.providers.CartoDB.DarkMatter,
+    'CartoDB Voyager': ctx.providers.CartoDB.Voyager,
+    'Esri World Imagery': ctx.providers.Esri.WorldImagery,
+    'Esri World Topo Map': ctx.providers.Esri.WorldTopoMap
+}
+
+# ✅ Select basemap
+choice = 1  # 1 = OpenStreetMap
+selected_basemap = list(basemaps.values())[choice - 1]
+
+# ✅ Plotting
+fig, ax = plt.subplots(figsize=(14, 12))
+
+# Plot watershed boundary
+watershed.to_crs(epsg=3857).plot(ax=ax, edgecolor='black', facecolor='none', linewidth=1)
+
+# Plot the stations near the Gulf of Mexico
+gulf_stations.to_crs(epsg=3857).plot(ax=ax, markersize=50, color='blue', label='Stations')
+
+# ✅ Add station names:
+# - Remove 'Peace River' from labels
+# - Plot every second station except the last one
+
+for i, row in enumerate(gulf_stations.to_crs(epsg=3857).iterrows()):
+    label = row[1]['StationName'].replace('PEACE RIVER AT ', '').replace('Peace River at ', '')
+    
+    if i % 2 == 0 or i == len(gulf_stations) - 1:  # Always show the last station
+        ax.text(row[1].geometry.x, row[1].geometry.y, label, 
+                fontsize=8, ha='left', va='bottom', color='darkblue')
+
+# Plot the Peace River
+peace_river.to_crs(epsg=3857).plot(ax=ax, color='cyan', label='Peace River', linewidth=2)
+
+# ✅ Add selected basemap (lower resolution for faster rendering)
+ctx.add_basemap(ax, source=selected_basemap, zoom=10) 
+
+# ✅ Fix x-axis label crowding (reduce number of ticks)
+ax.set_xticks(ax.get_xticks()[::2])  # Show every second tick to reduce clutter
+
+# Customize plot
+plt.title('Stations and Peace River in the Peace River Watershed', fontsize=16)
+plt.xlabel('Longitude')
+plt.ylabel('Latitude')
+plt.legend()
+
+# ✅ Save figure
+plt.savefig('map_cleaned.png', dpi=300)
+
+plt.show()
+
+------------------
+
+
+[1;31m---------------------------------------------------------------------------[0m
+[1;31mFileNotFoundError[0m                         Traceback (most recent call last)
+Cell [1;32mIn[2], line 9[0m
+[0;32m      7[0m [38;5;66;03m# Load the CSV file (update path if needed)[39;00m
+[0;32m      8[0m file_path [38;5;241m=[39m [38;5;124m'[39m[38;5;124mdata/DataDownload_4344079_row.csv[39m[38;5;124m'[39m
+[1;32m----> 9[0m data [38;5;241m=[39m [43mpd[49m[38;5;241;43m.[39;49m[43mread_csv[49m[43m([49m[43mfile_path[49m[43m)[49m
+[0;32m     11[0m [38;5;66;03m# Filter the data for Elevation and Flow parameters[39;00m
+[0;32m     12[0m filtered_data [38;5;241m=[39m data[data[[38;5;124m'[39m[38;5;124mParameter[39m[38;5;124m'[39m][38;5;241m.[39misin([[38;5;124m'[39m[38;5;124mLevel_FT_NAVD88[39m[38;5;124m'[39m, [38;5;124m'[39m[38;5;124mFlow_CFS[39m[38;5;124m'[39m])]
+
+File [1;32m~\AppData\Local\miniconda3\Lib\site-packages\pandas\io\parsers\readers.py:1026[0m, in [0;36mread_csv[1;34m(filepath_or_buffer, sep, delimiter, header, names, index_col, usecols, dtype, engine, converters, true_values, false_values, skipinitialspace, skiprows, skipfooter, nrows, na_values, keep_default_na, na_filter, verbose, skip_blank_lines, parse_dates, infer_datetime_format, keep_date_col, date_parser, date_format, dayfirst, cache_dates, iterator, chunksize, compression, thousands, decimal, lineterminator, quotechar, quoting, doublequote, escapechar, comment, encoding, encoding_errors, dialect, on_bad_lines, delim_whitespace, low_memory, memory_map, float_precision, storage_options, dtype_backend)[0m
+[0;32m   1013[0m kwds_defaults [38;5;241m=[39m _refine_defaults_read(
+[0;32m   1014[0m     dialect,
+[0;32m   1015[0m     delimiter,
+[1;32m   (...)[0m
+[0;32m   1022[0m     dtype_backend[38;5;241m=[39mdtype_backend,
+[0;32m   1023[0m )
+[0;32m   1024[0m kwds[38;5;241m.[39mupdate(kwds_defaults)
+[1;32m-> 1026[0m [38;5;28;01mreturn[39;00m [43m_read[49m[43m([49m[43mfilepath_or_buffer[49m[43m,[49m[43m [49m[43mkwds[49m[43m)[49m
+
+File [1;32m~\AppData\Local\miniconda3\Lib\site-packages\pandas\io\parsers\readers.py:620[0m, in [0;36m_read[1;34m(filepath_or_buffer, kwds)[0m
+[0;32m    617[0m _validate_names(kwds[38;5;241m.[39mget([38;5;124m"[39m[38;5;124mnames[39m[38;5;124m"[39m, [38;5;28;01mNone[39;00m))
+[0;32m    619[0m [38;5;66;03m# Create the parser.[39;00m
+[1;32m--> 620[0m parser [38;5;241m=[39m [43mTextFileReader[49m[43m([49m[43mfilepath_or_buffer[49m[43m,[49m[43m [49m[38;5;241;43m*[39;49m[38;5;241;43m*[39;49m[43mkwds[49m[43m)[49m
+[0;32m    622[0m [38;5;28;01mif[39;00m chunksize [38;5;129;01mor[39;00m iterator:
+[0;32m    623[0m     [38;5;28;01mreturn[39;00m parser
+
+File [1;32m~\AppData\Local\miniconda3\Lib\site-packages\pandas\io\parsers\readers.py:1620[0m, in [0;36mTextFileReader.__init__[1;34m(self, f, engine, **kwds)[0m
+[0;32m   1617[0m     [38;5;28mself[39m[38;5;241m.[39moptions[[38;5;124m"[39m[38;5;124mhas_index_names[39m[38;5;124m"[39m] [38;5;241m=[39m kwds[[38;5;124m"[39m[38;5;124mhas_index_names[39m[38;5;124m"[39m]
+[0;32m   1619[0m [38;5;28mself[39m[38;5;241m.[39mhandles: IOHandles [38;5;241m|[39m [38;5;28;01mNone[39;00m [38;5;241m=[39m [38;5;28;01mNone[39;00m
+[1;32m-> 1620[0m [38;5;28mself[39m[38;5;241m.[39m_engine [38;5;241m=[39m [38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43m_make_engine[49m[43m([49m[43mf[49m[43m,[49m[43m [49m[38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43mengine[49m[43m)[49m
+
+File [1;32m~\AppData\Local\miniconda3\Lib\site-packages\pandas\io\parsers\readers.py:1880[0m, in [0;36mTextFileReader._make_engine[1;34m(self, f, engine)[0m
+[0;32m   1878[0m     [38;5;28;01mif[39;00m [38;5;124m"[39m[38;5;124mb[39m[38;5;124m"[39m [38;5;129;01mnot[39;00m [38;5;129;01min[39;00m mode:
+[0;32m   1879[0m         mode [38;5;241m+[39m[38;5;241m=[39m [38;5;124m"[39m[38;5;124mb[39m[38;5;124m"[39m
+[1;32m-> 1880[0m [38;5;28mself[39m[38;5;241m.[39mhandles [38;5;241m=[39m [43mget_handle[49m[43m([49m
+[0;32m   1881[0m [43m    [49m[43mf[49m[43m,[49m
+[0;32m   1882[0m [43m    [49m[43mmode[49m[43m,[49m
+[0;32m   1883[0m [43m    [49m[43mencoding[49m[38;5;241;43m=[39;49m[38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43moptions[49m[38;5;241;43m.[39;49m[43mget[49m[43m([49m[38;5;124;43m"[39;49m[38;5;124;43mencoding[39;49m[38;5;124;43m"[39;49m[43m,[49m[43m [49m[38;5;28;43;01mNone[39;49;00m[43m)[49m[43m,[49m
+[0;32m   1884[0m [43m    [49m[43mcompression[49m[38;5;241;43m=[39;49m[38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43moptions[49m[38;5;241;43m.[39;49m[43mget[49m[43m([49m[38;5;124;43m"[39;49m[38;5;124;43mcompression[39;49m[38;5;124;43m"[39;49m[43m,[49m[43m [49m[38;5;28;43;01mNone[39;49;00m[43m)[49m[43m,[49m
+[0;32m   1885[0m [43m    [49m[43mmemory_map[49m[38;5;241;43m=[39;49m[38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43moptions[49m[38;5;241;43m.[39;49m[43mget[49m[43m([49m[38;5;124;43m"[39;49m[38;5;124;43mmemory_map[39;49m[38;5;124;43m"[39;49m[43m,[49m[43m [49m[38;5;28;43;01mFalse[39;49;00m[43m)[49m[43m,[49m
+[0;32m   1886[0m [43m    [49m[43mis_text[49m[38;5;241;43m=[39;49m[43mis_text[49m[43m,[49m
+[0;32m   1887[0m [43m    [49m[43merrors[49m[38;5;241;43m=[39;49m[38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43moptions[49m[38;5;241;43m.[39;49m[43mget[49m[43m([49m[38;5;124;43m"[39;49m[38;5;124;43mencoding_errors[39;49m[38;5;124;43m"[39;49m[43m,[49m[43m [49m[38;5;124;43m"[39;49m[38;5;124;43mstrict[39;49m[38;5;124;43m"[39;49m[43m)[49m[43m,[49m
+[0;32m   1888[0m [43m    [49m[43mstorage_options[49m[38;5;241;43m=[39;49m[38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43moptions[49m[38;5;241;43m.[39;49m[43mget[49m[43m([49m[38;5;124;43m"[39;49m[38;5;124;43mstorage_options[39;49m[38;5;124;43m"[39;49m[43m,[49m[43m [49m[38;5;28;43;01mNone[39;49;00m[43m)[49m[43m,[49m
+[0;32m   1889[0m [43m[49m[43m)[49m
+[0;32m   1890[0m [38;5;28;01massert[39;00m [38;5;28mself[39m[38;5;241m.[39mhandles [38;5;129;01mis[39;00m [38;5;129;01mnot[39;00m [38;5;28;01mNone[39;00m
+[0;32m   1891[0m f [38;5;241m=[39m [38;5;28mself[39m[38;5;241m.[39mhandles[38;5;241m.[39mhandle
+
+File [1;32m~\AppData\Local\miniconda3\Lib\site-packages\pandas\io\common.py:873[0m, in [0;36mget_handle[1;34m(path_or_buf, mode, encoding, compression, memory_map, is_text, errors, storage_options)[0m
+[0;32m    868[0m [38;5;28;01melif[39;00m [38;5;28misinstance[39m(handle, [38;5;28mstr[39m):
+[0;32m    869[0m     [38;5;66;03m# Check whether the filename is to be opened in binary mode.[39;00m
+[0;32m    870[0m     [38;5;66;03m# Binary mode does not support 'encoding' and 'newline'.[39;00m
+[0;32m    871[0m     [38;5;28;01mif[39;00m ioargs[38;5;241m.[39mencoding [38;5;129;01mand[39;00m [38;5;124m"[39m[38;5;124mb[39m[38;5;124m"[39m [38;5;129;01mnot[39;00m [38;5;129;01min[39;00m ioargs[38;5;241m.[39mmode:
+[0;32m    872[0m         [38;5;66;03m# Encoding[39;00m
+[1;32m--> 873[0m         handle [38;5;241m=[39m [38;5;28;43mopen[39;49m[43m([49m
+[0;32m    874[0m [43m            [49m[43mhandle[49m[43m,[49m
+[0;32m    875[0m [43m            [49m[43mioargs[49m[38;5;241;43m.[39;49m[43mmode[49m[43m,[49m
+[0;32m    876[0m [43m            [49m[43mencoding[49m[38;5;241;43m=[39;49m[43mioargs[49m[38;5;241;43m.[39;49m[43mencoding[49m[43m,[49m
+[0;32m    877[0m [43m            [49m[43merrors[49m[38;5;241;43m=[39;49m[43merrors[49m[43m,[49m
+[0;32m    878[0m [43m            [49m[43mnewline[49m[38;5;241;43m=[39;49m[38;5;124;43m"[39;49m[38;5;124;43m"[39;49m[43m,[49m
+[0;32m    879[0m [43m        [49m[43m)[49m
+[0;32m    880[0m     [38;5;28;01melse[39;00m:
+[0;32m    881[0m         [38;5;66;03m# Binary mode[39;00m
+[0;32m    882[0m         handle [38;5;241m=[39m [38;5;28mopen[39m(handle, ioargs[38;5;241m.[39mmode)
+
+[1;31mFileNotFoundError[0m: [Errno 2] No such file or directory: 'data/DataDownload_4344079_row.csv'
+

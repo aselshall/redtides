@@ -1,0 +1,1930 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>River data &#8212; Home</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=6a7d0a54" />
+    <link rel="stylesheet" type="text/css" href="../_static/.ipynb_checkpoints/custom-checkpoint.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'river/river';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="Sea-surface height and red tides" href="../ocean/ocean.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Home</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Project outlines</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../atmosphere/atmosphere.html">Data - Atmospher</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ocean/ocean.html">Data - Ocean</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Data - River</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/river/river.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>River data</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#discharge">1. Discharge</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#select-station-close-to-the-gulf-of-america">1.1 Select station close to the Gulf of America</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#downloading-data">1.2 Downloading data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-discharge">3. Plot discharge</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nutrients">2. Nutrients</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nurtient-data">2.1 Nurtient data</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#datasource-values">DataSource Values</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#qacode-values">QACode Values</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#filted-data-at-lower-reach">2.2 Filted data at lower reach</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="river-data">
+<h1>River data<a class="headerlink" href="#river-data" title="Link to this heading">#</a></h1>
+<p>The Peace River is a significant contributor of freshwater and associated nutrients to Charlotte Harbor, which subsequently influences coastal waters where red tides occur.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">datetime</span>
+
+<span class="kn">import</span> <span class="nn">geopandas</span> <span class="k">as</span> <span class="nn">gpd</span>
+<span class="kn">import</span> <span class="nn">contextily</span> <span class="k">as</span> <span class="nn">ctx</span>
+<span class="kn">from</span> <span class="nn">shapely</span> <span class="kn">import</span> <span class="n">wkb</span>
+<span class="kn">from</span> <span class="nn">shapely.geometry</span> <span class="kn">import</span> <span class="n">Point</span>
+<span class="kn">from</span> <span class="nn">adjustText</span> <span class="kn">import</span> <span class="n">adjust_text</span>
+
+<span class="kn">import</span> <span class="nn">os</span> 
+<span class="kn">import</span> <span class="nn">dataretrieval.nwis</span> <span class="k">as</span> <span class="nn">nwis</span>
+<span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">from</span> <span class="nn">io</span> <span class="kn">import</span> <span class="n">StringIO</span>
+
+<span class="kn">import</span> <span class="nn">warnings</span>
+<span class="n">warnings</span><span class="o">.</span><span class="n">simplefilter</span><span class="p">(</span><span class="n">action</span><span class="o">=</span><span class="s1">&#39;ignore&#39;</span><span class="p">,</span> <span class="n">category</span><span class="o">=</span><span class="ne">UserWarning</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="discharge">
+<h2>1. Discharge<a class="headerlink" href="#discharge" title="Link to this heading">#</a></h2>
+<section id="select-station-close-to-the-gulf-of-america">
+<h3>1.1 Select station close to the Gulf of America<a class="headerlink" href="#select-station-close-to-the-gulf-of-america" title="Link to this heading">#</a></h3>
+<p>The USGS monitoring station 02296750 at State Road 70 in Arcadia, Florida is ued to understand the Peace River’s influence on the Charlotte Harbor estuarine system and red tides in the Gulf of America. It provides long-term discharge and water level data, essential for assessing freshwater inflow, nutrient loading, and salinity—key factors driving red tides. Its location near the river’s mouth makes it valuable for studying freshwater-coastal interactions. While other stations, such as 02295637 at Zolfo Springs and 02294898 at Fort Meade, also monitor discharge and water levels, Arcadia’s strategic position and historical data since 1912 make it particularly valuable for studying red tides</p>
+<p>For watershed boundary data:</p>
+<p><a class="reference external" href="https://www.usgs.gov/national-hydrography">https://www.usgs.gov/national-hydrography</a></p>
+<p><a class="reference external" href="https://www.usgs.gov/national-hydrography/access-national-hydrography-products">https://www.usgs.gov/national-hydrography/access-national-hydrography-products</a></p>
+<p>For water level data:<br />
+<a class="reference external" href="https://chnep.wateratlas.usf.edu/datadownload/">https://chnep.wateratlas.usf.edu/datadownload/</a></p>
+<p>This code reads the flow data to identify stations close to Charlotte Harbour</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Load the CSV file (update path if needed)</span>
+<span class="c1">#file_path = &#39;input/DataDownload_4344079_row.csv&#39;</span>
+<span class="n">HU</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;03100101&#39;</span><span class="p">,</span> <span class="s1">&#39;03090205&#39;</span><span class="p">]</span>  <span class="c1">#Peace river basin, Caloosahatchee River Basin</span>
+<span class="n">river</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Peace&#39;</span><span class="p">,</span> <span class="s1">&#39;Caloosahatchee&#39;</span><span class="p">]</span>
+<span class="n">selection</span><span class="o">=</span><span class="mi">1</span>
+<span class="n">basin</span><span class="o">=</span><span class="n">HU</span><span class="p">[</span><span class="n">selection</span><span class="p">]</span>
+<span class="n">file_path</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;input/HU8_</span><span class="si">{</span><span class="n">basin</span><span class="si">}</span><span class="s1">_Flow.csv&#39;</span>
+
+<span class="c1">#data = pd.read_csv(file_path)</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">file_path</span><span class="p">,</span> <span class="n">low_memory</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;StationID&#39;</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="s1">&#39;Longitude_DD&#39;</span><span class="p">:</span> <span class="nb">float</span><span class="p">})</span>
+
+<span class="c1"># Filter the data for Elevation and Flow parameters</span>
+<span class="n">filtered_data</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;Parameter&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">([</span><span class="s1">&#39;Level_FT_NAVD88&#39;</span><span class="p">,</span> <span class="s1">&#39;Flow_CFS&#39;</span><span class="p">])]</span>
+<span class="n">filtered_data</span> <span class="o">=</span> <span class="n">filtered_data</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">subset</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Latitude_DD&#39;</span><span class="p">,</span> <span class="s1">&#39;Longitude_DD&#39;</span><span class="p">])</span>
+
+<span class="c1"># Convert to GeoDataFrame</span>
+<span class="n">gdf</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">GeoDataFrame</span><span class="p">(</span>
+    <span class="n">filtered_data</span><span class="p">,</span> 
+    <span class="n">geometry</span><span class="o">=</span><span class="n">gpd</span><span class="o">.</span><span class="n">points_from_xy</span><span class="p">(</span><span class="n">filtered_data</span><span class="p">[</span><span class="s1">&#39;Longitude_DD&#39;</span><span class="p">],</span> <span class="n">filtered_data</span><span class="p">[</span><span class="s1">&#39;Latitude_DD&#39;</span><span class="p">]),</span>
+    <span class="n">crs</span><span class="o">=</span><span class="s1">&#39;EPSG:4326&#39;</span>
+<span class="p">)</span>
+
+<span class="c1"># Remove duplicates based on station location and name</span>
+<span class="n">unique_stations</span> <span class="o">=</span> <span class="n">gdf</span><span class="p">[[</span><span class="s1">&#39;StationName&#39;</span><span class="p">,</span> <span class="s1">&#39;geometry&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">drop_duplicates</span><span class="p">()</span>
+
+<span class="c1"># Filter for stations close to the Gulf of Mexico</span>
+
+<span class="k">if</span> <span class="n">basin</span> <span class="o">==</span> <span class="s1">&#39;03100101&#39;</span><span class="p">:</span>
+    <span class="n">lat_lon</span> <span class="o">=</span><span class="p">[</span><span class="mf">27.5</span><span class="p">,</span> <span class="mf">26.5</span><span class="p">,</span> <span class="o">-</span><span class="mf">82.5</span><span class="p">,</span> <span class="o">-</span><span class="mf">81.5</span><span class="p">]</span>
+<span class="k">elif</span> <span class="n">basin</span> <span class="o">==</span> <span class="s1">&#39;03090205&#39;</span><span class="p">:</span>
+    <span class="n">lat_lon</span> <span class="o">=</span><span class="p">[</span><span class="mf">27.5</span><span class="p">,</span> <span class="mf">26.5</span><span class="p">,</span> <span class="o">-</span><span class="mi">90</span><span class="p">,</span> <span class="o">-</span><span class="mf">81.5</span><span class="p">]</span>
+    
+<span class="n">gulf_stations</span> <span class="o">=</span> <span class="n">unique_stations</span><span class="p">[</span>
+    <span class="p">(</span><span class="n">unique_stations</span><span class="o">.</span><span class="n">geometry</span><span class="o">.</span><span class="n">y</span> <span class="o">&lt;=</span> <span class="n">lat_lon</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="o">&amp;</span> 
+    <span class="p">(</span><span class="n">unique_stations</span><span class="o">.</span><span class="n">geometry</span><span class="o">.</span><span class="n">y</span> <span class="o">&gt;=</span> <span class="n">lat_lon</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="o">&amp;</span> 
+    <span class="p">(</span><span class="n">unique_stations</span><span class="o">.</span><span class="n">geometry</span><span class="o">.</span><span class="n">x</span> <span class="o">&gt;=</span> <span class="n">lat_lon</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span> <span class="o">&amp;</span> 
+    <span class="p">(</span><span class="n">unique_stations</span><span class="o">.</span><span class="n">geometry</span><span class="o">.</span><span class="n">x</span> <span class="o">&lt;=</span> <span class="n">lat_lon</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span>
+<span class="p">]</span>
+
+<span class="c1"># Load the Peace River Watershed shapefile</span>
+<span class="c1">#NHD_H_03100101_HU8_Shape</span>
+<span class="n">watershed</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;input/NHD_H_</span><span class="si">{</span><span class="n">basin</span><span class="si">}</span><span class="s1">_HU8_Shape/WBDHU8.shp&#39;</span><span class="p">)</span>
+
+<span class="c1"># Load the NHD flowline data</span>
+<span class="c1">#e.g, NHD_H_03100101_HU8_Shape</span>
+<span class="n">flowlines</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;input/NHD_H_</span><span class="si">{</span><span class="n">basin</span><span class="si">}</span><span class="s1">_HU8_Shape/NHDFlowline.shp&#39;</span><span class="p">)</span>
+
+<span class="c1"># Convert to 2D geometry (strip Z values)</span>
+<span class="n">flowlines</span><span class="p">[</span><span class="s1">&#39;geometry&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">flowlines</span><span class="p">[</span><span class="s1">&#39;geometry&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span>
+    <span class="k">lambda</span> <span class="n">geom</span><span class="p">:</span> <span class="n">wkb</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">wkb</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">geom</span><span class="p">,</span> <span class="n">output_dimension</span><span class="o">=</span><span class="mi">2</span><span class="p">))</span>
+<span class="p">)</span>
+
+<span class="c1"># Filter the flowlines to select only Peace River</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">flowlines</span><span class="p">[</span><span class="s1">&#39;gnis_name&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">())</span>
+<span class="k">if</span> <span class="n">basin</span> <span class="o">==</span> <span class="s1">&#39;03100101&#39;</span><span class="p">:</span>
+    <span class="n">river_to_plot</span> <span class="o">=</span> <span class="n">flowlines</span><span class="p">[</span><span class="n">flowlines</span><span class="p">[</span><span class="s1">&#39;gnis_name&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">==</span> <span class="s1">&#39;peace river&#39;</span><span class="p">]</span>
+<span class="k">elif</span> <span class="n">basin</span> <span class="o">==</span> <span class="s1">&#39;03090205&#39;</span><span class="p">:</span>
+    <span class="n">river_to_plot</span> <span class="o">=</span> <span class="n">flowlines</span><span class="p">[</span><span class="n">flowlines</span><span class="p">[</span><span class="s1">&#39;gnis_name&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span> <span class="o">==</span> <span class="s1">&#39;Caloosahatchee River&#39;</span><span class="p">]</span>
+    
+
+<span class="c1"># Define available basemaps</span>
+<span class="n">basemaps</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;OpenStreetMap&#39;</span><span class="p">:</span> <span class="n">ctx</span><span class="o">.</span><span class="n">providers</span><span class="o">.</span><span class="n">OpenStreetMap</span><span class="o">.</span><span class="n">Mapnik</span><span class="p">,</span>
+    <span class="s1">&#39;CartoDB Positron&#39;</span><span class="p">:</span> <span class="n">ctx</span><span class="o">.</span><span class="n">providers</span><span class="o">.</span><span class="n">CartoDB</span><span class="o">.</span><span class="n">Positron</span><span class="p">,</span>
+    <span class="s1">&#39;CartoDB DarkMatter&#39;</span><span class="p">:</span> <span class="n">ctx</span><span class="o">.</span><span class="n">providers</span><span class="o">.</span><span class="n">CartoDB</span><span class="o">.</span><span class="n">DarkMatter</span><span class="p">,</span>
+    <span class="s1">&#39;CartoDB Voyager&#39;</span><span class="p">:</span> <span class="n">ctx</span><span class="o">.</span><span class="n">providers</span><span class="o">.</span><span class="n">CartoDB</span><span class="o">.</span><span class="n">Voyager</span><span class="p">,</span>
+    <span class="s1">&#39;Esri World Imagery&#39;</span><span class="p">:</span> <span class="n">ctx</span><span class="o">.</span><span class="n">providers</span><span class="o">.</span><span class="n">Esri</span><span class="o">.</span><span class="n">WorldImagery</span><span class="p">,</span>
+    <span class="s1">&#39;Esri World Topo Map&#39;</span><span class="p">:</span> <span class="n">ctx</span><span class="o">.</span><span class="n">providers</span><span class="o">.</span><span class="n">Esri</span><span class="o">.</span><span class="n">WorldTopoMap</span>
+<span class="p">}</span>
+
+<span class="c1"># elect basemap</span>
+<span class="n">choice</span> <span class="o">=</span> <span class="mi">1</span>  <span class="c1"># 1 = OpenStreetMap</span>
+<span class="n">selected_basemap</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">basemaps</span><span class="o">.</span><span class="n">values</span><span class="p">())[</span><span class="n">choice</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span>
+
+<span class="c1"># Plotting</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">14</span><span class="p">,</span> <span class="mi">12</span><span class="p">))</span>
+
+<span class="c1"># Plot watershed boundary</span>
+<span class="n">watershed</span><span class="o">.</span><span class="n">to_crs</span><span class="p">(</span><span class="n">epsg</span><span class="o">=</span><span class="mi">3857</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;none&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="c1"># Plot the stations near the Gulf of Mexico</span>
+<span class="n">gulf_stations</span><span class="o">.</span><span class="n">to_crs</span><span class="p">(</span><span class="n">epsg</span><span class="o">=</span><span class="mi">3857</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">markersize</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Stations&#39;</span><span class="p">)</span>
+
+<span class="c1"># Add station names:</span>
+<span class="c1"># - Remove &#39;Peace River&#39; from labels</span>
+<span class="c1"># - Plot every second station except the last one</span>
+
+
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">gulf_stations</span><span class="o">.</span><span class="n">to_crs</span><span class="p">(</span><span class="n">epsg</span><span class="o">=</span><span class="mi">3857</span><span class="p">)</span><span class="o">.</span><span class="n">iterrows</span><span class="p">()):</span>
+    <span class="k">if</span> <span class="n">basin</span> <span class="o">==</span> <span class="s1">&#39;03100101&#39;</span><span class="p">:</span>        
+        <span class="c1">#row[1][&#39;StationName&#39;]</span>
+        <span class="n">label</span> <span class="o">=</span> <span class="n">row</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="s1">&#39;StationName&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;PEACE RIVER AT &#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span><span class="o">.</span>\
+        <span class="n">replace</span><span class="p">(</span><span class="s1">&#39;PEACE RIVER BELOW CHARLIE CREEK&#39;</span><span class="p">,</span><span class="s1">&#39;&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;FL&#39;</span><span class="p">,</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">i</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">gulf_stations</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">:</span>  <span class="c1"># Always show the last station</span>
+            <span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">geometry</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">row</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">geometry</span><span class="o">.</span><span class="n">y</span><span class="p">,</span> <span class="n">label</span><span class="p">,</span> 
+                    <span class="n">fontsize</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span> <span class="n">ha</span><span class="o">=</span><span class="s1">&#39;left&#39;</span><span class="p">,</span> <span class="n">va</span><span class="o">=</span><span class="s1">&#39;bottom&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;darkblue&#39;</span><span class="p">)</span>
+    
+    <span class="k">elif</span> <span class="n">basin</span> <span class="o">==</span> <span class="s1">&#39;03090205&#39;</span><span class="p">:</span>
+        <span class="c1"># Strip whitespace and standardize case</span>
+        <span class="n">gulf_stations</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s1">&#39;StationName&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">gulf_stations</span><span class="p">[</span><span class="s1">&#39;StationName&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+
+        <span class="c1"># Add station labels (only for key stations)</span>
+        <span class="n">stations_to_label</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="s1">&#39;CALOOSAHATCHEE RIVER AT S-79, NR.OLGA, FLA&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;CALOOSAHATCHEE RIVER AT FORT MYERS FL&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;TOWNSEND CANAL NEAR ALVA,FL&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;Big Water Control Structure&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;Twin Ponds&#39;</span>
+        <span class="p">]</span>
+        
+        <span class="c1"># Iterate outside the main loop and add labels only for key stations</span>
+        <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">gulf_stations</span><span class="o">.</span><span class="n">to_crs</span><span class="p">(</span><span class="n">epsg</span><span class="o">=</span><span class="mi">3857</span><span class="p">)</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
+            <span class="k">if</span> <span class="n">row</span><span class="p">[</span><span class="s1">&#39;StationName&#39;</span><span class="p">]</span> <span class="ow">in</span> <span class="n">stations_to_label</span><span class="p">:</span>
+                <span class="n">label</span> <span class="o">=</span> <span class="n">row</span><span class="p">[</span><span class="s1">&#39;StationName&#39;</span><span class="p">]</span>
+                <span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span>
+                    <span class="n">row</span><span class="o">.</span><span class="n">geometry</span><span class="o">.</span><span class="n">x</span><span class="o">*</span><span class="mf">0.9998</span><span class="p">,</span> 
+                    <span class="n">row</span><span class="o">.</span><span class="n">geometry</span><span class="o">.</span><span class="n">y</span><span class="o">*</span><span class="mf">1.0001</span><span class="p">,</span> 
+                    <span class="n">label</span><span class="p">,</span> 
+                    <span class="n">fontsize</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span> 
+                    <span class="n">ha</span><span class="o">=</span><span class="s1">&#39;left&#39;</span><span class="p">,</span> 
+                    <span class="n">va</span><span class="o">=</span><span class="s1">&#39;bottom&#39;</span><span class="p">,</span> 
+                    <span class="n">color</span><span class="o">=</span><span class="s1">&#39;darkblue&#39;</span>
+                <span class="p">)</span>
+
+<span class="c1"># Plot the Peace River</span>
+<span class="n">river_to_plot</span><span class="o">.</span><span class="n">to_crs</span><span class="p">(</span><span class="n">epsg</span><span class="o">=</span><span class="mi">3857</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;cyan&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">river</span><span class="p">[</span><span class="n">selection</span><span class="p">]</span><span class="si">}</span><span class="s1"> River&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+
+
+<span class="c1"># Add selected basemap (lower resolution for faster rendering)</span>
+<span class="n">ctx</span><span class="o">.</span><span class="n">add_basemap</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">source</span><span class="o">=</span><span class="n">selected_basemap</span><span class="p">,</span> <span class="n">zoom</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span> 
+
+<span class="c1"># Fix x-axis label crowding (reduce number of ticks)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xticks</span><span class="p">(</span><span class="n">ax</span><span class="o">.</span><span class="n">get_xticks</span><span class="p">()[::</span><span class="mi">2</span><span class="p">])</span>  <span class="c1"># Show every second tick to reduce clutter</span>
+
+<span class="c1"># Customize plot</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Stations and </span><span class="si">{</span><span class="n">river</span><span class="p">[</span><span class="n">selection</span><span class="p">]</span><span class="si">}</span><span class="s1"> River in the </span><span class="si">{</span><span class="n">river</span><span class="p">[</span><span class="n">selection</span><span class="p">]</span><span class="si">}</span><span class="s1"> River Watershed&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Longitude&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Latitude&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+
+<span class="c1"># Create &#39;figures&#39; folder if it does not exist</span>
+<span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="s1">&#39;figures&#39;</span><span class="p">):</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="s1">&#39;figures&#39;</span><span class="p">)</span>
+
+<span class="c1"># Save figure</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;figures/data_</span><span class="si">{</span><span class="n">river</span><span class="p">[</span><span class="n">selection</span><span class="p">]</span><span class="si">}</span><span class="s1">_river_fig1_map.png&#39;</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">300</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[None &#39;Powell Creek&#39; &#39;Caloosahatchee Canal&#39; &#39;Long Hammock Creek&#39;
+ &#39;Banana Branch&#39; &#39;Nicodemus Slough&#39; &#39;Okaloacoochee Branch&#39; &#39;Hancock Creek&#39;
+ &#39;York Branch&#39; &#39;Caloosahatchee River&#39; &#39;Manuel Branch&#39; &#39;Orange River&#39;
+ &#39;Pollywog Creek&#39; &#39;Daughtrey Creek&#39; &#39;Trout Creek&#39; &#39;Able Canal&#39; &#39;Rim Canal&#39;
+ &#39;East Prong Pollywog Creek&#39; &#39;Fox Canal&#39; &#39;Stricklin Gully&#39; &#39;Roberts Canal&#39;
+ &#39;Bee Branch&#39; &#39;Telegraph Creek&#39; &#39;Owl Creek&#39; &#39;Jacks Branch&#39; &#39;Spanish Creek&#39;
+ &#39;Whiskey Creek&#39; &#39;George Canal&#39; &#39;Popash Creek&#39; &#39;Yellow Fever Creek&#39;
+ &#39;Dog Canal&#39; &#39;Fort Simmons Branch&#39; &#39;King Canal&#39; &#39;Townsend Canal&#39;
+ &#39;Bullhead Strand&#39; &#39;Billy Creek&#39; &#39;Tenmile Canal&#39; &#39;Chaparral Slough&#39;
+ &#39;Clay Gully&#39;]
+</pre></div>
+</div>
+<img alt="../_images/2ea905023721a17a625d104fb8a470ef636393c0631d32fb1ddef010b829ab22.png" src="../_images/2ea905023721a17a625d104fb8a470ef636393c0631d32fb1ddef010b829ab22.png" />
+</div>
+</div>
+<p>In peace river: The discharge data from USGS station 02296750 represents the daily streamflow measurements for the Peace River at Arcadia, Florida in cubic feet per second (cfs). The data spans from October 1, 1985, to the present, capturing seasonal variations, storm events, and long-term hydrological trends. The station is part of the USGS National Water Information System (NWIS), which follows standardized methods for data collection and processing. However, the data may contain uncertainties due to factors such as instrument calibration errors, changes in channel geometry, flow estimation methods, and environmental factors like debris or vegetation influencing water flow. The data is marked with an approval code (‘A’), indicating that it has been quality-checked and meets USGS data accuracy standards. However, for future study we need to account for measurement errors by learning about the error and distribution and missing data through using a physics-based model.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gulf_stations</span><span class="o">.</span><span class="n">to_crs</span><span class="p">(</span><span class="n">epsg</span><span class="o">=</span><span class="mi">3857</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>StationName</th>
+      <th>geometry</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>20877</th>
+      <td>CALOOSAHATCHEE RIVER AT S-79, NR.OLGA, FLA</td>
+      <td>POINT (-9094625.945 3089025.953)</td>
+    </tr>
+    <tr>
+      <th>42815</th>
+      <td>ARIES CANAL AT CAPE CORAL, FL</td>
+      <td>POINT (-9127527.935 3073629.165)</td>
+    </tr>
+    <tr>
+      <th>51332</th>
+      <td>COURTNEY CANAL AT CAPE CORAL, FL</td>
+      <td>POINT (-9126321.955 3070862.937)</td>
+    </tr>
+    <tr>
+      <th>60641</th>
+      <td>MEADE CANAL AT CAPE CORAL, FL</td>
+      <td>POINT (-9120384.719 3078125.399)</td>
+    </tr>
+    <tr>
+      <th>70143</th>
+      <td>SAN CARLOS CANAL AT CAPE CORAL, FL</td>
+      <td>POINT (-9124095.487 3074009.553)</td>
+    </tr>
+    <tr>
+      <th>98498</th>
+      <td>CALOOSAHATCHEE RIVER AT FORT MYERS FL</td>
+      <td>POINT (-9113608.891 3079943.65)</td>
+    </tr>
+    <tr>
+      <th>100249</th>
+      <td>TOWNSEND CANAL NEAR ALVA,FL</td>
+      <td>POINT (-9078999.049 3087006.528)</td>
+    </tr>
+    <tr>
+      <th>101787</th>
+      <td>Big Water Control Structure</td>
+      <td>POINT (-9107456.196 3105744.77)</td>
+    </tr>
+    <tr>
+      <th>103147</th>
+      <td>Twin Ponds</td>
+      <td>POINT (-9106734.734 3108963.328)</td>
+    </tr>
+    <tr>
+      <th>103408</th>
+      <td>WHISKEY CREEK AT FT. MYERS, FL</td>
+      <td>POINT (-9116086.473 3070413.444)</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>The most important stations are those on the mainstem of the Caloosahatchee River (especially S-79 and Fort Myers) and those associated with water control structures. These stations are directly linked to nutrient loading into the Gulf, which drives red tide events. Stations in smaller canals and tributaries are likely less influential at the regional scale but may still affect local water quality and nutrient dynamics. Most relevant stations for TN, TP, and red tide impact:</p>
+<ul class="simple">
+<li><p>CALOOSAHATCHEE RIVER AT S-79, NR.OLGA, FLA: S-79 (W.P. Franklin Lock &amp; Dam) is the primary control point for freshwater releases from Lake Okeechobee into the Caloosahatchee River, where nutrient loading from Lake Okeechobee, especially during high discharge events, is known to fuel red tide events along the Gulf Coast.</p></li>
+<li><p>CALOOSAHATCHEE RIVER AT FORT MYERS FL: This station is located near the mouth of the Caloosahatchee River and would provide insight into nutrient loading directly into the estuary and the Gulf of Mexico. Strong relationship between freshwater nutrient loading and harmful algal blooms (HABs) would make this station important for monitoring.</p></li>
+<li><p>TOWNSEND CANAL NEAR ALVA, FL: This canal drains into the Caloosahatchee River upstream of the estuary, potentially influencing nutrient delivery. It may help explain how upstream sources of nutrients impact nutrient dynamics downstream.</p></li>
+<li><p>Big Water Control Structure: Nutrient loading influenced by water control decisions would make this an important location for understanding how artificial water management influences nutrient delivery to the Gulf.</p></li>
+<li><p>Twin Ponds: While not directly on the Caloosahatchee River, this station may represent an additional nutrient source or retention area that contributes to downstream loading.</p></li>
+</ul>
+</section>
+<section id="downloading-data">
+<h3>1.2 Downloading data<a class="headerlink" href="#downloading-data" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">download</span> <span class="o">=</span> <span class="kc">False</span> 
+<span class="k">if</span> <span class="n">download</span><span class="p">:</span>
+    <span class="c1"># # Define station ID and parameter for discharge</span>
+    <span class="c1"># site = &#39;02297100&#39;  # Nocatee, FL station ID</span>
+    <span class="c1"># parameter = &#39;00060&#39;  # Discharge in cfs</span>
+    <span class="c1"># start_date = &#39;1985-01-01&#39;</span>
+    <span class="c1"># end_date = &#39;2025-01-01&#39;</span>
+    <span class="c1">#https://waterservices.usgs.gov/nwis/iv/?format=json&amp;sites=02296750&amp;parameterCd=00060&amp;startDT=1985-01-01&amp;endDT=2025-01-01</span>
+    
+    <span class="c1"># Site number and parameter code for discharge (00060)</span>
+    <span class="n">site</span> <span class="o">=</span> <span class="s1">&#39;02296750&#39;</span>
+    <span class="n">parameter</span> <span class="o">=</span> <span class="s1">&#39;00060&#39;</span>
+    <span class="n">start_date</span> <span class="o">=</span> <span class="s1">&#39;1985-01-01&#39;</span>
+    <span class="n">end_date</span> <span class="o">=</span> <span class="s1">&#39;2025-01-01&#39;</span>
+    
+    <span class="c1"># Retrieve data</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">nwis</span><span class="o">.</span><span class="n">get_record</span><span class="p">(</span><span class="n">sites</span><span class="o">=</span><span class="n">site</span><span class="p">,</span> <span class="n">parameterCd</span><span class="o">=</span><span class="n">parameter</span><span class="p">,</span> <span class="n">start</span><span class="o">=</span><span class="n">start_date</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="n">end_date</span><span class="p">)</span>
+    
+    <span class="c1"># Display data</span>
+    <span class="n">df</span>
+    
+    <span class="c1"># Save to CSV</span>
+    <span class="n">df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;input/data_river_fig1_peace_river_discharge.csv&#39;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="plot-discharge">
+<h3>3. Plot discharge<a class="headerlink" href="#plot-discharge" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Load the discharge data for both Arcadia and Nocatee from CSV files</span>
+<span class="n">file_arcadia</span> <span class="o">=</span> <span class="s1">&#39;input/peace_river_discharge_arcadia.csv&#39;</span>
+<span class="n">file_nocatee</span> <span class="o">=</span> <span class="s1">&#39;input/peace_river_discharge_nocatee.csv&#39;</span>
+
+<span class="c1"># Read data files</span>
+<span class="n">discharge_arcadia</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">file_arcadia</span><span class="p">)</span>
+<span class="n">discharge_nocatee</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">file_nocatee</span><span class="p">)</span>
+
+<span class="c1"># Convert &#39;datetime&#39; columns to datetime format</span>
+<span class="n">discharge_arcadia</span><span class="p">[</span><span class="s1">&#39;datetime&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">discharge_arcadia</span><span class="p">[</span><span class="s1">&#39;datetime&#39;</span><span class="p">])</span>
+<span class="n">discharge_nocatee</span><span class="p">[</span><span class="s1">&#39;datetime&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">discharge_nocatee</span><span class="p">[</span><span class="s1">&#39;datetime&#39;</span><span class="p">])</span>
+
+<span class="c1"># Create subplots for Arcadia and Nocatee</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">axs</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">14</span><span class="p">,</span> <span class="mi">10</span><span class="p">),</span> <span class="n">sharex</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># Plot for Arcadia</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">discharge_arcadia</span><span class="p">[</span><span class="s1">&#39;datetime&#39;</span><span class="p">],</span> <span class="n">discharge_arcadia</span><span class="p">[</span><span class="s1">&#39;00060&#39;</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Arcadia Discharge (cfs)&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">)</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Discharge (cfs)&#39;</span><span class="p">)</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Peace River at Arcadia, FL&#39;</span><span class="p">)</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;upper right&#39;</span><span class="p">)</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># Plot for Nocatee</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">discharge_nocatee</span><span class="p">[</span><span class="s1">&#39;datetime&#39;</span><span class="p">],</span> <span class="n">discharge_nocatee</span><span class="p">[</span><span class="s1">&#39;00060&#39;</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Nocatee Discharge (cfs)&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;green&#39;</span><span class="p">)</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Discharge (cfs)&#39;</span><span class="p">)</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Peace River at Nocatee, FL&#39;</span><span class="p">)</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;upper right&#39;</span><span class="p">)</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># Set common x-label</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Date&#39;</span><span class="p">)</span>
+
+<span class="c1"># Adjust spacing between subplots</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;figures/data_river_fig2_discharge.png&#39;</span><span class="p">)</span>
+<span class="c1"># Display the plot</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/f0e5c93fc04e80ef723c0ce8b9012ffa41de823a184efdf9ca6ee9066d296e04.png" src="../_images/f0e5c93fc04e80ef723c0ce8b9012ffa41de823a184efdf9ca6ee9066d296e04.png" />
+</div>
+</div>
+<p>Arcadia station (USGS 02296750) records higher flow rates compared to the Nocatee station (USGS 02297100). This discrepancy arises because the Arcadia station monitors the main stem of the Peace River, capturing cumulative flow from a larger upstream drainage area, whereas the Nocatee station measures discharge from Joshua Creek, a smaller tributary within the Peace River Basin. For studying red tides in the Gulf of Mexico, discharge data from the Arcadia station is more pertinent. Monitoring at Arcadia provides a comprehensive understanding of the total freshwater inflow and nutrient loads entering the estuarine and coastal systems.</p>
+</section>
+</section>
+<section id="nutrients">
+<h2>2. Nutrients<a class="headerlink" href="#nutrients" title="Link to this heading">#</a></h2>
+<section id="nurtient-data">
+<h3>2.1 Nurtient data<a class="headerlink" href="#nurtient-data" title="Link to this heading">#</a></h3>
+<p>The Total Nitrogen (TN) and Total Phosphorus (TP) data for the Peace River Basin were obtained from the Water Atlas, which serves as a central repository for water quality, hydrology, and environmental data across various Florida watersheds. The Peace River Basin, located in southwest Florida, is a vital waterway that supports both ecological and human needs, including municipal water supply, agriculture, and recreation. The basin is highly influenced by natural and anthropogenic factors, including urban development, agricultural runoff, and phosphate mining, which contribute to nutrient loading and water quality issues such as eutrophication and harmful algal blooms (HABs). The Water Atlas compiles data from multiple sources, including the Southwest Florida Water Management District (SWFWMD), the Florida Department of Environmental Protection (FDEP), and local environmental agencies. To access TN and TP data for the segment of the Peace River near the Gulf of Mexico we focus on:</p>
+<ul class="simple">
+<li><p>Peace River (CHNEP): This segment falls under the jurisdiction of the Coastal &amp; Heartland National Estuary Partnership (CHNEP) and encompasses areas closer to the river’s mouth near the Gulf.</p></li>
+<li><p>Peace River Estuary (Upper Segment North) (CHNEP): This section includes the upper portion of the estuary where the Peace River transitions into tidal waters as it approaches the Gulf.</p></li>
+<li><p>Tidal Peace River (CHNEP): This segment covers the tidal sections of the Peace River within the CHNEP’s monitoring area, reflecting the river’s interaction with Gulf tides.</p></li>
+</ul>
+<p>By selecting these segments, we obtain TN and TP data relevant to the lower reaches of the Peace River near its confluence with the Gulf of Mexico.</p>
+<p>Data information: <a class="reference external" href="https://chnep.wateratlas.usf.edu/waterbodies/basins/7/peace-river-basin">https://chnep.wateratlas.usf.edu/waterbodies/basins/7/peace-river-basin</a></p>
+<p>Data information: <a class="reference external" href="https://chnep.wateratlas.usf.edu/waterbodies/basins/1/caloosahatchee-river-basin">https://chnep.wateratlas.usf.edu/waterbodies/basins/1/caloosahatchee-river-basin</a></p>
+<p>Data download: <a class="reference external" href="https://chnep.wateratlas.usf.edu/datadownload/Default.aspx">https://chnep.wateratlas.usf.edu/datadownload/Default.aspx</a></p>
+<section id="datasource-values">
+<h4>DataSource Values<a class="headerlink" href="#datasource-values" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">USGS_NWIS</span></code> – USGS National Water Information System – A comprehensive database of surface water, groundwater, and water quality data collected by the U.S. Geological Survey (USGS).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">LEGACYSTORET_21FLA</span></code> – Legacy STORET data from Florida – Historical water quality data stored in the legacy version of the STORET database maintained by the EPA.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">LEGACYSTORET_1113S000</span></code> – Legacy STORET data from Florida – Historical data from a specific Florida station stored in the legacy STORET database.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">LEGACYSTORET_21FLSWFD</span></code> – Legacy STORET data from the Southwest Florida Water Management District – Historical data stored in the legacy STORET database collected in the Southwest Florida region.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">STORET_21FLPOLK</span></code> – STORET data from Polk County, Florida – Modern STORET data from water quality monitoring stations in Polk County.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">POLKCO_NRD_WQ</span></code> – Polk County Natural Resources Department – Water Quality – Data collected specifically by Polk County’s water quality monitoring programs.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">STORET_FLPRMRWS</span></code> – STORET data from the Peace River Manasota Regional Water Supply Authority – Data collected from water supply and quality monitoring stations in the Peace River basin.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">STORET_21FLSWFD</span></code> – STORET data from the Southwest Florida Water Management District – Data collected from water quality monitoring stations in Southwest Florida.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">LEGACYSTORET_21FLGW</span></code> – Legacy STORET groundwater data from Florida – Historical groundwater data stored in the legacy STORET database.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">STORET_SWFMDDEP</span></code> – STORET data from the Southwest Florida Water Management District submitted to the Florida Department of Environmental Protection (DEP).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">STORET_21FLGW</span></code> – STORET groundwater data from Florida – Modern groundwater data collected under the STORET system.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">STORET_21FLFTM</span></code> – STORET data from Fort Myers, Florida – Modern STORET data collected from water quality monitoring stations in Fort Myers.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">STORET_21FLTPA</span></code> – STORET data from Tampa, Florida – Modern STORET data collected from water quality monitoring stations in the Tampa area.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">LAKEWATCH_V</span></code> – Florida LAKEWATCH – A volunteer-based water quality monitoring program managed by the University of Florida that focuses on lakes.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">WIN_21FLMOSA</span></code> – WIN (Watershed Information Network) data from Mosaic – Data from Mosaic-operated monitoring stations under the WIN program.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">STORET_21FLWQSP</span></code> – STORET data from Florida water quality monitoring stations – Data from various Florida monitoring stations collected under the STORET system.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">WIN_21FLSWFD</span></code> – WIN data from the Southwest Florida Water Management District – WIN data collected from monitoring stations in Southwest Florida.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">WIN_FLPRMRWS</span></code> – WIN data from the Peace River Manasota Regional Water Supply Authority – Data from the Peace River basin under the WIN program.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">WIN_21FLTPA</span></code> – WIN data from Tampa, Florida – Data from monitoring stations in the Tampa area under the WIN program.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">WIN_21FLWQA</span></code> – WIN data from Florida water quality monitoring – WIN data from statewide water quality monitoring stations.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">WIN_21FLGW</span></code> – WIN groundwater data from Florida – Groundwater data collected under the WIN program.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">WIN_21FLPOLK</span></code> – WIN data from Polk County, Florida – Data collected from monitoring stations in Polk County under the WIN program.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">WIN_21FLFTM</span></code> – WIN data from Fort Myers, Florida – Data from monitoring stations in Fort Myers under the WIN program.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">WIN_21FLCHCO</span></code> – WIN data from Charlotte County, Florida – Data from monitoring stations in Charlotte County under the WIN program.</p></li>
+</ul>
+</section>
+<section id="qacode-values">
+<h4>QACode Values<a class="headerlink" href="#qacode-values" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">NaN</span></code> – No QA code assigned</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">E</span></code> – Estimated value</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;</span></code> – Below detection limit</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">A</span></code> – Acceptable</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">J</span></code> – Estimated value (within detection limit but uncertain)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Q</span></code> – Questionable data</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">+</span></code> – Added value during processing</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Q+</span></code> – Questionable but added value</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Y</span></code> – Lab analysis confirmation</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Y+</span></code> – Confirmed but added value</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">QY</span></code> – Questionable lab-confirmed value</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">V</span></code> – Verified value</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">AJ</span></code> – Acceptable but estimated value</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">U</span></code> – Not detected (below detection limit)</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Read the file (adjust path if needed)</span>
+<span class="n">file_path</span> <span class="o">=</span> <span class="s1">&#39;input/TN_TP.csv&#39;</span>  <span class="c1"># Adjust path if needed</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">file_path</span><span class="p">)</span>
+
+<span class="c1"># Convert SampleDate to datetime and drop invalid dates</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;SampleDate&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;SampleDate&#39;</span><span class="p">],</span> <span class="n">errors</span><span class="o">=</span><span class="s1">&#39;coerce&#39;</span><span class="p">)</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">subset</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;SampleDate&#39;</span><span class="p">])</span>
+<span class="n">display</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+
+<span class="c1"># Filter TN and TP data</span>
+<span class="n">tn_data</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Parameter&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;TN_ugl&#39;</span><span class="p">]</span>
+<span class="n">tp_data</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Parameter&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;TP_ugl&#39;</span><span class="p">]</span>
+
+<span class="c1"># Sort by SampleDate</span>
+<span class="n">tn_data</span> <span class="o">=</span> <span class="n">tn_data</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s1">&#39;SampleDate&#39;</span><span class="p">)</span>
+<span class="n">tp_data</span> <span class="o">=</span> <span class="n">tp_data</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s1">&#39;SampleDate&#39;</span><span class="p">)</span>
+
+<span class="c1"># Plot TN and TP as points</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">14</span><span class="p">,</span> <span class="mi">7</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">tn_data</span><span class="p">[</span><span class="s1">&#39;SampleDate&#39;</span><span class="p">],</span> <span class="n">tn_data</span><span class="p">[</span><span class="s1">&#39;Result_Value&#39;</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Total Nitrogen (TN)&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">40</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">tp_data</span><span class="p">[</span><span class="s1">&#39;SampleDate&#39;</span><span class="p">],</span> <span class="n">tp_data</span><span class="p">[</span><span class="s1">&#39;Result_Value&#39;</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Total Phosphorus (TP)&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;orange&#39;</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">40</span><span class="p">)</span>
+
+<span class="c1"># Add labels and title</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Sample Date&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Concentration (ug/L)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;TN and TP Over Time&#39;</span><span class="p">)</span>
+
+<span class="c1"># Add legend</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+
+<span class="c1"># Improve formatting</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">rotation</span><span class="o">=</span><span class="mi">45</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># Adjust spacing between subplots</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;figures/data_river_fig3_TN_TP_all.png&#39;</span><span class="p">)</span>
+
+<span class="c1"># Show plot</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">6</span><span class="p">],</span> <span class="n">line</span> <span class="mi">3</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Read the file (adjust path if needed)</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">file_path</span> <span class="o">=</span> <span class="s1">&#39;input/TN_TP.csv&#39;</span>  <span class="c1"># Adjust path if needed</span>
+<span class="ne">----&gt; </span><span class="mi">3</span> <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">file_path</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="c1"># Convert SampleDate to datetime and drop invalid dates</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;SampleDate&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;SampleDate&#39;</span><span class="p">],</span> <span class="n">errors</span><span class="o">=</span><span class="s1">&#39;coerce&#39;</span><span class="p">)</span>
+
+<span class="nn">File ~\AppData\Local\miniconda3\Lib\site-packages\pandas\io\parsers\readers.py:1026,</span> in <span class="ni">read_csv</span><span class="nt">(filepath_or_buffer, sep, delimiter, header, names, index_col, usecols, dtype, engine, converters, true_values, false_values, skipinitialspace, skiprows, skipfooter, nrows, na_values, keep_default_na, na_filter, verbose, skip_blank_lines, parse_dates, infer_datetime_format, keep_date_col, date_parser, date_format, dayfirst, cache_dates, iterator, chunksize, compression, thousands, decimal, lineterminator, quotechar, quoting, doublequote, escapechar, comment, encoding, encoding_errors, dialect, on_bad_lines, delim_whitespace, low_memory, memory_map, float_precision, storage_options, dtype_backend)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1013</span> <span class="n">kwds_defaults</span> <span class="o">=</span> <span class="n">_refine_defaults_read</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1014</span>     <span class="n">dialect</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1015</span>     <span class="n">delimiter</span><span class="p">,</span>
+   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1022</span>     <span class="n">dtype_backend</span><span class="o">=</span><span class="n">dtype_backend</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1023</span> <span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1024</span> <span class="n">kwds</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">kwds_defaults</span><span class="p">)</span>
+<span class="ne">-&gt; </span><span class="mi">1026</span> <span class="k">return</span> <span class="n">_read</span><span class="p">(</span><span class="n">filepath_or_buffer</span><span class="p">,</span> <span class="n">kwds</span><span class="p">)</span>
+
+<span class="nn">File ~\AppData\Local\miniconda3\Lib\site-packages\pandas\io\parsers\readers.py:620,</span> in <span class="ni">_read</span><span class="nt">(filepath_or_buffer, kwds)</span>
+<span class="g g-Whitespace">    </span><span class="mi">617</span> <span class="n">_validate_names</span><span class="p">(</span><span class="n">kwds</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;names&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">))</span>
+<span class="g g-Whitespace">    </span><span class="mi">619</span> <span class="c1"># Create the parser.</span>
+<span class="ne">--&gt; </span><span class="mi">620</span> <span class="n">parser</span> <span class="o">=</span> <span class="n">TextFileReader</span><span class="p">(</span><span class="n">filepath_or_buffer</span><span class="p">,</span> <span class="o">**</span><span class="n">kwds</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">622</span> <span class="k">if</span> <span class="n">chunksize</span> <span class="ow">or</span> <span class="n">iterator</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">623</span>     <span class="k">return</span> <span class="n">parser</span>
+
+<span class="nn">File ~\AppData\Local\miniconda3\Lib\site-packages\pandas\io\parsers\readers.py:1620,</span> in <span class="ni">TextFileReader.__init__</span><span class="nt">(self, f, engine, **kwds)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1617</span>     <span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="p">[</span><span class="s2">&quot;has_index_names&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">kwds</span><span class="p">[</span><span class="s2">&quot;has_index_names&quot;</span><span class="p">]</span>
+<span class="g g-Whitespace">   </span><span class="mi">1619</span> <span class="bp">self</span><span class="o">.</span><span class="n">handles</span><span class="p">:</span> <span class="n">IOHandles</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="ne">-&gt; </span><span class="mi">1620</span> <span class="bp">self</span><span class="o">.</span><span class="n">_engine</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_make_engine</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">engine</span><span class="p">)</span>
+
+<span class="nn">File ~\AppData\Local\miniconda3\Lib\site-packages\pandas\io\parsers\readers.py:1880,</span> in <span class="ni">TextFileReader._make_engine</span><span class="nt">(self, f, engine)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1878</span>     <span class="k">if</span> <span class="s2">&quot;b&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">mode</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1879</span>         <span class="n">mode</span> <span class="o">+=</span> <span class="s2">&quot;b&quot;</span>
+<span class="ne">-&gt; </span><span class="mi">1880</span> <span class="bp">self</span><span class="o">.</span><span class="n">handles</span> <span class="o">=</span> <span class="n">get_handle</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1881</span>     <span class="n">f</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1882</span>     <span class="n">mode</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1883</span>     <span class="n">encoding</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;encoding&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">),</span>
+<span class="g g-Whitespace">   </span><span class="mi">1884</span>     <span class="n">compression</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;compression&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">),</span>
+<span class="g g-Whitespace">   </span><span class="mi">1885</span>     <span class="n">memory_map</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;memory_map&quot;</span><span class="p">,</span> <span class="kc">False</span><span class="p">),</span>
+<span class="g g-Whitespace">   </span><span class="mi">1886</span>     <span class="n">is_text</span><span class="o">=</span><span class="n">is_text</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1887</span>     <span class="n">errors</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;encoding_errors&quot;</span><span class="p">,</span> <span class="s2">&quot;strict&quot;</span><span class="p">),</span>
+<span class="g g-Whitespace">   </span><span class="mi">1888</span>     <span class="n">storage_options</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;storage_options&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">),</span>
+<span class="g g-Whitespace">   </span><span class="mi">1889</span> <span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1890</span> <span class="k">assert</span> <span class="bp">self</span><span class="o">.</span><span class="n">handles</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+<span class="g g-Whitespace">   </span><span class="mi">1891</span> <span class="n">f</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">handles</span><span class="o">.</span><span class="n">handle</span>
+
+<span class="nn">File ~\AppData\Local\miniconda3\Lib\site-packages\pandas\io\common.py:873,</span> in <span class="ni">get_handle</span><span class="nt">(path_or_buf, mode, encoding, compression, memory_map, is_text, errors, storage_options)</span>
+<span class="g g-Whitespace">    </span><span class="mi">868</span> <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">handle</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">869</span>     <span class="c1"># Check whether the filename is to be opened in binary mode.</span>
+<span class="g g-Whitespace">    </span><span class="mi">870</span>     <span class="c1"># Binary mode does not support &#39;encoding&#39; and &#39;newline&#39;.</span>
+<span class="g g-Whitespace">    </span><span class="mi">871</span>     <span class="k">if</span> <span class="n">ioargs</span><span class="o">.</span><span class="n">encoding</span> <span class="ow">and</span> <span class="s2">&quot;b&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">ioargs</span><span class="o">.</span><span class="n">mode</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">872</span>         <span class="c1"># Encoding</span>
+<span class="ne">--&gt; </span><span class="mi">873</span>         <span class="n">handle</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">874</span>             <span class="n">handle</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">875</span>             <span class="n">ioargs</span><span class="o">.</span><span class="n">mode</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">876</span>             <span class="n">encoding</span><span class="o">=</span><span class="n">ioargs</span><span class="o">.</span><span class="n">encoding</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">877</span>             <span class="n">errors</span><span class="o">=</span><span class="n">errors</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">878</span>             <span class="n">newline</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">879</span>         <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">880</span>     <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">881</span>         <span class="c1"># Binary mode</span>
+<span class="g g-Whitespace">    </span><span class="mi">882</span>         <span class="n">handle</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">handle</span><span class="p">,</span> <span class="n">ioargs</span><span class="o">.</span><span class="n">mode</span><span class="p">)</span>
+
+<span class="ne">FileNotFoundError</span>: [Errno 2] No such file or directory: &#39;input/TN_TP.csv&#39;
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="filted-data-at-lower-reach">
+<h3>2.2 Filted data at lower reach<a class="headerlink" href="#filted-data-at-lower-reach" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Load the data</span>
+<span class="n">file_path</span> <span class="o">=</span> <span class="s1">&#39;input/TN_TP.csv&#39;</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">file_path</span><span class="p">)</span>
+
+<span class="c1"># Convert coordinates to float64 to maintain precision</span>
+<span class="n">data</span><span class="p">[</span><span class="s1">&#39;Actual_Latitude&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;Actual_Latitude&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&#39;float64&#39;</span><span class="p">)</span>
+<span class="n">data</span><span class="p">[</span><span class="s1">&#39;Actual_Longitude&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;Actual_Longitude&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&#39;float64&#39;</span><span class="p">)</span>
+
+<span class="c1"># Drop rows with missing coordinates</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">subset</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Actual_Latitude&#39;</span><span class="p">,</span> <span class="s1">&#39;Actual_Longitude&#39;</span><span class="p">])</span>
+
+<span class="c1"># Filter out data before 1990</span>
+<span class="n">data</span><span class="p">[</span><span class="s1">&#39;SampleDate&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;SampleDate&#39;</span><span class="p">])</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;SampleDate&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">year</span> <span class="o">&gt;=</span> <span class="mi">1990</span><span class="p">]</span>
+
+<span class="c1"># Create a summary table for each station</span>
+<span class="n">summary</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;StationID&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">agg</span><span class="p">(</span>
+    <span class="n">WBodyID</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;WBodyID&#39;</span><span class="p">,</span> <span class="s1">&#39;first&#39;</span><span class="p">),</span>
+    <span class="n">WaterBodyName</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;WaterBodyName&#39;</span><span class="p">,</span> <span class="s1">&#39;first&#39;</span><span class="p">),</span>
+    <span class="n">DataSource</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;DataSource&#39;</span><span class="p">,</span> <span class="s1">&#39;first&#39;</span><span class="p">),</span>
+    <span class="n">StationName</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;StationName&#39;</span><span class="p">,</span> <span class="s1">&#39;first&#39;</span><span class="p">),</span>
+    <span class="n">Actual_Latitude</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;Actual_Latitude&#39;</span><span class="p">,</span> <span class="s1">&#39;first&#39;</span><span class="p">),</span>
+    <span class="n">Actual_Longitude</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;Actual_Longitude&#39;</span><span class="p">,</span> <span class="s1">&#39;first&#39;</span><span class="p">),</span>
+    <span class="n">TN_Samples</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;Parameter&#39;</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="p">(</span><span class="n">x</span> <span class="o">==</span> <span class="s1">&#39;TN_mgl&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span> <span class="o">+</span> <span class="p">(</span><span class="n">x</span> <span class="o">==</span> <span class="s1">&#39;TN_ugl&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()),</span>
+    <span class="n">TP_Samples</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;Parameter&#39;</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="p">(</span><span class="n">x</span> <span class="o">==</span> <span class="s1">&#39;TP_mgl&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span> <span class="o">+</span> <span class="p">(</span><span class="n">x</span> <span class="o">==</span> <span class="s1">&#39;TP_ugl&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()),</span>
+    <span class="n">StartDate</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;SampleDate&#39;</span><span class="p">,</span> <span class="s1">&#39;min&#39;</span><span class="p">),</span>
+    <span class="n">EndDate</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;SampleDate&#39;</span><span class="p">,</span> <span class="s1">&#39;max&#39;</span><span class="p">)</span>
+<span class="p">)</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+
+<span class="c1"># Filter stations that have 10 or more sample points for either TN or TP</span>
+<span class="n">stations_with_10_or_more_samples</span> <span class="o">=</span> <span class="n">summary</span><span class="p">[</span>
+    <span class="p">(</span><span class="n">summary</span><span class="p">[</span><span class="s1">&#39;TN_Samples&#39;</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mi">30</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="n">summary</span><span class="p">[</span><span class="s1">&#39;TP_Samples&#39;</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mi">30</span><span class="p">)</span>
+<span class="p">]</span>
+
+<span class="c1"># Remove stations above latitude 27.4 to keep only Gulf-proximate stations</span>
+<span class="n">stations_with_10_or_more_samples</span> <span class="o">=</span> <span class="n">stations_with_10_or_more_samples</span><span class="p">[</span>
+    <span class="n">stations_with_10_or_more_samples</span><span class="p">[</span><span class="s1">&#39;Actual_Latitude&#39;</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="mf">27.4</span>
+<span class="p">]</span>
+<span class="n">display</span><span class="p">(</span><span class="n">stations_with_10_or_more_samples</span><span class="p">)</span>
+
+<span class="c1"># Convert to GeoDataFrame</span>
+<span class="n">filtered_gdf</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">GeoDataFrame</span><span class="p">(</span>
+    <span class="n">stations_with_10_or_more_samples</span><span class="p">,</span>
+    <span class="n">geometry</span><span class="o">=</span><span class="p">[</span><span class="n">Point</span><span class="p">(</span><span class="n">xy</span><span class="p">)</span> <span class="k">for</span> <span class="n">xy</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span>
+        <span class="n">stations_with_10_or_more_samples</span><span class="p">[</span><span class="s1">&#39;Actual_Longitude&#39;</span><span class="p">],</span>
+        <span class="n">stations_with_10_or_more_samples</span><span class="p">[</span><span class="s1">&#39;Actual_Latitude&#39;</span><span class="p">]</span>
+    <span class="p">)],</span>
+    <span class="n">crs</span><span class="o">=</span><span class="s1">&#39;EPSG:4326&#39;</span>
+<span class="p">)</span>
+
+<span class="c1"># Load Peace River Watershed shapefile</span>
+<span class="n">path</span> <span class="o">=</span> <span class="s1">&#39;data/NHD_H_03100101_HU8_Shape&#39;</span>
+<span class="n">watershed</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span><span class="s1">&#39;input/shape/WBDHU8.shp&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">to_crs</span><span class="p">(</span><span class="n">epsg</span><span class="o">=</span><span class="mi">4326</span><span class="p">)</span>
+
+<span class="c1"># Load Peace River flowline data</span>
+<span class="n">flowlines</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span><span class="s1">&#39;input/shape/NHDFlowline.shp&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">to_crs</span><span class="p">(</span><span class="n">epsg</span><span class="o">=</span><span class="mi">4326</span><span class="p">)</span>
+
+<span class="c1"># Filter for Peace River flowline</span>
+<span class="n">peace_river</span> <span class="o">=</span> <span class="n">flowlines</span><span class="p">[</span><span class="n">flowlines</span><span class="p">[</span><span class="s1">&#39;gnis_name&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">==</span> <span class="s1">&#39;peace river&#39;</span><span class="p">]</span>
+
+<span class="c1"># Plotting</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+
+<span class="c1"># Plot watershed boundary</span>
+<span class="n">watershed</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;none&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Watershed Boundary&#39;</span><span class="p">)</span>
+
+<span class="c1"># Plot filtered stations</span>
+<span class="n">filtered_gdf</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">markersize</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Filtered Stations&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">)</span>
+
+<span class="c1"># Plot Peace River</span>
+<span class="n">peace_river</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;cyan&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Peace River&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="c1"># Add station labels using adjustText to avoid overlap</span>
+<span class="n">texts</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">label</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span>
+    <span class="n">filtered_gdf</span><span class="o">.</span><span class="n">geometry</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> 
+    <span class="n">filtered_gdf</span><span class="o">.</span><span class="n">geometry</span><span class="o">.</span><span class="n">y</span><span class="p">,</span> 
+    <span class="n">filtered_gdf</span><span class="p">[</span><span class="s1">&#39;StationID&#39;</span><span class="p">]</span>
+<span class="p">):</span>
+    <span class="n">texts</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="sa">f</span><span class="s1">&#39;Station </span><span class="si">{</span><span class="n">label</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span> <span class="n">ha</span><span class="o">=</span><span class="s1">&#39;left&#39;</span><span class="p">,</span> <span class="n">va</span><span class="o">=</span><span class="s1">&#39;bottom&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;darkblue&#39;</span><span class="p">))</span>
+
+<span class="c1"># Automatically adjust text to prevent overlap</span>
+<span class="n">adjust_text</span><span class="p">(</span><span class="n">texts</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">arrowprops</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">arrowstyle</span><span class="o">=</span><span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">0.5</span><span class="p">))</span>
+
+<span class="c1"># Add basemap without changing CRS</span>
+<span class="n">ctx</span><span class="o">.</span><span class="n">add_basemap</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">source</span><span class="o">=</span><span class="n">ctx</span><span class="o">.</span><span class="n">providers</span><span class="o">.</span><span class="n">OpenStreetMap</span><span class="o">.</span><span class="n">Mapnik</span><span class="p">,</span> <span class="n">crs</span><span class="o">=</span><span class="s1">&#39;EPSG:4326&#39;</span><span class="p">)</span>
+
+<span class="c1"># Fix axis labels to show degrees (latitude and longitude)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Longitude (degrees)&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Latitude (degrees)&#39;</span><span class="p">)</span>
+
+<span class="c1"># Customize plot</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Peace River Watershed&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+
+<span class="c1"># Save and show plot</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;figures/data_river_fig4_TP_TN_stations_map.png&#39;</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">300</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="c1"># Total number of stations after filtering</span>
+<span class="n">total_stations</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">stations_with_10_or_more_samples</span><span class="p">)</span>
+
+<span class="c1"># Total number of samples (sum of TN and TP samples)</span>
+<span class="n">total_samples</span> <span class="o">=</span> <span class="n">stations_with_10_or_more_samples</span><span class="p">[</span><span class="s1">&#39;TN_Samples&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span> <span class="o">+</span> <span class="n">stations_with_10_or_more_samples</span><span class="p">[</span><span class="s1">&#39;TP_Samples&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+
+<span class="c1"># Total number of TN and TP samples</span>
+<span class="n">total_tn_samples</span> <span class="o">=</span> <span class="n">stations_with_10_or_more_samples</span><span class="p">[</span><span class="s1">&#39;TN_Samples&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+<span class="n">total_tp_samples</span> <span class="o">=</span> <span class="n">stations_with_10_or_more_samples</span><span class="p">[</span><span class="s1">&#39;TP_Samples&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+
+<span class="c1"># Sampling start and end date</span>
+<span class="n">sampling_start_date</span> <span class="o">=</span> <span class="n">stations_with_10_or_more_samples</span><span class="p">[</span><span class="s1">&#39;StartDate&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">()</span>
+<span class="n">sampling_end_date</span> <span class="o">=</span> <span class="n">stations_with_10_or_more_samples</span><span class="p">[</span><span class="s1">&#39;EndDate&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+
+<span class="c1"># Print the results</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Total Number of Stations: </span><span class="si">{</span><span class="n">total_stations</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Total Number of Samples: </span><span class="si">{</span><span class="n">total_samples</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Total Number of TN Samples: </span><span class="si">{</span><span class="n">total_tn_samples</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Total Number of TP Samples: </span><span class="si">{</span><span class="n">total_tp_samples</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Sampling Start Date: </span><span class="si">{</span><span class="n">sampling_start_date</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Sampling End Date: </span><span class="si">{</span><span class="n">sampling_end_date</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>StationID</th>
+      <th>WBodyID</th>
+      <th>WaterBodyName</th>
+      <th>DataSource</th>
+      <th>StationName</th>
+      <th>Actual_Latitude</th>
+      <th>Actual_Longitude</th>
+      <th>TN_Samples</th>
+      <th>TP_Samples</th>
+      <th>StartDate</th>
+      <th>EndDate</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>6</th>
+      <td>02296750</td>
+      <td>181964</td>
+      <td>Peace River</td>
+      <td>USGS_NWIS</td>
+      <td>PEACE RIVER AT ARCADIA FL</td>
+      <td>27.222271</td>
+      <td>-81.875917</td>
+      <td>155</td>
+      <td>147</td>
+      <td>1990-03-21</td>
+      <td>2004-09-29</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>02297330</td>
+      <td>181964</td>
+      <td>Peace River</td>
+      <td>USGS_NWIS</td>
+      <td>PEACE RIVER AT FT. OGDEN FL</td>
+      <td>27.088388</td>
+      <td>-81.993976</td>
+      <td>161</td>
+      <td>156</td>
+      <td>1996-08-26</td>
+      <td>2000-06-27</td>
+    </tr>
+    <tr>
+      <th>58</th>
+      <td>270318081593100</td>
+      <td>181964</td>
+      <td>Peace River</td>
+      <td>USGS_NWIS</td>
+      <td>PEACE RIVER AT RIVER MILE 14.82 NEAR FT. OGDE...</td>
+      <td>27.055334</td>
+      <td>-81.991753</td>
+      <td>163</td>
+      <td>170</td>
+      <td>1996-08-26</td>
+      <td>2000-06-27</td>
+    </tr>
+    <tr>
+      <th>97</th>
+      <td>3556</td>
+      <td>181964</td>
+      <td>Peace River</td>
+      <td>WIN_21FLGW</td>
+      <td>PEACE RIVER</td>
+      <td>27.221164</td>
+      <td>-81.876377</td>
+      <td>291</td>
+      <td>291</td>
+      <td>1998-10-08</td>
+      <td>2024-11-05</td>
+    </tr>
+    <tr>
+      <th>340</th>
+      <td>PR14</td>
+      <td>181964</td>
+      <td>Peace River</td>
+      <td>STORET_FLPRMRWS</td>
+      <td>Peace River south of Desoto Marina</td>
+      <td>27.056200</td>
+      <td>-81.992215</td>
+      <td>496</td>
+      <td>181</td>
+      <td>1996-08-26</td>
+      <td>2022-12-21</td>
+    </tr>
+    <tr>
+      <th>341</th>
+      <td>PR18</td>
+      <td>181964</td>
+      <td>Peace River</td>
+      <td>STORET_FLPRMRWS</td>
+      <td>Peace River N of SR761</td>
+      <td>27.089117</td>
+      <td>-81.992443</td>
+      <td>723</td>
+      <td>452</td>
+      <td>1996-08-26</td>
+      <td>2022-12-21</td>
+    </tr>
+  </tbody>
+</table>
+</div></div><div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\aelshall\AppData\Local\miniconda3\Lib\site-packages\pyogrio\raw.py:198: UserWarning: Measured (M) geometry types are not supported. Original type &#39;Measured 3D LineString&#39; is converted to &#39;LineString Z&#39;
+  return ogr_read(
+C:\Users\aelshall\AppData\Local\Temp\ipykernel_14160\247625261.py:94: UserWarning: Legend does not support handles for PatchCollection instances.
+See: https://matplotlib.org/stable/tutorials/intermediate/legend_guide.html#implementing-a-custom-legend-handler
+  plt.legend()
+</pre></div>
+</div>
+<img alt="../_images/348f466ffa8616804750da3fd170b4aaf62b37df83f64cf79e7a99f031af7ffe.png" src="../_images/348f466ffa8616804750da3fd170b4aaf62b37df83f64cf79e7a99f031af7ffe.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Total Number of Stations: 6
+Total Number of Samples: 3386
+Total Number of TN Samples: 1989
+Total Number of TP Samples: 1397
+Sampling Start Date: 1990-03-21 00:00:00
+Sampling End Date: 2024-11-05 00:00:00
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Load the data</span>
+<span class="n">file_path</span> <span class="o">=</span> <span class="s1">&#39;input/TN_TP.csv&#39;</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">file_path</span><span class="p">)</span>
+
+<span class="c1"># Convert coordinates to float64 to maintain precision</span>
+<span class="n">data</span><span class="p">[</span><span class="s1">&#39;Actual_Latitude&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;Actual_Latitude&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&#39;float64&#39;</span><span class="p">)</span>
+<span class="n">data</span><span class="p">[</span><span class="s1">&#39;Actual_Longitude&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;Actual_Longitude&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&#39;float64&#39;</span><span class="p">)</span>
+
+<span class="c1"># Drop rows with missing coordinates</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">subset</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Actual_Latitude&#39;</span><span class="p">,</span> <span class="s1">&#39;Actual_Longitude&#39;</span><span class="p">])</span>
+
+<span class="c1"># Filter out data before 1990</span>
+<span class="n">data</span><span class="p">[</span><span class="s1">&#39;SampleDate&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;SampleDate&#39;</span><span class="p">])</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;SampleDate&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">year</span> <span class="o">&gt;=</span> <span class="mi">1990</span><span class="p">]</span>
+
+<span class="c1"># Create a summary table for each station</span>
+<span class="n">summary</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;StationID&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">agg</span><span class="p">(</span>
+    <span class="n">WBodyID</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;WBodyID&#39;</span><span class="p">,</span> <span class="s1">&#39;first&#39;</span><span class="p">),</span>
+    <span class="n">WaterBodyName</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;WaterBodyName&#39;</span><span class="p">,</span> <span class="s1">&#39;first&#39;</span><span class="p">),</span>
+    <span class="n">DataSource</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;DataSource&#39;</span><span class="p">,</span> <span class="s1">&#39;first&#39;</span><span class="p">),</span>
+    <span class="n">StationName</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;StationName&#39;</span><span class="p">,</span> <span class="s1">&#39;first&#39;</span><span class="p">),</span>
+    <span class="n">Actual_Latitude</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;Actual_Latitude&#39;</span><span class="p">,</span> <span class="s1">&#39;first&#39;</span><span class="p">),</span>
+    <span class="n">Actual_Longitude</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;Actual_Longitude&#39;</span><span class="p">,</span> <span class="s1">&#39;first&#39;</span><span class="p">),</span>
+    <span class="n">TN_Samples</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;Parameter&#39;</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="p">(</span><span class="n">x</span> <span class="o">==</span> <span class="s1">&#39;TN_mgl&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span> <span class="o">+</span> <span class="p">(</span><span class="n">x</span> <span class="o">==</span> <span class="s1">&#39;TN_ugl&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()),</span>
+    <span class="n">TP_Samples</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;Parameter&#39;</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="p">(</span><span class="n">x</span> <span class="o">==</span> <span class="s1">&#39;TP_mgl&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span> <span class="o">+</span> <span class="p">(</span><span class="n">x</span> <span class="o">==</span> <span class="s1">&#39;TP_ugl&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()),</span>
+    <span class="n">StartDate</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;SampleDate&#39;</span><span class="p">,</span> <span class="s1">&#39;min&#39;</span><span class="p">),</span>
+    <span class="n">EndDate</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;SampleDate&#39;</span><span class="p">,</span> <span class="s1">&#39;max&#39;</span><span class="p">)</span>
+<span class="p">)</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+
+<span class="c1"># Filter stations that have 30 or more sample points for either TN or TP</span>
+<span class="n">filtered_stations</span> <span class="o">=</span> <span class="n">summary</span><span class="p">[</span>
+    <span class="p">(</span><span class="n">summary</span><span class="p">[</span><span class="s1">&#39;TN_Samples&#39;</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mi">30</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="n">summary</span><span class="p">[</span><span class="s1">&#39;TP_Samples&#39;</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mi">30</span><span class="p">)</span>
+<span class="p">]</span>
+
+<span class="c1"># Remove stations above latitude 27.4 (keep Gulf-proximate stations)</span>
+<span class="n">filtered_stations</span> <span class="o">=</span> <span class="n">filtered_stations</span><span class="p">[</span><span class="n">filtered_stations</span><span class="p">[</span><span class="s1">&#39;Actual_Latitude&#39;</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="mf">27.4</span><span class="p">]</span>
+
+<span class="c1"># Keep only data from filtered stations</span>
+<span class="n">filtered_data</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;StationID&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">filtered_stations</span><span class="p">[</span><span class="s1">&#39;StationID&#39;</span><span class="p">])]</span>
+
+<span class="c1"># Separate TN and TP data</span>
+<span class="n">tn_data</span> <span class="o">=</span> <span class="n">filtered_data</span><span class="p">[</span><span class="n">filtered_data</span><span class="p">[</span><span class="s1">&#39;Parameter&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">([</span><span class="s1">&#39;TN_mgl&#39;</span><span class="p">,</span> <span class="s1">&#39;TN_ugl&#39;</span><span class="p">])]</span>
+<span class="n">tp_data</span> <span class="o">=</span> <span class="n">filtered_data</span><span class="p">[</span><span class="n">filtered_data</span><span class="p">[</span><span class="s1">&#39;Parameter&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">([</span><span class="s1">&#39;TP_mgl&#39;</span><span class="p">,</span> <span class="s1">&#39;TP_ugl&#39;</span><span class="p">])]</span>
+
+<span class="c1"># Convert concentration to consistent units (mg/L) if necessary</span>
+<span class="n">tn_data</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">tn_data</span><span class="p">[</span><span class="s1">&#39;Parameter&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;TN_ugl&#39;</span><span class="p">,</span> <span class="s1">&#39;Result_Value&#39;</span><span class="p">]</span> <span class="o">/=</span> <span class="mi">1000</span>
+<span class="n">tp_data</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">tp_data</span><span class="p">[</span><span class="s1">&#39;Parameter&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;TP_ugl&#39;</span><span class="p">,</span> <span class="s1">&#39;Result_Value&#39;</span><span class="p">]</span> <span class="o">/=</span> <span class="mi">1000</span>
+
+<span class="c1"># Create subplots</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">nrows</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">ncols</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">14</span><span class="p">,</span> <span class="mi">12</span><span class="p">),</span> <span class="n">sharex</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># Plot TN in the first subplot with lines and markers</span>
+<span class="n">Line</span><span class="o">=</span> <span class="kc">False</span> 
+<span class="k">for</span> <span class="n">station_id</span> <span class="ow">in</span> <span class="n">tn_data</span><span class="p">[</span><span class="s1">&#39;StationID&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">():</span>
+    <span class="n">station_data</span> <span class="o">=</span> <span class="n">tn_data</span><span class="p">[</span><span class="n">tn_data</span><span class="p">[</span><span class="s1">&#39;StationID&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">station_id</span><span class="p">]</span>
+    <span class="k">if</span> <span class="n">Line</span><span class="p">:</span>
+        <span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">station_data</span><span class="p">[</span><span class="s1">&#39;SampleDate&#39;</span><span class="p">],</span> <span class="n">station_data</span><span class="p">[</span><span class="s1">&#39;Result_Value&#39;</span><span class="p">],</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;TN - </span><span class="si">{</span><span class="n">station_data</span><span class="p">[</span><span class="s2">&quot;StationID&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">station_data</span><span class="p">[</span><span class="s1">&#39;SampleDate&#39;</span><span class="p">],</span> <span class="n">station_data</span><span class="p">[</span><span class="s1">&#39;Result_Value&#39;</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;TN - </span><span class="si">{</span><span class="n">station_data</span><span class="p">[</span><span class="s2">&quot;StationID&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">30</span><span class="p">)</span>
+
+<span class="c1"># Customize TN plot</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;TN Time-Series Data for Filtered Stations&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Concentration (mg/L)&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span> <span class="n">loc</span><span class="o">=</span><span class="s1">&#39;upper right&#39;</span><span class="p">,</span> <span class="n">ncol</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># Plot TP in the second subplot as dots</span>
+<span class="k">for</span> <span class="n">station_id</span> <span class="ow">in</span> <span class="n">tp_data</span><span class="p">[</span><span class="s1">&#39;StationID&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">():</span>
+    <span class="n">station_data</span> <span class="o">=</span> <span class="n">tp_data</span><span class="p">[</span><span class="n">tp_data</span><span class="p">[</span><span class="s1">&#39;StationID&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">station_id</span><span class="p">]</span>
+    <span class="k">if</span> <span class="n">Line</span><span class="p">:</span>
+        <span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">station_data</span><span class="p">[</span><span class="s1">&#39;SampleDate&#39;</span><span class="p">],</span> <span class="n">station_data</span><span class="p">[</span><span class="s1">&#39;Result_Value&#39;</span><span class="p">],</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;TP - </span><span class="si">{</span><span class="n">station_data</span><span class="p">[</span><span class="s2">&quot;StationID&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">station_data</span><span class="p">[</span><span class="s1">&#39;SampleDate&#39;</span><span class="p">],</span> <span class="n">station_data</span><span class="p">[</span><span class="s1">&#39;Result_Value&#39;</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;TP - </span><span class="si">{</span><span class="n">station_data</span><span class="p">[</span><span class="s2">&quot;StationID&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">30</span><span class="p">)</span>
+    
+
+
+<span class="c1"># Customize TP plot</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;TP Time-Series Data for Filtered Stations&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Sample Date&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Concentration (mg/L)&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span> <span class="n">loc</span><span class="o">=</span><span class="s1">&#39;upper right&#39;</span><span class="p">,</span> <span class="n">ncol</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># Adjust spacing between subplots</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+
+<span class="c1"># Save and show plot</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;figures/data_river_fig4_TN_TP_TimeSeries_Dots.png&#39;</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">300</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/f1127adc53b8d3db5d8e922ca0c9ccce975922992175ca0b72b12cd8c73d5f5a.png" src="../_images/f1127adc53b8d3db5d8e922ca0c9ccce975922992175ca0b72b12cd8c73d5f5a.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="c1"># Load the data</span>
+<span class="n">file_path</span> <span class="o">=</span> <span class="s1">&#39;input/TN_TP.csv&#39;</span>  <span class="c1"># Update with the correct path</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">file_path</span><span class="p">)</span>
+
+<span class="c1"># Clean data by stripping whitespace and converting to lowercase</span>
+<span class="n">data</span><span class="p">[</span><span class="s1">&#39;Parameter&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;Parameter&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+
+<span class="c1"># Convert SampleDate to datetime format</span>
+<span class="n">data</span><span class="p">[</span><span class="s1">&#39;SampleDate&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;SampleDate&#39;</span><span class="p">],</span> <span class="n">errors</span><span class="o">=</span><span class="s1">&#39;coerce&#39;</span><span class="p">)</span>
+
+<span class="c1"># Remove data prior to 1990</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;SampleDate&#39;</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="s1">&#39;1990-01-01&#39;</span><span class="p">]</span>
+
+<span class="c1"># Create a summary DataFrame for each unique StationID</span>
+<span class="n">summary</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;StationID&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">agg</span><span class="p">(</span>
+    <span class="n">WBodyID</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;WBodyID&#39;</span><span class="p">,</span> <span class="s1">&#39;first&#39;</span><span class="p">),</span>
+    <span class="n">WaterBodyName</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;WaterBodyName&#39;</span><span class="p">,</span> <span class="s1">&#39;first&#39;</span><span class="p">),</span>
+    <span class="n">DataSource</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;DataSource&#39;</span><span class="p">,</span> <span class="s1">&#39;first&#39;</span><span class="p">),</span>
+    <span class="n">StationName</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;StationName&#39;</span><span class="p">,</span> <span class="s1">&#39;first&#39;</span><span class="p">),</span>
+    <span class="n">Actual_StationID</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;Actual_StationID&#39;</span><span class="p">,</span> <span class="s1">&#39;first&#39;</span><span class="p">),</span>
+    <span class="n">Actual_Latitude</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;Actual_Latitude&#39;</span><span class="p">,</span> <span class="s1">&#39;first&#39;</span><span class="p">),</span>
+    <span class="n">Actual_Longitude</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;Actual_Longitude&#39;</span><span class="p">,</span> <span class="s1">&#39;first&#39;</span><span class="p">),</span>
+    <span class="n">TN_Samples</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;Parameter&#39;</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="s1">&#39;tn&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()),</span>  <span class="c1"># Count all TN entries</span>
+    <span class="n">TP_Samples</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;Parameter&#39;</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="s1">&#39;tp&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()),</span>  <span class="c1"># Count all TP entries</span>
+    <span class="n">Start_Date</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;SampleDate&#39;</span><span class="p">,</span> <span class="s1">&#39;min&#39;</span><span class="p">),</span>
+    <span class="n">End_Date</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;SampleDate&#39;</span><span class="p">,</span> <span class="s1">&#39;max&#39;</span><span class="p">)</span>
+<span class="p">)</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+
+<span class="c1"># Sort by Latitude (descending) and Longitude (ascending)</span>
+<span class="n">summary</span> <span class="o">=</span> <span class="n">summary</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Actual_Latitude&#39;</span><span class="p">,</span> <span class="s1">&#39;Actual_Longitude&#39;</span><span class="p">],</span> <span class="n">ascending</span><span class="o">=</span><span class="p">[</span><span class="kc">False</span><span class="p">,</span> <span class="kc">True</span><span class="p">])</span>
+
+<span class="c1"># Display the summary DataFrame</span>
+<span class="n">display</span><span class="p">(</span><span class="n">summary</span><span class="p">)</span>
+
+<span class="c1"># Save to CSV (if needed)</span>
+<span class="n">summary</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;output/TN_TP_summary_sorted.csv&#39;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>StationID</th>
+      <th>WBodyID</th>
+      <th>WaterBodyName</th>
+      <th>DataSource</th>
+      <th>StationName</th>
+      <th>Actual_StationID</th>
+      <th>Actual_Latitude</th>
+      <th>Actual_Longitude</th>
+      <th>TN_Samples</th>
+      <th>TP_Samples</th>
+      <th>Start_Date</th>
+      <th>End_Date</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>77</th>
+      <td>29887</td>
+      <td>181964</td>
+      <td>Peace River</td>
+      <td>STORET_21FLGW</td>
+      <td>SW3-LR-2007 PEACE RIVER</td>
+      <td>29887</td>
+      <td>27.914571</td>
+      <td>-81.820521</td>
+      <td>1</td>
+      <td>1</td>
+      <td>2006-06-27</td>
+      <td>2006-06-27</td>
+    </tr>
+    <tr>
+      <th>122</th>
+      <td>51426</td>
+      <td>181964</td>
+      <td>Peace River</td>
+      <td>STORET_21FLGW</td>
+      <td>Z4-LR-11010 PEACE RIVER</td>
+      <td>51426</td>
+      <td>27.912942</td>
+      <td>-81.820375</td>
+      <td>1</td>
+      <td>1</td>
+      <td>2017-05-16</td>
+      <td>2017-05-16</td>
+    </tr>
+    <tr>
+      <th>40</th>
+      <td>24833</td>
+      <td>181964</td>
+      <td>Peace River</td>
+      <td>STORET_21FLSWFD</td>
+      <td>PEACE RIVER @ BARTOW</td>
+      <td>24833</td>
+      <td>27.902373</td>
+      <td>-81.817604</td>
+      <td>312</td>
+      <td>306</td>
+      <td>1997-08-04</td>
+      <td>2024-03-06</td>
+    </tr>
+    <tr>
+      <th>0</th>
+      <td>02294650</td>
+      <td>181964</td>
+      <td>Peace River</td>
+      <td>USGS_NWIS</td>
+      <td>PEACE RIVER AT BARTOW FL</td>
+      <td>02294650</td>
+      <td>27.902248</td>
+      <td>-81.817304</td>
+      <td>105</td>
+      <td>105</td>
+      <td>1990-02-08</td>
+      <td>1999-09-23</td>
+    </tr>
+    <tr>
+      <th>47</th>
+      <td>25020044</td>
+      <td>181964</td>
+      <td>Peace River</td>
+      <td>STORET_21FLTPA</td>
+      <td>TP18 - PEACE RIVER</td>
+      <td>25020044</td>
+      <td>27.901944</td>
+      <td>-81.817528</td>
+      <td>9</td>
+      <td>9</td>
+      <td>2008-02-04</td>
+      <td>2008-11-03</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>321</th>
+      <td>PR103_0522</td>
+      <td>181964</td>
+      <td>Peace River</td>
+      <td>WIN_FLPRMRWS</td>
+      <td>Peace River @ river kilometer 19 @ 12 ppt iso...</td>
+      <td>PR103_0522</td>
+      <td>27.016333</td>
+      <td>-81.984389</td>
+      <td>1</td>
+      <td>1</td>
+      <td>2022-05-10</td>
+      <td>2022-05-10</td>
+    </tr>
+    <tr>
+      <th>142</th>
+      <td>CH-029</td>
+      <td>181964</td>
+      <td>Peace River</td>
+      <td>STORET_SWFMDDEP</td>
+      <td>CHARLOTTE HARBOR PEACE RIVER @ 2ND POWER LINES</td>
+      <td>CH-029</td>
+      <td>27.016333</td>
+      <td>-81.984167</td>
+      <td>19</td>
+      <td>22</td>
+      <td>1998-03-26</td>
+      <td>2000-12-13</td>
+    </tr>
+    <tr>
+      <th>143</th>
+      <td>CH-029</td>
+      <td>181964</td>
+      <td>Peace River</td>
+      <td>LEGACYSTORET_21FLSWFD</td>
+      <td>CHARLOTTE HARBOR PEACE RIVER @ 2ND POWER LINE...</td>
+      <td>CH-029</td>
+      <td>27.016333</td>
+      <td>-81.984167</td>
+      <td>27</td>
+      <td>0</td>
+      <td>1996-01-22</td>
+      <td>1998-08-11</td>
+    </tr>
+    <tr>
+      <th>289</th>
+      <td>PR102_0320</td>
+      <td>181964</td>
+      <td>Peace River</td>
+      <td>WIN_FLPRMRWS</td>
+      <td>Peace River @ river kilometer 19 @ 6 ppt isoh...</td>
+      <td>PR102_0320</td>
+      <td>27.016111</td>
+      <td>-81.985083</td>
+      <td>1</td>
+      <td>0</td>
+      <td>2020-03-10</td>
+      <td>2020-03-10</td>
+    </tr>
+    <tr>
+      <th>57</th>
+      <td>270055081590300</td>
+      <td>181964</td>
+      <td>Peace River</td>
+      <td>USGS_NWIS</td>
+      <td>PEACE RIVER ESTUARY SITE CH29 NEAR HARBOUR HT...</td>
+      <td>270055081590300</td>
+      <td>27.015613</td>
+      <td>-81.983976</td>
+      <td>4</td>
+      <td>4</td>
+      <td>1991-08-19</td>
+      <td>1991-09-16</td>
+    </tr>
+  </tbody>
+</table>
+<p>354 rows × 12 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="c1"># Read the data</span>
+<span class="n">file_path</span> <span class="o">=</span> <span class="s1">&#39;input/TN_TP.csv&#39;</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">file_path</span><span class="p">)</span>
+
+<span class="c1"># Pivot the Result_Value based on the Parameter column</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;TP&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Parameter&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;TP_ugl&#39;</span><span class="p">,</span> <span class="s1">&#39;Result_Value&#39;</span><span class="p">]</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;TN&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Parameter&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;TN_ugl&#39;</span><span class="p">,</span> <span class="s1">&#39;Result_Value&#39;</span><span class="p">]</span>
+
+<span class="c1"># Keep only required columns</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="s1">&#39;WBodyID&#39;</span><span class="p">,</span> <span class="s1">&#39;WaterBodyName&#39;</span><span class="p">,</span> <span class="s1">&#39;DataSource&#39;</span><span class="p">,</span> <span class="s1">&#39;StationID&#39;</span><span class="p">,</span> <span class="s1">&#39;StationName&#39;</span><span class="p">,</span>
+         <span class="s1">&#39;Actual_Latitude&#39;</span><span class="p">,</span> <span class="s1">&#39;Actual_Longitude&#39;</span><span class="p">,</span> <span class="s1">&#39;SampleDate&#39;</span><span class="p">,</span> <span class="s1">&#39;TP&#39;</span><span class="p">,</span> <span class="s1">&#39;TN&#39;</span><span class="p">,</span> <span class="s1">&#39;QACode&#39;</span><span class="p">,</span> <span class="s1">&#39;Result_Comment&#39;</span><span class="p">]]</span>
+
+<span class="c1"># Rename latitude and longitude columns</span>
+<span class="n">df</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;Actual_Latitude&#39;</span><span class="p">:</span> <span class="s1">&#39;Latitude&#39;</span><span class="p">,</span> <span class="s1">&#39;Actual_Longitude&#39;</span><span class="p">:</span> <span class="s1">&#39;Longitude&#39;</span><span class="p">},</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># Convert SampleDate to datetime</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;SampleDate&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;SampleDate&#39;</span><span class="p">],</span> <span class="n">errors</span><span class="o">=</span><span class="s1">&#39;coerce&#39;</span><span class="p">)</span>
+
+<span class="c1"># Set SampleDate as the index and sort from oldest to newest</span>
+<span class="n">df</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;SampleDate&#39;</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">sort_index</span><span class="p">(</span><span class="n">ascending</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># Save to new CSV</span>
+<span class="n">df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;output/TN_TP_cleaned.csv&#39;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="c1"># Display the cleaned dataframe</span>
+<span class="n">display</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+
+<span class="c1"># Show unique values for specified columns</span>
+<span class="n">unique_wbodyid</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;WBodyID&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
+<span class="n">unique_waterbodyname</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;WaterBodyName&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
+<span class="n">unique_datasource</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;DataSource&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
+<span class="n">unique_qacode</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;QACode&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
+
+<span class="c1"># Display the unique values</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Unique WBodyID values:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">unique_wbodyid</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Unique WaterBodyName values:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">unique_waterbodyname</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Unique DataSource values:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">unique_datasource</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Unique QACode values:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">unique_qacode</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>WBodyID</th>
+      <th>WaterBodyName</th>
+      <th>DataSource</th>
+      <th>StationID</th>
+      <th>StationName</th>
+      <th>Latitude</th>
+      <th>Longitude</th>
+      <th>TP</th>
+      <th>TN</th>
+      <th>QACode</th>
+      <th>Result_Comment</th>
+    </tr>
+    <tr>
+      <th>SampleDate</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1939-10-31</th>
+      <td>181964</td>
+      <td>Peace River</td>
+      <td>USGS_NWIS</td>
+      <td>02296750</td>
+      <td>PEACE RIVER AT ARCADIA FL</td>
+      <td>27.222271</td>
+      <td>-81.875917</td>
+      <td>3500.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1959-05-27</th>
+      <td>181964</td>
+      <td>Peace River</td>
+      <td>LEGACYSTORET_21FLA</td>
+      <td>25020006</td>
+      <td>PEACE RIVER BR FLA HWY 64A / SOUTH-EAST / PEACE</td>
+      <td>27.540000</td>
+      <td>-81.792500</td>
+      <td>NaN</td>
+      <td>1580.0</td>
+      <td>NaN</td>
+      <td>FCCDR Calculated</td>
+    </tr>
+    <tr>
+      <th>1959-05-27</th>
+      <td>181964</td>
+      <td>Peace River</td>
+      <td>LEGACYSTORET_21FLA</td>
+      <td>25020008</td>
+      <td>PEACE RIVER BR FLA HWY |664 / SOUTH-EAST / PEACE</td>
+      <td>27.645556</td>
+      <td>-81.802500</td>
+      <td>NaN</td>
+      <td>1025.0</td>
+      <td>NaN</td>
+      <td>FCCDR Calculated</td>
+    </tr>
+    <tr>
+      <th>1959-10-20</th>
+      <td>181964</td>
+      <td>Peace River</td>
+      <td>LEGACYSTORET_21FLA</td>
+      <td>25020003</td>
+      <td>PEACE RIVER BR FLA HWY #760 / SOUTH-EAST / PEACE</td>
+      <td>27.161944</td>
+      <td>-81.901944</td>
+      <td>NaN</td>
+      <td>746.0</td>
+      <td>NaN</td>
+      <td>FCCDR Calculated</td>
+    </tr>
+    <tr>
+      <th>1959-10-20</th>
+      <td>181964</td>
+      <td>Peace River</td>
+      <td>LEGACYSTORET_21FLA</td>
+      <td>25020004</td>
+      <td>PEACE RIVER BR FLA HWY #70 / SOUTHEAST / PEAC...</td>
+      <td>27.221944</td>
+      <td>-81.876389</td>
+      <td>NaN</td>
+      <td>502.0</td>
+      <td>NaN</td>
+      <td>FCCDR Calculated</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>2025-01-09</th>
+      <td>181964</td>
+      <td>Peace River</td>
+      <td>WIN_21FLPOLK</td>
+      <td>PEACE RVR5 - PISGAH</td>
+      <td>Peace Rvr5 - Pisgah</td>
+      <td>27.722774</td>
+      <td>-81.790078</td>
+      <td>874.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2025-01-09</th>
+      <td>181964</td>
+      <td>Peace River</td>
+      <td>WIN_21FLPOLK</td>
+      <td>PEACE RVR78 - CO LINE</td>
+      <td>Peace Rvr78 - Co Line</td>
+      <td>27.646111</td>
+      <td>-81.802278</td>
+      <td>NaN</td>
+      <td>1879.0</td>
+      <td>NaN</td>
+      <td>Water Institute Calculated: TKN + NO3</td>
+    </tr>
+    <tr>
+      <th>2025-01-09</th>
+      <td>181964</td>
+      <td>Peace River</td>
+      <td>WIN_21FLPOLK</td>
+      <td>PEACE RVR78 - CO LINE</td>
+      <td>Peace Rvr78 - Co Line</td>
+      <td>27.646111</td>
+      <td>-81.802278</td>
+      <td>970.0</td>
+      <td>NaN</td>
+      <td>J</td>
+      <td>J6=matrix spike recovery outside acceptable li...</td>
+    </tr>
+    <tr>
+      <th>2025-01-13</th>
+      <td>181964</td>
+      <td>Peace River</td>
+      <td>WIN_21FLPOLK</td>
+      <td>PEACE RVR10 - SR60</td>
+      <td>Peace Rvr10 - SR60</td>
+      <td>27.901444</td>
+      <td>-81.817250</td>
+      <td>NaN</td>
+      <td>1725.0</td>
+      <td>NaN</td>
+      <td>Water Institute Calculated: TKN + NO3</td>
+    </tr>
+    <tr>
+      <th>2025-01-13</th>
+      <td>181964</td>
+      <td>Peace River</td>
+      <td>WIN_21FLPOLK</td>
+      <td>PEACE RVR10 - SR60</td>
+      <td>Peace Rvr10 - SR60</td>
+      <td>27.901444</td>
+      <td>-81.817250</td>
+      <td>221.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+<p>11541 rows × 11 columns</p>
+</div></div><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Unique WBodyID values:
+[ 181964  300031  300106  300115 2003656   -9999 9000307]
+
+Unique WaterBodyName values:
+[&#39;Peace River&#39; &#39;Hunter Creek&#39; &#39;Barber Branch&#39; &#39;Arcadia Canal&#39;
+ &#39;Camp Branch&#39; &#39;Weather, Rainfall, Ground Water&#39;
+ &#39;Peace River Estuary (Upper Segment North)&#39;]
+
+Unique DataSource values:
+[&#39;USGS_NWIS&#39; &#39;LEGACYSTORET_21FLA&#39; &#39;LEGACYSTORET_1113S000&#39;
+ &#39;LEGACYSTORET_21FLSWFD&#39; &#39;STORET_21FLPOLK&#39; &#39;POLKCO_NRD_WQ&#39;
+ &#39;STORET_FLPRMRWS&#39; &#39;STORET_21FLSWFD&#39; &#39;LEGACYSTORET_21FLGW  &#39;
+ &#39;STORET_SWFMDDEP&#39; &#39;STORET_21FLGW&#39; &#39;STORET_21FLFTM&#39; &#39;STORET_21FLTPA&#39;
+ &#39;LAKEWATCH_V&#39; &#39;WIN_21FLMOSA&#39; &#39;STORET_21FLWQSP&#39; &#39;WIN_21FLSWFD&#39;
+ &#39;WIN_FLPRMRWS&#39; &#39;WIN_21FLTPA&#39; &#39;WIN_21FLWQA&#39; &#39;WIN_21FLGW&#39; &#39;WIN_21FLPOLK&#39;
+ &#39;WIN_21FLFTM&#39; &#39;WIN_21FLCHCO&#39;]
+
+Unique QACode values:
+[nan &#39;E&#39; &#39;&lt;&#39; &#39;A&#39; &#39;J&#39; &#39;Q&#39; &#39;+&#39; &#39;Q+&#39; &#39;Y&#39; &#39;Y+&#39; &#39;QY&#39; &#39;V&#39; &#39;AJ&#39; &#39;U&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Caloosahatchee River Basin<br />
+<a class="reference external" href="https://chnep.wateratlas.usf.edu/waterbodies/basins/1/caloosahatchee-river-basin?utm_source=chatgpt.com">https://chnep.wateratlas.usf.edu/waterbodies/basins/1/caloosahatchee-river-basin?utm_source=chatgpt.com</a></p>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./river"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../ocean/ocean.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Sea-surface height and red tides</p>
+      </div>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#discharge">1. Discharge</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#select-station-close-to-the-gulf-of-america">1.1 Select station close to the Gulf of America</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#downloading-data">1.2 Downloading data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-discharge">3. Plot discharge</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nutrients">2. Nutrients</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nurtient-data">2.1 Nurtient data</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#datasource-values">DataSource Values</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#qacode-values">QACode Values</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#filted-data-at-lower-reach">2.2 Filted data at lower reach</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By The Jupyter Book community
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

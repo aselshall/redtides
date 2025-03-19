@@ -1,0 +1,1079 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Processing code 3: KB data &#8212; Home</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=6a7d0a54" />
+    <link rel="stylesheet" type="text/css" href="../_static/.ipynb_checkpoints/custom-checkpoint.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'ocean/KB';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Home</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Project outlines</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../atmosphere/atmosphere.html">Data - Atmospher</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ocean.html">Data - Ocean</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../river/river.html">Data - River</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/ocean/KB.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Processing code 3: KB data</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Processing code 3: KB data</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#study-area">Study area</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#kb-data-for-the-study-area-from-1993-to-2024">[1] KB data for the study area from 1993 to 2024</a></li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="processing-code-3-kb-data">
+<h1>Processing code 3: KB data<a class="headerlink" href="#processing-code-3-kb-data" title="Link to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">matplotlib.dates</span> <span class="k">as</span> <span class="nn">mdates</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">date</span>
+<span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
+<span class="kn">from</span> <span class="nn">dateutil.relativedelta</span> <span class="kn">import</span> <span class="n">relativedelta</span>
+
+<span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
+<span class="kn">import</span> <span class="nn">random</span>
+
+<span class="c1">#AGU Poster code</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="study-area">
+<h1>Study area<a class="headerlink" href="#study-area" title="Link to this heading">#</a></h1>
+<p><img alt="image.png" src="ocean/attachment:8c975195-f645-4f66-b6a6-539513f9e4e9.png" />
+<img alt="image.png" src="ocean/attachment:8dc409e6-7d7c-45eb-ab73-edd61b871049.png" />
+<img alt="image.png" src="ocean/attachment:c7e88295-fe3f-44d2-b715-c41e3f1e8677.png" /></p>
+<p>Sample Date: 199301-201412 <br>
+Latitude: 26.50	28.00 <br>
+Longitude: -85.01	-81.61 <br>
+the periods from 1993 to 2007 are considered (15 years 60 periods) <br>
+1 degree lat/lon equals 111 km ( 0.1° = 11.1 km)<br></p>
+<p>[113 183]
+[113 184]
+[114 183]
+[115 183]
+[116 183]]</p>
+<p>[ 88 203]
+[ 88 204]
+[ 88 205]
+[ 88 206]
+[ 89 200]
+[ 89 201]
+[ 89 202]
+[ 90 197]
+[ 90 198]
+[ 90 199]
+[ 91 196]
+[ 91 197]
+[ 92 194]
+[ 92 195]
+[ 92 196]]</p>
+</section>
+<section id="kb-data-for-the-study-area-from-1993-to-2024">
+<h1>[1] KB data for the study area from 1993 to 2024<a class="headerlink" href="#kb-data-for-the-study-area-from-1993-to-2024" title="Link to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#[1] Read data</span>
+<span class="n">df</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;input/habsos_20240430.csv&#39;</span><span class="p">,</span><span class="n">low_memory</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span>
+
+<span class="c1">#[2] Convert date column to a datetime, and set and rename index</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;SAMPLE_DATE&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;SAMPLE_DATE&#39;</span><span class="p">])</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">]</span><span class="o">=</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;SAMPLE_DATE&#39;</span><span class="p">]</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;date&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">sort_index</span><span class="p">()</span>
+
+<span class="c1"># [3] Filter study area (relaxing bounds temporarily for debugging)</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="p">[(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;LATITUDE&#39;</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mf">25.5</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;LATITUDE&#39;</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="mf">27.0</span><span class="p">)</span> <span class="o">&amp;</span> 
+        <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;LONGITUDE&#39;</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="o">-</span><span class="mf">85.0</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;LONGITUDE&#39;</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="o">-</span><span class="mf">81.0</span><span class="p">)]</span>
+
+<span class="c1"># #[4] Filter time period of interest </span>
+<span class="n">end_of_year</span><span class="o">=</span><span class="mi">2014</span>
+<span class="n">df</span><span class="o">=</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;1993-1-1&#39;</span><span class="p">:</span><span class="s1">&#39;</span><span class="si">{}</span><span class="s1">-12-31&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">end_of_year</span><span class="p">)]</span>
+
+<span class="c1">#[5] Filter variables, and rename variables of interest </span>
+<span class="c1">#df = df[[&#39;SAMPLE_DATE&#39;,&#39;CELLCOUNT&#39;,&#39;SALINITY&#39;,&#39;WATER_TEMP&#39;,&#39;WIND_DIR&#39;,&#39;WIND_SPEED&#39;]]</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="s1">&#39;SAMPLE_DATE&#39;</span><span class="p">,</span><span class="s1">&#39;CELLCOUNT&#39;</span><span class="p">]]</span>
+
+<span class="c1">#[6] Get number of samples and maximum cell/L per day</span>
+<span class="n">samples_count</span><span class="o">=</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;CELLCOUNT&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
+<span class="n">df</span><span class="o">=</span><span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;num_KB_samples&#39;</span><span class="p">]</span><span class="o">=</span><span class="n">samples_count</span>
+
+<span class="c1">#[7] Resample to daily data with the maximum cell counts per day</span>
+<span class="n">df</span><span class="o">=</span><span class="n">df</span><span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="s1">&#39;D&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+
+<span class="c1"># Rename the column &#39;CELLCOUNT&#39; to &#39;CELLCOUNT_1e5&#39;</span>
+<span class="n">df</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;CELLCOUNT&#39;</span><span class="p">:</span> <span class="s1">&#39;CELLCOUNT_1e5&#39;</span><span class="p">},</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;CELLCOUNT_1e5&#39;</span><span class="p">]</span><span class="o">=</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;CELLCOUNT_1e5&#39;</span><span class="p">]</span><span class="o">/</span><span class="mf">1e5</span>
+
+<span class="c1">#[8] Save filtered data</span>
+<span class="n">df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;output/KB_daily_raw_</span><span class="si">{}</span><span class="s1">.csv&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">end_of_year</span><span class="p">))</span>
+<span class="n">df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Index([&#39;STATE_ID&#39;, &#39;DESCRIPTION&#39;, &#39;Unnamed: 2&#39;, &#39;LATITUDE&#39;, &#39;LONGITUDE&#39;,
+       &#39;SAMPLE_DATE&#39;, &#39;SAMPLE_TIME&#39;, &#39;SAMPLE_DEPTH&#39;, &#39;GENUS&#39;, &#39;SPECIES&#39;,
+       &#39;CATEGORY&#39;, &#39;CELLCOUNT&#39;, &#39;CELLCOUNT_UNIT&#39;, &#39;CELLCOUNT_QA&#39;, &#39;SALINITY&#39;,
+       &#39;SALINITY_UNIT&#39;, &#39;SALINITY_QA&#39;, &#39;WATER_TEMP&#39;, &#39;WATER_TEMP_UNIT&#39;,
+       &#39;WATER_TEMP_QA&#39;, &#39;WIND_DIR&#39;, &#39;WIND_DIR_UNIT&#39;, &#39;WIND_DIR_QA&#39;,
+       &#39;WIND_SPEED&#39;, &#39;WIND_SPEED_UNIT&#39;, &#39;WIND_SPEED_QA&#39;, &#39;OBJECTID&#39;,
+       &#39;Unnamed: 27&#39;],
+      dtype=&#39;object&#39;)
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>SAMPLE_DATE</th>
+      <th>CELLCOUNT_1e5</th>
+      <th>num_KB_samples</th>
+    </tr>
+    <tr>
+      <th>date</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1993-01-04</th>
+      <td>1993-01-04</td>
+      <td>0.00333</td>
+      <td>5.0</td>
+    </tr>
+    <tr>
+      <th>1993-01-05</th>
+      <td>NaT</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1993-01-06</th>
+      <td>1993-01-06</td>
+      <td>0.00667</td>
+      <td>2.0</td>
+    </tr>
+    <tr>
+      <th>1993-01-07</th>
+      <td>NaT</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1993-01-08</th>
+      <td>NaT</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>2014-12-27</th>
+      <td>2014-12-27</td>
+      <td>0.00000</td>
+      <td>3.0</td>
+    </tr>
+    <tr>
+      <th>2014-12-28</th>
+      <td>NaT</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2014-12-29</th>
+      <td>2014-12-29</td>
+      <td>0.00000</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>2014-12-30</th>
+      <td>2014-12-30</td>
+      <td>0.00000</td>
+      <td>8.0</td>
+    </tr>
+    <tr>
+      <th>2014-12-31</th>
+      <td>2014-12-31</td>
+      <td>0.00000</td>
+      <td>6.0</td>
+    </tr>
+  </tbody>
+</table>
+<p>8032 rows × 3 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="c1"># Define bloom threshold and gap tolerance</span>
+<span class="n">BLOOM_THRESHOLD</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">MAX_GAP</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Timedelta</span><span class="p">(</span><span class="n">days</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
+
+<span class="c1"># Initialize bloom state</span>
+<span class="n">bloom_id</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">in_bloom</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="n">last_bloom_date</span> <span class="o">=</span> <span class="kc">None</span>
+
+<span class="n">bloom_list</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
+    <span class="n">cellcount</span> <span class="o">=</span> <span class="n">row</span><span class="p">[</span><span class="s1">&#39;CELLCOUNT_1e5&#39;</span><span class="p">]</span>
+    <span class="n">date</span> <span class="o">=</span> <span class="n">row</span><span class="o">.</span><span class="n">name</span>
+    
+    <span class="k">if</span> <span class="n">pd</span><span class="o">.</span><span class="n">notna</span><span class="p">(</span><span class="n">cellcount</span><span class="p">)</span> <span class="ow">and</span> <span class="n">cellcount</span> <span class="o">&gt;=</span> <span class="n">BLOOM_THRESHOLD</span><span class="p">:</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">in_bloom</span> <span class="ow">or</span> <span class="p">(</span><span class="n">last_bloom_date</span> <span class="ow">and</span> <span class="p">(</span><span class="n">date</span> <span class="o">-</span> <span class="n">last_bloom_date</span><span class="p">)</span> <span class="o">&gt;</span> <span class="n">MAX_GAP</span><span class="p">):</span>
+            <span class="c1"># Start a new bloom only if there&#39;s a large gap</span>
+            <span class="n">bloom_id</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="n">in_bloom</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="n">last_bloom_date</span> <span class="o">=</span> <span class="n">date</span>
+    
+    <span class="k">elif</span> <span class="n">last_bloom_date</span> <span class="ow">and</span> <span class="p">(</span><span class="n">date</span> <span class="o">-</span> <span class="n">last_bloom_date</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="n">MAX_GAP</span><span class="p">:</span>
+        <span class="c1"># Continue the bloom if within max gap</span>
+        <span class="n">in_bloom</span> <span class="o">=</span> <span class="kc">True</span>
+    
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">in_bloom</span> <span class="o">=</span> <span class="kc">False</span>
+    
+    <span class="n">bloom_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">bloom_id</span> <span class="k">if</span> <span class="n">in_bloom</span> <span class="k">else</span> <span class="mi">0</span><span class="p">)</span>
+
+<span class="c1"># ✅ Add bloom column to dataframe</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;BLOOM&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">bloom_list</span>
+
+<span class="c1"># ✅ Fix short gaps within an active bloom using forward fill</span>
+<span class="c1"># This will extend a bloom across short gaps or low values</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;BLOOM&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;BLOOM&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">to_replace</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;ffill&#39;</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="c1"># ✅ Resample after processing (weekly)</span>
+<span class="n">df_weekly</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="s1">&#39;W&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">agg</span><span class="p">({</span>
+    <span class="s1">&#39;CELLCOUNT_1e5&#39;</span><span class="p">:</span> <span class="s1">&#39;max&#39;</span><span class="p">,</span>   <span class="c1"># Take the max weekly cell count</span>
+    <span class="s1">&#39;BLOOM&#39;</span><span class="p">:</span> <span class="s1">&#39;first&#39;</span>          <span class="c1"># Take the first bloom ID of the week</span>
+<span class="p">})</span>
+
+<span class="c1"># ✅ Ensure bloom IDs are consistent after resampling</span>
+<span class="n">df_weekly</span><span class="p">[</span><span class="s1">&#39;BLOOM&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_weekly</span><span class="p">[</span><span class="s1">&#39;BLOOM&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">df_weekly</span><span class="p">[</span><span class="s1">&#39;BLOOM&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">df_weekly</span><span class="p">[</span><span class="s1">&#39;BLOOM&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_weekly</span><span class="p">[</span><span class="s1">&#39;BLOOM&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">ffill</span><span class="p">()</span>
+
+<span class="c1"># ✅ Ensure bloom IDs remain consistent across short gaps</span>
+<span class="n">df_weekly</span><span class="p">[</span><span class="s1">&#39;BLOOM&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_weekly</span><span class="p">[</span><span class="s1">&#39;BLOOM&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">where</span><span class="p">(</span>
+    <span class="p">(</span><span class="n">df_weekly</span><span class="p">[</span><span class="s1">&#39;BLOOM&#39;</span><span class="p">]</span> <span class="o">!=</span> <span class="n">df_weekly</span><span class="p">[</span><span class="s1">&#39;BLOOM&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">shift</span><span class="p">())</span> <span class="o">|</span>
+    <span class="p">(</span><span class="n">df_weekly</span><span class="p">[</span><span class="s1">&#39;CELLCOUNT_1e5&#39;</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="n">BLOOM_THRESHOLD</span><span class="p">)</span>
+<span class="p">)</span>
+
+<span class="c1"># ✅ Save to CSV or continue with further processing</span>
+<span class="n">df_weekly</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;weekly_summary.csv&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\mgebremedhin\AppData\Local\Temp\ipykernel_8040\678472623.py:39: FutureWarning: The &#39;method&#39; keyword in Series.replace is deprecated and will be removed in a future version.
+  df[&#39;BLOOM&#39;] = df[&#39;BLOOM&#39;].replace(to_replace=0, method=&#39;ffill&#39;, limit=2)
+</pre></div>
+</div>
+</div>
+</div>
+<p>Deep search for KB events in Charllot harbour<br />
+Hurricances<br />
+Loop Current</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#[0] General</span>
+<span class="n">end_of_year</span><span class="o">=</span><span class="mi">2014</span>
+<span class="n">Interpretation</span><span class="o">=</span><span class="mi">2</span>
+<span class="n">rule2</span><span class="o">=</span><span class="mf">0.2</span>
+
+<span class="c1">#Options and flag</span>
+<span class="n">data_plot_flag</span><span class="o">=</span><span class="mi">1</span>    <span class="c1">#Raw data plot: [1] daily, [2] period </span>
+<span class="n">Start_KB_df_flag</span><span class="o">=</span><span class="mi">1</span>  <span class="c1">#Start new data frame for saving results</span>
+<span class="n">Plot_KB_Flag</span><span class="o">=</span><span class="mi">1</span>     <span class="c1">#[1] Plot KB raw data and bloom analysis </span>
+<span class="n">Save_zos_res_Flag</span><span class="o">=</span><span class="mi">1</span>  <span class="c1">#[1] Save resutls</span>
+<span class="n">NewSeg</span><span class="o">=</span><span class="mi">0</span>
+
+<span class="k">for</span> <span class="n">Period</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;W&#39;</span><span class="p">]:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Analysis from 1990 to </span><span class="si">{}</span><span class="s1"> with rule2 </span><span class="si">{}</span><span class="s1"> for period </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">end_of_year</span><span class="p">,</span><span class="n">rule2</span><span class="p">,</span><span class="n">Period</span><span class="p">))</span>
+
+    <span class="c1">#Part 1: Karenia brevis bloom analysis</span>
+    <span class="k">for</span> <span class="n">min_bloom_length</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">10</span><span class="p">]:</span>              <span class="c1">#If bloom larger than or equal: 10,14, 15</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;min_bloom_length:&#39;</span><span class="p">,</span><span class="n">min_bloom_length</span><span class="p">)</span>  
+        <span class="k">for</span>  <span class="n">max_gaps_days</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">5</span><span class="p">]:</span>              <span class="c1">#If gaps more than: 3,4,5,6,7</span>
+
+            <span class="c1">#[1] Read data, set index, and select columns of interest </span>
+            <span class="n">df</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;Output/KB_daily_raw_</span><span class="si">{}</span><span class="s1">.csv&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">end_of_year</span><span class="p">))</span>
+            <span class="n">df</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">])</span>
+            <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Sample Date&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Sample Date&#39;</span><span class="p">])</span>
+            <span class="n">df</span><span class="p">[</span><span class="s1">&#39;idx&#39;</span><span class="p">]</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">))</span>
+            <span class="n">df</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;date&#39;</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+            <span class="n">df</span><span class="o">=</span><span class="n">df</span><span class="p">[[</span><span class="s1">&#39;idx&#39;</span><span class="p">,</span><span class="s1">&#39;Sample Date&#39;</span><span class="p">,</span><span class="s1">&#39;num_of_samples&#39;</span><span class="p">,</span><span class="s1">&#39;max_cells/L_raw&#39;</span><span class="p">]]</span>
+
+            <span class="c1">#[2] Create new dataframe with samples with potential large_bloom</span>
+            <span class="n">df</span><span class="p">[</span><span class="s1">&#39;bloom1e5&#39;</span><span class="p">]</span><span class="o">=</span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;max_cells/L_raw&#39;</span><span class="p">]</span><span class="o">&gt;=</span><span class="mf">1e5</span><span class="p">),</span><span class="s1">&#39;max_cells/L_raw&#39;</span><span class="p">]</span>   <span class="c1">#iloc 4</span>
+
+            <span class="c1">#[3] Gap between two samples when large bloom is encountered</span>
+            <span class="n">bloom_samples</span><span class="o">=</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;bloom1e5&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">notnull</span><span class="p">()</span>
+            <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">bloom_samples</span><span class="p">,</span><span class="s1">&#39;gap_days&#39;</span><span class="p">]</span><span class="o">=</span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">bloom_samples</span><span class="p">,</span><span class="s1">&#39;Sample Date&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">diff</span><span class="p">()</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">days</span><span class="o">-</span><span class="mi">1</span>  <span class="c1">#iloc 5</span>
+
+            <span class="c1">#[4] Count new blooms with 5 days and 20% rules</span>
+            <span class="n">bl</span><span class="o">=</span><span class="n">df</span><span class="p">[</span><span class="n">bloom_samples</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+            <span class="n">bloom</span><span class="o">=</span><span class="mi">1</span>
+            <span class="n">first_bloom</span><span class="o">=</span><span class="mi">1</span>
+
+            <span class="n">bl</span><span class="p">[</span><span class="s1">&#39;bloom_lenght_inc&#39;</span><span class="p">]</span><span class="o">=</span><span class="s1">&#39;&#39;</span>     <span class="c1">#iloc 6</span>
+            <span class="n">bl</span><span class="p">[</span><span class="s1">&#39;20%_condition&#39;</span><span class="p">]</span><span class="o">=</span><span class="s1">&#39;&#39;</span>    <span class="c1">#iloc 7</span>
+            <span class="n">bl</span><span class="p">[</span><span class="s1">&#39;gap&#39;</span><span class="p">]</span><span class="o">=</span><span class="s1">&#39;&#39;</span>              <span class="c1">#iloc 8</span>
+            <span class="n">bl</span><span class="p">[</span><span class="s1">&#39;new_bloom&#39;</span><span class="p">]</span><span class="o">=</span><span class="s1">&#39;&#39;</span>         <span class="c1">#iloc 9</span>
+            <span class="n">bl</span><span class="p">[</span><span class="s1">&#39;new_bloom_idx&#39;</span><span class="p">]</span><span class="o">=</span><span class="s1">&#39;&#39;</span>     <span class="c1">#iloc 10</span>
+            <span class="n">bl</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">]</span><span class="o">=</span><span class="n">bloom</span>
+
+            <span class="k">for</span> <span class="n">cont</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">bl</span><span class="p">)):</span>
+                <span class="c1">#Start a new blooom</span>
+                <span class="k">if</span> <span class="n">first_bloom</span><span class="o">==</span><span class="mi">1</span><span class="p">:</span>
+                    <span class="n">loc1</span><span class="o">=</span><span class="mi">0</span>
+                    <span class="n">loc2</span><span class="o">=</span><span class="mi">1</span>
+                    <span class="n">idx1</span><span class="o">=</span><span class="n">bl</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">cont</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span>
+                    <span class="c1">#print(&#39;First bloom {} starts at {}&#39;.format(bloom,idx))</span>
+                    <span class="n">first_bloom</span><span class="o">=</span><span class="mi">0</span>
+                    <span class="n">sample_count</span><span class="o">=</span><span class="mi">1</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">loc2</span> <span class="o">+=</span><span class="mi">1</span>
+
+                <span class="c1">#Add bloom number</span>
+                <span class="k">if</span> <span class="n">bl</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">cont</span><span class="p">,</span><span class="mi">5</span><span class="p">]</span><span class="o">&gt;</span><span class="n">max_gaps_days</span><span class="p">:</span>
+
+                    <span class="c1">#bloom length</span>
+                    <span class="n">idx2</span><span class="o">=</span><span class="n">bl</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">cont</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span>
+                    <span class="n">bl</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">cont</span><span class="p">,</span><span class="mi">6</span><span class="p">]</span><span class="o">=</span><span class="n">idx2</span><span class="o">-</span><span class="n">idx1</span>   
+
+                    <span class="c1">#20%_condition</span>
+                    <span class="n">bl</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">cont</span><span class="p">,</span><span class="mi">7</span><span class="p">]</span><span class="o">=</span><span class="n">bl</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">cont</span><span class="p">,</span><span class="mi">6</span><span class="p">]</span><span class="o">*</span><span class="n">rule2</span>
+
+                    <span class="c1">#Gap/Gaps</span>
+                    <span class="k">if</span> <span class="n">Interpretation</span><span class="o">==</span><span class="mi">1</span><span class="p">:</span>
+                        <span class="n">bl</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">cont</span><span class="p">,</span><span class="mi">8</span><span class="p">]</span><span class="o">=</span> <span class="n">bl</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">cont</span><span class="p">,</span><span class="mi">5</span><span class="p">]</span>      
+                    <span class="k">elif</span> <span class="n">Interpretation</span><span class="o">==</span><span class="mi">2</span><span class="p">:</span>
+                        <span class="n">bl</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">cont</span><span class="p">,</span><span class="mi">8</span><span class="p">]</span><span class="o">=</span> <span class="n">bl</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">loc1</span><span class="p">:</span><span class="n">loc2</span><span class="p">,</span><span class="mi">5</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span> 
+                        <span class="c1">#print(bl.iloc[cont,8])</span>
+
+                    <span class="c1">#Decision: Same bloom</span>
+                    <span class="k">if</span> <span class="n">bl</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">cont</span><span class="p">,</span><span class="mi">8</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="n">bl</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">cont</span><span class="p">,</span><span class="mi">7</span><span class="p">]:</span>
+                        <span class="n">bl</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">cont</span><span class="p">,</span><span class="mi">9</span><span class="p">]</span><span class="o">=</span><span class="mi">0</span>
+
+                    <span class="c1">#Decision: New bloom</span>
+                    <span class="k">elif</span> <span class="n">bl</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">cont</span><span class="p">,</span><span class="mi">8</span><span class="p">]</span><span class="o">&gt;</span> <span class="n">bl</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">cont</span><span class="p">,</span><span class="mi">7</span><span class="p">]:</span>
+                        <span class="n">bloom</span> <span class="o">+=</span><span class="mi">1</span> 
+                        <span class="n">bl</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">cont</span><span class="p">,</span><span class="mi">9</span><span class="p">]</span><span class="o">=</span><span class="mi">1</span>
+                        <span class="n">loc1</span><span class="o">=</span><span class="n">loc2</span>
+                        <span class="n">idx1</span><span class="o">=</span><span class="n">bl</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">cont</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span>
+
+                <span class="c1">#New bloom index </span>
+                <span class="n">bl</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">cont</span><span class="p">,</span><span class="mi">10</span><span class="p">]</span><span class="o">=</span><span class="n">bloom</span>
+
+            <span class="c1">#[5] Remove blooms less than 10 days </span>
+            <span class="n">bloom_number</span><span class="o">=</span><span class="mi">0</span>
+            <span class="n">bl</span><span class="o">=</span><span class="n">bl</span><span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="s1">&#39;D&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+
+            <span class="k">for</span> <span class="n">new_bloom_idx</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">bloom</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+
+                <span class="c1">#Filter data for each new bloom</span>
+                <span class="n">temp</span><span class="o">=</span><span class="n">bl</span><span class="p">[</span><span class="n">bl</span><span class="p">[</span><span class="s1">&#39;new_bloom_idx&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">eq</span><span class="p">(</span><span class="n">new_bloom_idx</span><span class="p">)]</span>
+
+                <span class="c1">#Bloom length days</span>
+                <span class="n">idx1</span><span class="o">=</span><span class="n">temp</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span>
+                <span class="n">idx2</span><span class="o">=</span><span class="n">temp</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">temp</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span>
+                <span class="n">bloom_length</span><span class="o">=</span><span class="n">idx2</span><span class="o">-</span><span class="n">idx1</span><span class="o">+</span><span class="mi">1</span>
+                <span class="k">if</span> <span class="n">bloom_length</span><span class="o">&gt;=</span><span class="n">min_bloom_length</span><span class="p">:</span>
+                    <span class="n">bloom_number</span><span class="o">+=</span><span class="mi">1</span>
+
+                <span class="c1">#Bloom start and end date</span>
+                <span class="n">date1</span><span class="o">=</span><span class="n">temp</span><span class="p">[</span><span class="n">temp</span><span class="p">[</span><span class="s1">&#39;idx&#39;</span><span class="p">]</span><span class="o">==</span><span class="n">idx1</span><span class="p">]</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">values</span>
+                <span class="n">date2</span><span class="o">=</span><span class="n">temp</span><span class="p">[</span><span class="n">temp</span><span class="p">[</span><span class="s1">&#39;idx&#39;</span><span class="p">]</span><span class="o">==</span><span class="n">idx2</span><span class="p">]</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">values</span>
+
+                <span class="c1">#Record bloom number and length </span>
+                <span class="k">if</span> <span class="n">bloom_length</span><span class="o">&gt;=</span><span class="n">min_bloom_length</span><span class="p">:</span>
+                    <span class="n">mask</span><span class="o">=</span><span class="p">(</span><span class="n">bl</span><span class="o">.</span><span class="n">index</span> <span class="o">&gt;=</span> <span class="n">date1</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">bl</span><span class="o">.</span><span class="n">index</span> <span class="o">&lt;=</span> <span class="n">date2</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> 
+                    <span class="n">bl</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">mask</span><span class="p">,</span><span class="s1">&#39;bloom_length&#39;</span><span class="p">]</span><span class="o">=</span><span class="n">bloom_length</span>
+                    <span class="n">bl</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">mask</span><span class="p">,</span><span class="s1">&#39;bloom_number&#39;</span><span class="p">]</span><span class="o">=</span><span class="n">bloom_number</span>
+                    <span class="c1">#print(new_bloom_idx,&#39;:&#39;,idx1,idx2,&#39;:&#39;,bloom_length,&#39;:&#39;,pd.to_datetime(date1[0]).date(),pd.to_datetime(date2[0]).date())</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">bl</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">date1</span><span class="p">,</span><span class="s1">&#39;bloom_length&#39;</span><span class="p">]</span><span class="o">=</span><span class="s1">&#39;&#39;</span>
+
+            <span class="c1">#[6] Merge dataFrames with no_large bloom and large_bloom and save dataFrame</span>
+            <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">df</span><span class="p">,</span> <span class="n">bl</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">sort</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+            <span class="c1">#print(df.columns.values)</span>
+            <span class="n">df</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span><span class="p">[</span><span class="s1">&#39;idx&#39;</span><span class="p">,</span> <span class="s1">&#39;Sample Date&#39;</span><span class="p">,</span> <span class="s1">&#39;num_of_samples&#39;</span><span class="p">,</span> <span class="s1">&#39;max_cells/L_raw&#39;</span><span class="p">,</span> <span class="s1">&#39;bloom1e5&#39;</span><span class="p">,</span> \
+                     <span class="s1">&#39;gap_days&#39;</span><span class="p">,</span> <span class="s1">&#39;idx_b1e5&#39;</span><span class="p">,</span> <span class="s1">&#39;Sample Date&#39;</span><span class="p">,</span> <span class="s1">&#39;num_of_samples_b1e5&#39;</span><span class="p">,</span> <span class="s1">&#39;max_cells/L_raw_b1e5&#39;</span><span class="p">,</span> \
+                     <span class="s1">&#39;bloom1e5&#39;</span><span class="p">,</span> <span class="s1">&#39;gap_days&#39;</span><span class="p">,</span> <span class="s1">&#39;bloom_lenght_inc&#39;</span><span class="p">,</span> <span class="s1">&#39;20%_condition&#39;</span><span class="p">,</span> <span class="s1">&#39;gap&#39;</span><span class="p">,</span> \
+                     <span class="s1">&#39;new_bloom&#39;</span><span class="p">,</span> <span class="s1">&#39;new_bloom_idx&#39;</span><span class="p">,</span> <span class="s1">&#39;bloom_length&#39;</span><span class="p">,</span> <span class="s1">&#39;bloom_number&#39;</span><span class="p">]</span>
+
+            <span class="c1">#[7] Save KB daily output</span>
+            <span class="n">df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;Output/KB_daily_</span><span class="si">{}</span><span class="s1">.csv&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">end_of_year</span><span class="p">))</span>
+
+            <span class="c1">#[8] Count number of periods with large_bloom and number of bloom per period </span>
+
+            <span class="c1">#Data per period (Q or 2Q)</span>
+            <span class="n">df</span><span class="o">=</span><span class="n">df</span><span class="p">[[</span><span class="s1">&#39;max_cells/L_raw&#39;</span><span class="p">,</span><span class="s1">&#39;max_cells/L_raw_b1e5&#39;</span><span class="p">,</span><span class="s1">&#39;gap&#39;</span><span class="p">,</span><span class="s1">&#39;bloom_length&#39;</span><span class="p">,</span><span class="s1">&#39;bloom_number&#39;</span><span class="p">]]</span>
+            <span class="n">Q</span><span class="o">=</span><span class="n">df</span><span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="n">Period</span><span class="p">,</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;period&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+            <span class="n">n_periods</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">Q</span><span class="o">.</span><span class="n">copy</span><span class="p">())</span>
+
+            <span class="c1">#Count large_bloom and number of bloom per period </span>
+            <span class="k">for</span> <span class="n">period</span> <span class="ow">in</span> <span class="n">Q</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">values</span><span class="p">:</span>
+
+                <span class="c1">#Data per period</span>
+                <span class="n">data</span><span class="o">=</span><span class="n">df</span><span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="n">period</span><span class="p">)]</span>
+
+                <span class="c1">#Number of blooms per period</span>
+                <span class="n">n_blooms</span><span class="o">=</span><span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;bloom_number&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">notnull</span><span class="p">(),</span><span class="s1">&#39;bloom_number&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
+                <span class="n">Q</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="n">period</span><span class="p">),</span><span class="s1">&#39;n_blooms&#39;</span><span class="p">]</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">n_blooms</span><span class="p">)</span>
+
+                <span class="c1">#Analysis of blooms larger than 10 days </span>
+                <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">n_blooms</span><span class="p">)</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">:</span>
+                    <span class="n">total_length</span><span class="o">=</span><span class="mi">0</span>       <span class="c1">#total lenght of blooms per period</span>
+                    <span class="n">n_large_blooms</span><span class="o">=</span><span class="mi">0</span>     <span class="c1">#number of large blooms </span>
+
+                    <span class="k">for</span> <span class="n">n_bloom</span> <span class="ow">in</span> <span class="n">n_blooms</span><span class="p">:</span>
+                        <span class="c1">#Data per bloom</span>
+                        <span class="n">mask</span><span class="o">=</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;bloom_number&#39;</span><span class="p">]</span><span class="o">==</span><span class="n">n_bloom</span>
+                        <span class="n">temp</span><span class="o">=</span><span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">mask</span><span class="p">,</span><span class="s1">&#39;bloom_number&#39;</span><span class="p">]</span>
+                        <span class="n">bloom_lenght</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">temp</span><span class="p">)</span>
+
+                        <span class="c1">#Flag for large blooms</span>
+                        <span class="k">if</span> <span class="n">bloom_lenght</span><span class="o">&gt;=</span><span class="n">min_bloom_length</span><span class="p">:</span>
+                            <span class="c1">#Count large blooms</span>
+                            <span class="n">n_large_blooms</span><span class="o">+=</span><span class="mi">1</span>
+
+                            <span class="c1">#Total bloom lenght </span>
+                            <span class="n">total_length</span><span class="o">=</span><span class="n">total_length</span><span class="o">+</span><span class="n">bloom_lenght</span>
+
+                <span class="c1">#Number of large blooms per period and total days of blooms per period</span>
+                <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">n_blooms</span><span class="p">)</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">:</span>
+                    <span class="k">if</span> <span class="n">n_large_blooms</span><span class="o">==</span><span class="mi">0</span><span class="p">:</span>
+                        <span class="n">n_large_blooms</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">NaN</span>
+                        <span class="n">total_length</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">NaN</span>
+
+                    <span class="n">Q</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="n">period</span><span class="p">),</span><span class="s1">&#39;n_large_blooms&#39;</span><span class="p">]</span><span class="o">=</span><span class="n">n_large_blooms</span>
+                    <span class="n">Q</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="n">period</span><span class="p">),</span><span class="s1">&#39;n_days_bloom&#39;</span><span class="p">]</span><span class="o">=</span><span class="n">total_length</span>
+
+            <span class="c1">#Number of blooms</span>
+            <span class="n">n_large_blooms</span><span class="o">=</span><span class="n">Q</span><span class="p">[</span><span class="s1">&#39;n_large_blooms&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+            <span class="n">n_large_bloom_periods</span><span class="o">=</span><span class="n">Q</span><span class="p">[</span><span class="s1">&#39;n_large_blooms&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
+
+            <span class="c1">#Ratio of periods with bloom(s) ratio</span>
+            <span class="n">bloom_periods_ratio</span><span class="o">=</span><span class="n">n_large_bloom_periods</span><span class="o">/</span><span class="n">n_periods</span>
+
+            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;min-bloom-length </span><span class="si">{}</span><span class="s1"> days with max-gaps </span><span class="si">{}</span><span class="s1"> days: </span><span class="se">\</span>
+<span class="s1">large-blooms, periods-with-large-bloom(s), and bloom-periods-ratio are </span><span class="si">{:0.0f}</span><span class="s1">, </span><span class="si">{}</span><span class="s1">, and </span><span class="si">{:0.2f}</span><span class="s1">&#39;</span> \
+                  <span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">min_bloom_length</span><span class="p">,</span><span class="n">max_gaps_days</span><span class="p">,</span><span class="n">n_large_blooms</span><span class="p">,</span><span class="n">n_large_bloom_periods</span><span class="p">,</span><span class="n">bloom_periods_ratio</span><span class="p">))</span>
+
+            <span class="c1">#[9] Save KB period output </span>
+            <span class="n">Q</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;Output/KB_period_</span><span class="si">{}{}</span><span class="s1">L</span><span class="si">{}</span><span class="s1">G</span><span class="si">{}</span><span class="s1">.csv&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">Period</span><span class="p">,</span><span class="n">end_of_year</span><span class="p">,</span><span class="n">min_bloom_length</span><span class="p">,</span><span class="n">max_gaps_days</span><span class="p">))</span>
+
+            <span class="c1">#[10] Plot KB blooms</span>
+            <span class="k">if</span> <span class="n">Plot_KB_Flag</span><span class="o">==</span><span class="mi">1</span><span class="p">:</span>
+                <span class="n">plot_KB</span><span class="p">(</span><span class="n">data_plot_flag</span><span class="p">,</span><span class="n">df</span><span class="p">,</span><span class="n">Q</span><span class="p">,</span><span class="n">min_bloom_length</span><span class="p">,</span><span class="n">max_gaps_days</span><span class="p">,</span><span class="n">n_large_blooms</span><span class="p">,</span><span class="n">n_large_bloom_periods</span><span class="p">,</span><span class="n">bloom_periods_ratio</span><span class="p">)</span>
+
+    <span class="c1">#Part2: zos analysis </span>
+
+            <span class="c1">#[11] zos dataFrames</span>
+            <span class="c1">#(1) Results summary</span>
+
+            <span class="k">if</span> <span class="n">Start_KB_df_flag</span><span class="o">==</span><span class="mi">1</span><span class="p">:</span>
+                <span class="n">res</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;Setting&#39;</span><span class="p">:[</span><span class="s1">&#39;Maze&#39;</span><span class="p">],</span><span class="s1">&#39;period&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Q&#39;</span><span class="p">],</span><span class="s1">&#39;segment&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;0_0&#39;</span><span class="p">],</span> \
+                                  <span class="s1">&#39;max_gaps_days&#39;</span><span class="p">:[</span><span class="mi">5</span><span class="p">],</span> <span class="s1">&#39;min_bloom_length&#39;</span><span class="p">:[</span><span class="mi">10</span><span class="p">],</span><span class="s1">&#39;n_large_blooms&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">13</span><span class="p">],</span><span class="s1">&#39;n_large_bloom_periods&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">13</span><span class="p">],</span>  \
+                                  <span class="s1">&#39;LC_N&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">44</span><span class="p">],</span><span class="s1">&#39;LC_S&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">16</span><span class="p">],</span> <span class="s1">&#39;LC_S_ratio&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;&#39;</span><span class="p">],</span>\
+                                  <span class="s1">&#39;LC_N_NoBloom&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">31</span><span class="p">],</span><span class="s1">&#39;LC_N_Bloom&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">13</span><span class="p">],</span> <span class="s1">&#39;LC_S_NoBloom&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">16</span><span class="p">],</span><span class="s1">&#39;LC_S_Bloom&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="s1">&#39;error&#39;</span><span class="p">:[</span><span class="mi">0</span><span class="p">]})</span>
+                <span class="n">res</span><span class="o">=</span> <span class="n">res</span><span class="o">.</span><span class="n">set_index</span><span class="p">([</span><span class="s1">&#39;Setting&#39;</span><span class="p">])</span>
+                <span class="n">res</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;Maze&#39;</span><span class="p">,</span><span class="s1">&#39;LC_S_ratio&#39;</span><span class="p">]</span><span class="o">=</span><span class="n">res</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;Maze&#39;</span><span class="p">,</span><span class="s1">&#39;LC_S&#39;</span><span class="p">]</span><span class="o">/</span><span class="p">(</span><span class="n">res</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;Maze&#39;</span><span class="p">,</span><span class="s1">&#39;LC_S&#39;</span><span class="p">]</span><span class="o">+</span><span class="n">res</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;Maze&#39;</span><span class="p">,</span><span class="s1">&#39;LC_N&#39;</span><span class="p">])</span>
+                <span class="n">Start_KB_df_flag</span><span class="o">=</span><span class="mi">0</span>
+
+            <span class="c1">#(2) Delta zos per setting</span>
+            <span class="n">df_delta_zos</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span> 
+
+
+            <span class="c1">#[12] zos data analysis</span>
+            <span class="k">for</span> <span class="n">lat</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">11</span><span class="p">):</span>      <span class="c1">#(-21,21)</span>
+            <span class="c1">#for lat in [&#39;0&#39;]:</span>
+                <span class="c1">#for lon in [&#39;0&#39;]:</span>
+                <span class="k">for</span> <span class="n">lon</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">):</span>  <span class="c1">#(-21,21)</span>
+
+                    <span class="c1">#(0) General info</span>
+                    <span class="n">idx</span><span class="o">=</span><span class="s1">&#39;</span><span class="si">{}</span><span class="s1">_L</span><span class="si">{}</span><span class="s1">G</span><span class="si">{}</span><span class="s1">_S</span><span class="si">{}</span><span class="s1">_</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">Period</span><span class="p">,</span><span class="n">min_bloom_length</span><span class="p">,</span><span class="n">max_gaps_days</span><span class="p">,</span><span class="n">lat</span><span class="p">,</span><span class="n">lon</span><span class="p">)</span>
+                    <span class="n">res</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">idx</span><span class="p">,</span><span class="s1">&#39;period&#39;</span><span class="p">]</span><span class="o">=</span><span class="n">Period</span>
+                    <span class="n">res</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">idx</span><span class="p">,</span><span class="s1">&#39;min_bloom_length&#39;</span><span class="p">]</span><span class="o">=</span><span class="n">min_bloom_length</span>
+                    <span class="n">res</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">idx</span><span class="p">,</span><span class="s1">&#39;n_large_bloom_periods&#39;</span><span class="p">]</span><span class="o">=</span><span class="n">n_large_bloom_periods</span>
+                    <span class="n">res</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">idx</span><span class="p">,</span><span class="s1">&#39;n_large_blooms&#39;</span><span class="p">]</span><span class="o">=</span><span class="n">n_large_blooms</span>
+                    <span class="n">res</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">idx</span><span class="p">,</span><span class="s1">&#39;max_gaps_days&#39;</span><span class="p">]</span><span class="o">=</span><span class="n">max_gaps_days</span>
+                    <span class="n">res</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">idx</span><span class="p">,</span><span class="s1">&#39;segment&#39;</span><span class="p">]</span><span class="o">=</span><span class="s1">&#39;</span><span class="si">{}</span><span class="s1">_</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">lat</span><span class="p">,</span><span class="n">lon</span><span class="p">)</span>
+
+
+                    <span class="c1">#(1) Read data, and set index, </span>
+                    <span class="k">if</span> <span class="n">NewSeg</span><span class="o">==</span><span class="mi">0</span><span class="p">:</span>
+                        <span class="n">folder</span><span class="o">=</span><span class="s1">&#39;AVISIO&#39;</span>
+                        <span class="n">data_file</span><span class="o">=</span><span class="s1">&#39;AVISO-1-1_phy-001-030_r0_</span><span class="si">{}</span><span class="s1">-</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">lat</span><span class="p">,</span><span class="n">lon</span><span class="p">)</span>
+                    <span class="k">elif</span> <span class="n">NewSeg</span><span class="o">==</span><span class="mi">1</span><span class="p">:</span>
+                        <span class="n">folder</span><span class="o">=</span><span class="s1">&#39;per_member_10-1&#39;</span>
+                        <span class="n">data_file</span><span class="o">=</span><span class="s1">&#39;AVISO-1-1_phy-001-030_r0&#39;</span>
+                        
+                    <span class="n">df_zos</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;Input/</span><span class="si">{}</span><span class="s1">_</span><span class="si">{}</span><span class="s1">.csv&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">folder</span><span class="p">,</span><span class="n">data_file</span><span class="p">))</span>
+                    <span class="n">df_zos</span><span class="p">[</span><span class="s1">&#39;Date&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">df_zos</span><span class="p">[</span><span class="s1">&#39;Date&#39;</span><span class="p">])</span>
+                    <span class="n">df_zos</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;Date&#39;</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+                    <span class="n">df_zos</span><span class="o">=</span><span class="n">df_zos</span><span class="p">[</span><span class="s1">&#39;1993-1-1&#39;</span><span class="p">:</span><span class="s1">&#39;</span><span class="si">{}</span><span class="s1">-12-31&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">end_of_year</span><span class="p">)]</span>
+
+                    <span class="c1">#(3)downsampling daily frequency to quarterly-period frequency</span>
+                    <span class="n">df_zos</span><span class="o">=</span><span class="n">df_zos</span><span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="n">Period</span><span class="p">,</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;period&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+                    <span class="c1">#df_zos.to_csv(&#39;KB_data/zos_Data_{}_{}-{}.csv&#39;.format(resample,lat,lon))</span>
+
+                    <span class="c1">#(4) Number of north and south Loop Current</span>
+                    <span class="n">res</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">idx</span><span class="p">,</span><span class="s1">&#39;LC_N&#39;</span><span class="p">]</span><span class="o">=</span><span class="n">df_zos</span><span class="p">[</span><span class="s1">&#39;delta&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">gt</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+                    <span class="n">res</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">idx</span><span class="p">,</span><span class="s1">&#39;LC_S&#39;</span><span class="p">]</span><span class="o">=</span><span class="n">df_zos</span><span class="p">[</span><span class="s1">&#39;delta&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">le</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+                    <span class="n">res</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">idx</span><span class="p">,</span><span class="s1">&#39;LC_S_ratio&#39;</span><span class="p">]</span><span class="o">=</span><span class="n">res</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">idx</span><span class="p">,</span><span class="s1">&#39;LC_S&#39;</span><span class="p">]</span><span class="o">/</span><span class="p">(</span><span class="n">res</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">idx</span><span class="p">,</span><span class="s1">&#39;LC_N&#39;</span><span class="p">]</span><span class="o">+</span><span class="n">res</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">idx</span><span class="p">,</span><span class="s1">&#39;LC_S&#39;</span><span class="p">])</span>
+
+                    <span class="c1">#(5)Save zos delta per setting </span>
+                    <span class="n">Seg</span><span class="o">=</span><span class="s1">&#39;</span><span class="si">{}</span><span class="s1">_S</span><span class="si">{}</span><span class="s1">_</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">Period</span><span class="p">,</span><span class="n">lat</span><span class="p">,</span><span class="n">lon</span><span class="p">)</span>
+                    <span class="n">df_delta_zos</span><span class="p">[</span><span class="n">Seg</span><span class="p">]</span><span class="o">=</span><span class="n">df_zos</span><span class="p">[</span><span class="s1">&#39;delta&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+
+                    <span class="c1">#(5)Count LC_S error </span>
+                    <span class="n">QQ</span><span class="o">=</span><span class="n">Q</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+                    <span class="n">QQ</span><span class="p">[</span><span class="s1">&#39;zos&#39;</span><span class="p">]</span><span class="o">=</span><span class="n">df_zos</span><span class="p">[</span><span class="s1">&#39;delta&#39;</span><span class="p">]</span>
+                    <span class="n">QQ</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">subset</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;n_large_blooms&#39;</span><span class="p">],</span><span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+                    <span class="n">res</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">idx</span><span class="p">,</span><span class="s1">&#39;LC_S_Bloom&#39;</span><span class="p">]</span><span class="o">=</span><span class="n">QQ</span><span class="p">[</span><span class="s1">&#39;zos&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">lt</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+                    <span class="n">res</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">idx</span><span class="p">,</span><span class="s1">&#39;LC_S_NoBloom&#39;</span><span class="p">]</span><span class="o">=</span><span class="n">res</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">idx</span><span class="p">,</span><span class="s1">&#39;LC_S&#39;</span><span class="p">]</span><span class="o">-</span><span class="n">res</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">idx</span><span class="p">,</span><span class="s1">&#39;LC_S_Bloom&#39;</span><span class="p">]</span>
+                    <span class="n">res</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">idx</span><span class="p">,</span><span class="s1">&#39;LC_N_Bloom&#39;</span><span class="p">]</span><span class="o">=</span><span class="n">res</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">idx</span><span class="p">,</span><span class="s1">&#39;n_large_bloom_periods&#39;</span><span class="p">]</span><span class="o">-</span><span class="n">res</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">idx</span><span class="p">,</span><span class="s1">&#39;LC_S_Bloom&#39;</span><span class="p">]</span>
+                    <span class="n">res</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">idx</span><span class="p">,</span><span class="s1">&#39;LC_N_NoBloom&#39;</span><span class="p">]</span><span class="o">=</span><span class="n">res</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">idx</span><span class="p">,</span><span class="s1">&#39;LC_N&#39;</span><span class="p">]</span><span class="o">-</span><span class="n">res</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">idx</span><span class="p">,</span><span class="s1">&#39;LC_N_Bloom&#39;</span><span class="p">]</span>
+
+                    <span class="c1">#(6)Error</span>
+                    <span class="n">res</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">idx</span><span class="p">,</span><span class="s1">&#39;error&#39;</span><span class="p">]</span><span class="o">=</span><span class="p">(</span><span class="n">res</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">idx</span><span class="p">,</span><span class="s1">&#39;LC_S_Bloom&#39;</span><span class="p">]</span><span class="o">/</span><span class="n">res</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">idx</span><span class="p">,</span><span class="s1">&#39;LC_S&#39;</span><span class="p">])</span><span class="o">*</span><span class="mi">100</span>
+
+            <span class="c1">#[13] Save zos outputs</span>
+            <span class="k">if</span> <span class="n">Save_zos_res_Flag</span><span class="o">==</span><span class="mi">1</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">NewSeg</span><span class="o">==</span><span class="mi">0</span><span class="p">:</span>
+                    <span class="n">df_delta_zos</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;Output/zos_period_</span><span class="si">{}</span><span class="s1">_</span><span class="si">{}</span><span class="s1">.csv&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">Period</span><span class="p">,</span><span class="n">end_of_year</span><span class="p">))</span>
+                <span class="k">elif</span> <span class="n">NewSeg</span><span class="o">==</span><span class="mi">1</span><span class="p">:</span>
+                    <span class="n">df_delta_zos</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;Output/zos_period_</span><span class="si">{}</span><span class="s1">_</span><span class="si">{}</span><span class="s1">_10-1.csv&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">Period</span><span class="p">,</span><span class="n">end_of_year</span><span class="p">))</span>
+                
+            <span class="c1">#(6) Plot zos for LC-N and LC-S  </span>
+            <span class="n">zos_segment</span><span class="o">=</span><span class="s1">&#39;</span><span class="si">{}</span><span class="s1">_S</span><span class="si">{}</span><span class="s1">_</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">Period</span><span class="p">,</span><span class="n">lat</span><span class="p">,</span><span class="n">lon</span><span class="p">)</span>  <span class="c1">#e.g. Q_S6_4, 2Q_S0_0</span>
+            <span class="n">plot_zos</span><span class="p">(</span><span class="n">Period</span><span class="p">,</span><span class="n">end_of_year</span><span class="p">,</span><span class="n">zos_segment</span><span class="p">,</span><span class="n">Q</span><span class="p">,</span><span class="n">lat</span><span class="p">,</span><span class="n">lon</span><span class="p">,</span><span class="n">n_large_bloom_periods</span><span class="p">,</span><span class="n">bloom_periods_ratio</span><span class="p">,</span><span class="n">NewSeg</span><span class="p">)</span>
+            
+            <span class="c1">#(6) Plot zos for LC-N and LC-S  </span>
+            <span class="n">zos_segment</span><span class="o">=</span><span class="s1">&#39;</span><span class="si">{}</span><span class="s1">_S</span><span class="si">{}</span><span class="s1">_</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">Period</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>  <span class="c1">#e.g. Q_S6_4, 2Q_S0_0</span>
+            <span class="n">NewSeg</span><span class="o">=</span><span class="mi">2</span>
+            <span class="n">plot_zos</span><span class="p">(</span><span class="n">Period</span><span class="p">,</span><span class="n">end_of_year</span><span class="p">,</span><span class="n">zos_segment</span><span class="p">,</span><span class="n">Q</span><span class="p">,</span><span class="n">lat</span><span class="p">,</span><span class="n">lon</span><span class="p">,</span><span class="n">n_large_bloom_periods</span><span class="p">,</span><span class="n">bloom_periods_ratio</span><span class="p">,</span><span class="n">NewSeg</span><span class="p">)</span>
+            
+            
+
+
+<span class="c1">#[14] Save summary results of KB and zos analysis </span>
+<span class="k">if</span> <span class="n">Save_zos_res_Flag</span><span class="o">==</span><span class="mi">1</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">NewSeg</span><span class="o">==</span><span class="mi">0</span><span class="p">:</span>
+        <span class="n">res</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;Output/results_</span><span class="si">{}</span><span class="s1">.csv&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">end_of_year</span><span class="p">))</span>
+    <span class="k">elif</span> <span class="n">NewSeg</span><span class="o">==</span><span class="mi">1</span><span class="p">:</span>
+        <span class="n">res</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;Output/results_</span><span class="si">{}</span><span class="s1">_10-1.csv&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">end_of_year</span><span class="p">))</span>
+<span class="n">display</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Analysis from 1990 to 2014 with rule2 0.2 for period W
+min_bloom_length: 10
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">KeyError</span><span class="g g-Whitespace">                                  </span>Traceback (most recent call last)
+<span class="nn">File ~\AppData\Local\miniconda3\Lib\site-packages\pandas\core\indexes\base.py:3805,</span> in <span class="ni">Index.get_loc</span><span class="nt">(self, key)</span>
+<span class="g g-Whitespace">   </span><span class="mi">3804</span> <span class="k">try</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">3805</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_engine</span><span class="o">.</span><span class="n">get_loc</span><span class="p">(</span><span class="n">casted_key</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">3806</span> <span class="k">except</span> <span class="ne">KeyError</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>
+
+<span class="nn">File index.pyx:167,</span> in <span class="ni">pandas._libs.index.IndexEngine.get_loc</span><span class="nt">()</span>
+
+<span class="nn">File index.pyx:196,</span> in <span class="ni">pandas._libs.index.IndexEngine.get_loc</span><span class="nt">()</span>
+
+<span class="nn">File pandas\\_libs\\hashtable_class_helper.pxi:7081,</span> in <span class="ni">pandas._libs.hashtable.PyObjectHashTable.get_item</span><span class="nt">()</span>
+
+<span class="nn">File pandas\\_libs\\hashtable_class_helper.pxi:7089,</span> in <span class="ni">pandas._libs.hashtable.PyObjectHashTable.get_item</span><span class="nt">()</span>
+
+<span class="ne">KeyError</span>: &#39;Sample Date&#39;
+
+<span class="n">The</span> <span class="n">above</span> <span class="n">exception</span> <span class="n">was</span> <span class="n">the</span> <span class="n">direct</span> <span class="n">cause</span> <span class="n">of</span> <span class="n">the</span> <span class="n">following</span> <span class="n">exception</span><span class="p">:</span>
+
+<span class="ne">KeyError</span><span class="g g-Whitespace">                                  </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">4</span><span class="p">],</span> <span class="n">line</span> <span class="mi">24</span>
+<span class="g g-Whitespace">     </span><span class="mi">22</span> <span class="n">df</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;Output/KB_daily_raw_</span><span class="si">{}</span><span class="s1">.csv&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">end_of_year</span><span class="p">))</span>
+<span class="g g-Whitespace">     </span><span class="mi">23</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">])</span>
+<span class="ne">---&gt; </span><span class="mi">24</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Sample Date&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Sample Date&#39;</span><span class="p">])</span>
+<span class="g g-Whitespace">     </span><span class="mi">25</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;idx&#39;</span><span class="p">]</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">))</span>
+<span class="g g-Whitespace">     </span><span class="mi">26</span> <span class="n">df</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;date&#39;</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="nn">File ~\AppData\Local\miniconda3\Lib\site-packages\pandas\core\frame.py:4102,</span> in <span class="ni">DataFrame.__getitem__</span><span class="nt">(self, key)</span>
+<span class="g g-Whitespace">   </span><span class="mi">4100</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">nlevels</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">4101</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_getitem_multilevel</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+<span class="ne">-&gt; </span><span class="mi">4102</span> <span class="n">indexer</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">get_loc</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">4103</span> <span class="k">if</span> <span class="n">is_integer</span><span class="p">(</span><span class="n">indexer</span><span class="p">):</span>
+<span class="g g-Whitespace">   </span><span class="mi">4104</span>     <span class="n">indexer</span> <span class="o">=</span> <span class="p">[</span><span class="n">indexer</span><span class="p">]</span>
+
+<span class="nn">File ~\AppData\Local\miniconda3\Lib\site-packages\pandas\core\indexes\base.py:3812,</span> in <span class="ni">Index.get_loc</span><span class="nt">(self, key)</span>
+<span class="g g-Whitespace">   </span><span class="mi">3807</span>     <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">casted_key</span><span class="p">,</span> <span class="nb">slice</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">3808</span>         <span class="nb">isinstance</span><span class="p">(</span><span class="n">casted_key</span><span class="p">,</span> <span class="n">abc</span><span class="o">.</span><span class="n">Iterable</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">3809</span>         <span class="ow">and</span> <span class="nb">any</span><span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="nb">slice</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">casted_key</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">3810</span>     <span class="p">):</span>
+<span class="g g-Whitespace">   </span><span class="mi">3811</span>         <span class="k">raise</span> <span class="n">InvalidIndexError</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+<span class="ne">-&gt; </span><span class="mi">3812</span>     <span class="k">raise</span> <span class="ne">KeyError</span><span class="p">(</span><span class="n">key</span><span class="p">)</span> <span class="kn">from</span> <span class="nn">err</span>
+<span class="g g-Whitespace">   </span><span class="mi">3813</span> <span class="k">except</span> <span class="ne">TypeError</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">3814</span>     <span class="c1"># If we have a listlike key, _check_indexing_error will raise</span>
+<span class="g g-Whitespace">   </span><span class="mi">3815</span>     <span class="c1">#  InvalidIndexError. Otherwise we fall through and re-raise</span>
+<span class="g g-Whitespace">   </span><span class="mi">3816</span>     <span class="c1">#  the TypeError.</span>
+<span class="g g-Whitespace">   </span><span class="mi">3817</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_check_indexing_error</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+
+<span class="ne">KeyError</span>: &#39;Sample Date&#39;
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./ocean"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Processing code 3: KB data</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#study-area">Study area</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#kb-data-for-the-study-area-from-1993-to-2024">[1] KB data for the study area from 1993 to 2024</a></li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By The Jupyter Book community
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

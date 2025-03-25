@@ -169,9 +169,12 @@
     <div class="bd-toc-item navbar-nav active">
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Project outlines</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../atmosphere.html">Data - Atmospher</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../ocean/ocean.html">Data - Ocean</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../river/river.html">Data - River</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../wind.html">Atmosphere</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ocean/hab.html">HABs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ocean/zos.html">zos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../river/peace.html">Peace River</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../machineLearning/data.html">ML-Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../machineLearning/ml.html">ML-Model</a></li>
 </ul>
 
     </div>
@@ -372,7 +375,7 @@ document.write(`
 <div class="cell_output docutils container">
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;&gt;:16: SyntaxWarning: invalid escape sequence &#39;\s&#39;
 &lt;&gt;:16: SyntaxWarning: invalid escape sequence &#39;\s&#39;
-C:\Users\mgebremedhin\AppData\Local\Temp\ipykernel_28956\3090090348.py:16: SyntaxWarning: invalid escape sequence &#39;\s&#39;
+C:\Users\mgebremedhin\AppData\Local\Temp\ipykernel_13952\3090090348.py:16: SyntaxWarning: invalid escape sequence &#39;\s&#39;
   df = pd.read_csv(url, sep=&#39;\s+&#39;, header=[0], on_bad_lines=&#39;skip&#39;, low_memory=False)
 </pre></div>
 </div>
@@ -3241,8 +3244,9 @@ Extracted headers for wind_data_2008.csv:
 
 Extracted headers for wind_data_2009.csv:
 [&#39;#YY,MM,DD,hh,mm,WDIR,WSPD,GST,WVHT,DPD,APD,MWD,PRES,ATMP,WTMP,DEWP,VIS,TIDE&#39;]
-
-Extracted headers for wind_data_2010.csv:
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Extracted headers for wind_data_2010.csv:
 [&#39;#YY,MM,DD,hh,mm,WDIR,WSPD,GST,WVHT,DPD,APD,MWD,PRES,ATMP,WTMP,DEWP,VIS,TIDE&#39;]
 
 Extracted headers for wind_data_2011.csv:
@@ -3256,9 +3260,8 @@ Extracted headers for wind_data_2013.csv:
 
 Extracted headers for wind_data_2014.csv:
 [&#39;#YY,MM,DD,hh,mm,WDIR,WSPD,GST,WVHT,DPD,APD,MWD,PRES,ATMP,WTMP,DEWP,VIS,TIDE&#39;]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Extracted headers for wind_data_2015.csv:
+
+Extracted headers for wind_data_2015.csv:
 [&#39;#YY,MM,DD,hh,mm,WDIR,WSPD,GST,WVHT,DPD,APD,MWD,PRES,ATMP,WTMP,DEWP,VIS,TIDE&#39;]
 
 Extracted headers for wind_data_2016.csv:
@@ -3417,13 +3420,13 @@ Headers saved to &#39;input/headers_summary.csv&#39;
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>📥 Downloading data for year 1990...
-</pre></div>
-</div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;&gt;:19: SyntaxWarning: invalid escape sequence &#39;\s&#39;
 &lt;&gt;:19: SyntaxWarning: invalid escape sequence &#39;\s&#39;
-C:\Users\mgebremedhin\AppData\Local\Temp\ipykernel_28956\1498738825.py:19: SyntaxWarning: invalid escape sequence &#39;\s&#39;
+C:\Users\mgebremedhin\AppData\Local\Temp\ipykernel_13952\1498738825.py:19: SyntaxWarning: invalid escape sequence &#39;\s&#39;
   df = pd.read_csv(raw_data, sep=&#39;\s+&#39;, comment=&#39;#&#39;, header=None, on_bad_lines=&#39;skip&#39;)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>📥 Downloading data for year 1990...
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Failed to process data for year 1990: name &#39;io&#39; is not defined
@@ -3431,34 +3434,38 @@ C:\Users\mgebremedhin\AppData\Local\Temp\ipykernel_28956\1498738825.py:19: Synta
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Failed to process data for year 1991: name &#39;io&#39; is not defined
+📥 Downloading data for year 1992...
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>📥 Downloading data for year 1992...
-Failed to process data for year 1992: name &#39;io&#39; is not defined
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Failed to process data for year 1992: name &#39;io&#39; is not defined
 📥 Downloading data for year 1993...
+Failed to process data for year 1993: name &#39;io&#39; is not defined
+📥 Downloading data for year 1994...
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Failed to process data for year 1993: name &#39;io&#39; is not defined
-📥 Downloading data for year 1994...
-Failed to process data for year 1994: name &#39;io&#39; is not defined
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Failed to process data for year 1994: name &#39;io&#39; is not defined
 📥 Downloading data for year 1995...
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Failed to process data for year 1995: name &#39;io&#39; is not defined
 📥 Downloading data for year 1996...
-Failed to process data for year 1996: name &#39;io&#39; is not defined
-📥 Downloading data for year 1997...
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Failed to process data for year 1997: name &#39;io&#39; is not defined
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Failed to process data for year 1996: name &#39;io&#39; is not defined
+📥 Downloading data for year 1997...
+Failed to process data for year 1997: name &#39;io&#39; is not defined
 📥 Downloading data for year 1998...
-Failed to process data for year 1998: name &#39;io&#39; is not defined
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Failed to process data for year 1998: name &#39;io&#39; is not defined
 📥 Downloading data for year 1999...
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Failed to process data for year 1999: name &#39;io&#39; is not defined
 📥 Downloading data for year 2000...
-Failed to process data for year 2000: name &#39;io&#39; is not defined
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Failed to process data for year 2000: name &#39;io&#39; is not defined
 📥 Downloading data for year 2001...
 </pre></div>
 </div>
@@ -3478,9 +3485,7 @@ Failed to process data for year 2003: name &#39;io&#39; is not defined
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Failed to process data for year 2005: name &#39;io&#39; is not defined
 📥 Downloading data for year 2006...
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Failed to process data for year 2006: name &#39;io&#39; is not defined
+Failed to process data for year 2006: name &#39;io&#39; is not defined
 📥 Downloading data for year 2007...
 </pre></div>
 </div>
@@ -3508,7 +3513,9 @@ Failed to process data for year 2008: name &#39;io&#39; is not defined
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Failed to process data for year 2013: name &#39;io&#39; is not defined
 📥 Downloading data for year 2014...
-Failed to process data for year 2014: name &#39;io&#39; is not defined
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Failed to process data for year 2014: name &#39;io&#39; is not defined
 📥 Downloading data for year 2015...
 </pre></div>
 </div>
@@ -3518,7 +3525,9 @@ Failed to process data for year 2014: name &#39;io&#39; is not defined
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Failed to process data for year 2016: name &#39;io&#39; is not defined
 📥 Downloading data for year 2017...
-Failed to process data for year 2017: name &#39;io&#39; is not defined
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Failed to process data for year 2017: name &#39;io&#39; is not defined
 📥 Downloading data for year 2018...
 </pre></div>
 </div>
@@ -3536,9 +3545,7 @@ Failed to process data for year 2017: name &#39;io&#39; is not defined
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Failed to process data for year 2021: name &#39;io&#39; is not defined
 📥 Downloading data for year 2022...
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Failed to process data for year 2022: name &#39;io&#39; is not defined
+Failed to process data for year 2022: name &#39;io&#39; is not defined
 
  No valid data to combine!
 </pre></div>
@@ -3753,7 +3760,7 @@ Failed to process data for year 2017: name &#39;io&#39; is not defined
 <div class="cell_output docutils container">
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;&gt;:23: SyntaxWarning: invalid escape sequence &#39;\s&#39;
 &lt;&gt;:23: SyntaxWarning: invalid escape sequence &#39;\s&#39;
-C:\Users\mgebremedhin\AppData\Local\Temp\ipykernel_28956\318958368.py:23: SyntaxWarning: invalid escape sequence &#39;\s&#39;
+C:\Users\mgebremedhin\AppData\Local\Temp\ipykernel_13952\318958368.py:23: SyntaxWarning: invalid escape sequence &#39;\s&#39;
   df = pd.read_csv(raw_data, sep=&#39;\s+&#39;, comment=&#39;#&#39;, header=None, on_bad_lines=&#39;skip&#39;)
 </pre></div>
 </div>

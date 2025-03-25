@@ -18,29 +18,23 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-# Save DataFrame to file
-df_zos.to_csv("output/zos_interpolated.csv", index=True)
-
-# Save lat/lon to separate file
-lat_lon = pd.DataFrame({
-    "latitude": latitudes,
-    "longitude": longitudes
-})
-lat_lon.to_csv("lat_lon.csv", index=False)
-
+# Read all files
+ds = xr.open_mfdataset(f"{zos_folder}/*.nc", combine="by_coords")  # , parallel=True
 ------------------
 
 
 [1;31m---------------------------------------------------------------------------[0m
-[1;31mNameError[0m                                 Traceback (most recent call last)
+[1;31mOSError[0m                                   Traceback (most recent call last)
 Cell [1;32mIn[4], line 2[0m
-[0;32m      1[0m [38;5;66;03m# Save DataFrame to file[39;00m
-[1;32m----> 2[0m [43mdf_zos[49m[38;5;241m.[39mto_csv([38;5;124m"[39m[38;5;124moutput/zos_interpolated.csv[39m[38;5;124m"[39m, index[38;5;241m=[39m[38;5;28;01mTrue[39;00m)
-[0;32m      4[0m [38;5;66;03m# Save lat/lon to separate file[39;00m
-[0;32m      5[0m lat_lon [38;5;241m=[39m pd[38;5;241m.[39mDataFrame({
-[0;32m      6[0m     [38;5;124m"[39m[38;5;124mlatitude[39m[38;5;124m"[39m: latitudes,
-[0;32m      7[0m     [38;5;124m"[39m[38;5;124mlongitude[39m[38;5;124m"[39m: longitudes
-[0;32m      8[0m })
+[0;32m      1[0m [38;5;66;03m# Read all files[39;00m
+[1;32m----> 2[0m ds [38;5;241m=[39m [43mxr[49m[38;5;241;43m.[39;49m[43mopen_mfdataset[49m[43m([49m[38;5;124;43mf[39;49m[38;5;124;43m"[39;49m[38;5;132;43;01m{[39;49;00m[43mzos_folder[49m[38;5;132;43;01m}[39;49;00m[38;5;124;43m/*.nc[39;49m[38;5;124;43m"[39;49m[43m,[49m[43m [49m[43mcombine[49m[38;5;241;43m=[39;49m[38;5;124;43m"[39;49m[38;5;124;43mby_coords[39;49m[38;5;124;43m"[39;49m[43m)[49m  [38;5;66;03m# , parallel=True[39;00m
 
-[1;31mNameError[0m: name 'df_zos' is not defined
+File [1;32m~\AppData\Local\miniconda3\Lib\site-packages\xarray\backends\api.py:1541[0m, in [0;36mopen_mfdataset[1;34m(paths, chunks, concat_dim, compat, preprocess, engine, data_vars, coords, combine, parallel, join, attrs_file, combine_attrs, **kwargs)[0m
+[0;32m   1538[0m paths [38;5;241m=[39m _find_absolute_paths(paths, engine[38;5;241m=[39mengine, [38;5;241m*[39m[38;5;241m*[39mkwargs)
+[0;32m   1540[0m [38;5;28;01mif[39;00m [38;5;129;01mnot[39;00m paths:
+[1;32m-> 1541[0m     [38;5;28;01mraise[39;00m [38;5;167;01mOSError[39;00m([38;5;124m"[39m[38;5;124mno files to open[39m[38;5;124m"[39m)
+[0;32m   1543[0m paths1d: [38;5;28mlist[39m[[38;5;28mstr[39m [38;5;241m|[39m ReadBuffer]
+[0;32m   1544[0m [38;5;28;01mif[39;00m combine [38;5;241m==[39m [38;5;124m"[39m[38;5;124mnested[39m[38;5;124m"[39m:
+
+[1;31mOSError[0m: no files to open
 

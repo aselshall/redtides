@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Sea-surface height and red tides &#8212; Home</title>
+    <title>Sea-surface height data &#8212; Home</title>
   
   
   
@@ -59,11 +59,11 @@
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'ocean/ocean';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'ocean/zos';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="River data" href="../river/river.html" />
-    <link rel="prev" title="Data-Atmosphere" href="../atmosphere/atmosphere.html" />
+    <link rel="next" title="Peace River data" href="../river/peace.html" />
+    <link rel="prev" title="Red tides data" href="hab.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -169,9 +169,12 @@
     <div class="bd-toc-item navbar-nav active">
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Project outlines</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../atmosphere/atmosphere.html">Data - Atmospher</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Data - Ocean</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../river/river.html">Data - River</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../atmosphere/wind.html">Atmosphere</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hab.html">HABs</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">zos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../river/peace.html">Peace River</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../machineLearning/data.html">ML-Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../machineLearning/ml.html">ML-Model</a></li>
 </ul>
 
     </div>
@@ -226,7 +229,7 @@
       
       
       
-      <li><a href="../_sources/ocean/ocean.ipynb" target="_blank"
+      <li><a href="../_sources/ocean/zos.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -310,7 +313,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Sea-surface height and red tides</h1>
+    <h1>Sea-surface height data</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -338,8 +341,8 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="sea-surface-height-and-red-tides">
-<h1>Sea-surface height and red tides<a class="headerlink" href="#sea-surface-height-and-red-tides" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="sea-surface-height-data">
+<h1>Sea-surface height data<a class="headerlink" href="#sea-surface-height-data" title="Link to this heading">#</a></h1>
 <p><a class="reference external" href="https://mybinder.org/v2/gh/aselshall/eds/HEAD"><img alt="Binder" src="https://mybinder.org/badge_logo.svg" /></a></p>
 <hr class="docutils" />
 <div class="cell docutils container">
@@ -399,7 +402,7 @@ document.write(`
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Duration configuration (Month, Day)</span>
 <span class="n">select_duration</span><span class="o">=</span><span class="mi">1</span>
 <span class="n">duration</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;M&#39;</span><span class="p">,</span> <span class="s1">&#39;D&#39;</span><span class="p">]</span>
-<span class="n">zos_folder</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;raw_data/zos_</span><span class="si">{</span><span class="n">duration</span><span class="p">[</span><span class="n">select_duration</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="n">zos_folder</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;../../raw_data/zos_</span><span class="si">{</span><span class="n">duration</span><span class="p">[</span><span class="n">select_duration</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span>
 </pre></div>
 </div>
 </div>
@@ -434,15 +437,23 @@ document.write(`
         <span class="n">output</span> <span class="o">=</span> <span class="n">copernicusmarine</span><span class="o">.</span><span class="n">subset</span><span class="p">(</span>
             <span class="n">dataset_id</span><span class="o">=</span><span class="n">config</span><span class="p">[</span><span class="s1">&#39;dataset_id&#39;</span><span class="p">],</span>
             <span class="n">dataset_version</span><span class="o">=</span><span class="s2">&quot;202311&quot;</span><span class="p">,</span>
-            <span class="n">variables</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;zos&quot;</span><span class="p">],</span>
-            <span class="n">minimum_longitude</span><span class="o">=-</span><span class="mi">100</span><span class="p">,</span>
-            <span class="n">maximum_longitude</span><span class="o">=-</span><span class="mi">75</span><span class="p">,</span>
-            <span class="n">minimum_latitude</span><span class="o">=</span><span class="mi">18</span><span class="p">,</span>
-            <span class="n">maximum_latitude</span><span class="o">=</span><span class="mi">32</span><span class="p">,</span>
+            <span class="c1">#variables=[&quot;zos&quot;],</span>
+            <span class="n">variables</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;thetao&quot;</span><span class="p">],</span>
+            <span class="c1">#minimum_longitude=-100,</span>
+            <span class="c1">#maximum_longitude=-75,</span>
+            <span class="c1">#minimum_latitude=18,</span>
+            <span class="c1">#maximum_latitude=32,</span>
+
+            <span class="n">minimum_longitude</span><span class="o">=-</span><span class="mi">85</span><span class="p">,</span>
+            <span class="n">maximum_longitude</span><span class="o">=-</span><span class="mi">81</span><span class="p">,</span>
+            <span class="n">minimum_latitude</span><span class="o">=</span><span class="mi">25</span><span class="p">,</span>
+            <span class="n">maximum_latitude</span><span class="o">=</span><span class="mi">28</span><span class="p">,</span>
             <span class="n">start_datetime</span><span class="o">=</span><span class="n">config</span><span class="p">[</span><span class="s1">&#39;start_datetime&#39;</span><span class="p">],</span>
             <span class="n">end_datetime</span><span class="o">=</span><span class="n">config</span><span class="p">[</span><span class="s1">&#39;end_datetime&#39;</span><span class="p">],</span>
             <span class="n">minimum_depth</span><span class="o">=</span><span class="mf">0.49402499198913574</span><span class="p">,</span>
-            <span class="n">maximum_depth</span><span class="o">=</span><span class="mf">0.49402499198913574</span><span class="p">,</span>
+            <span class="c1">#maximum_depth=0.49402499198913574,</span>
+            <span class="n">maximum_depth</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
+
             <span class="n">coordinates_selection_method</span><span class="o">=</span><span class="s2">&quot;strict-inside&quot;</span><span class="p">,</span>
             <span class="n">disable_progress_bar</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
             <span class="n">username</span><span class="o">=</span><span class="s2">&quot;aelshall&quot;</span><span class="p">,</span>
@@ -871,7 +882,7 @@ Attributes:
     institution:               MERCATOR OCEAN
     history:                   2023/06/01 16:20:05 MERCATOR OCEAN Netcdf crea...
     references:                http://www.mercator-ocean.fr
-    copernicusmarine_version:  2.0.1</pre><div class='xr-wrap' style='display:none'><div class='xr-header'><div class='xr-obj-type'>xarray.Dataset</div></div><ul class='xr-sections'><li class='xr-section-item'><input id='section-0413cb01-3d8e-4008-b7f5-9eabbbfd8e3d' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-0413cb01-3d8e-4008-b7f5-9eabbbfd8e3d' class='xr-section-summary'  title='Expand/collapse section'>Dimensions:</label><div class='xr-section-inline-details'><ul class='xr-dim-list'><li><span class='xr-has-index'>time</span>: 11716</li><li><span class='xr-has-index'>latitude</span>: 169</li><li><span class='xr-has-index'>longitude</span>: 301</li></ul></div><div class='xr-section-details'></div></li><li class='xr-section-item'><input id='section-55597494-60b8-45b5-97f3-ea6f75e8884b' class='xr-section-summary-in' type='checkbox'  checked><label for='section-55597494-60b8-45b5-97f3-ea6f75e8884b' class='xr-section-summary' >Coordinates: <span>(3)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>latitude</span></div><div class='xr-var-dims'>(latitude)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>18.0 18.08 18.17 ... 31.92 32.0</div><input id='attrs-e0770eb4-9d9c-488c-82c8-3d61437405d5' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-e0770eb4-9d9c-488c-82c8-3d61437405d5' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-0f324cbe-67be-4a47-af97-8b82500c8ca4' class='xr-var-data-in' type='checkbox'><label for='data-0f324cbe-67be-4a47-af97-8b82500c8ca4' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>Latitude</dd><dt><span>units :</span></dt><dd>degrees_north</dd><dt><span>axis :</span></dt><dd>Y</dd><dt><span>unit_long :</span></dt><dd>Degrees North</dd><dt><span>standard_name :</span></dt><dd>latitude</dd></dl></div><div class='xr-var-data'><pre>array([18.      , 18.083334, 18.166666, 18.25    , 18.333334, 18.416666,
+    copernicusmarine_version:  2.0.1</pre><div class='xr-wrap' style='display:none'><div class='xr-header'><div class='xr-obj-type'>xarray.Dataset</div></div><ul class='xr-sections'><li class='xr-section-item'><input id='section-24e4c590-925f-42ca-9d41-65892df03e37' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-24e4c590-925f-42ca-9d41-65892df03e37' class='xr-section-summary'  title='Expand/collapse section'>Dimensions:</label><div class='xr-section-inline-details'><ul class='xr-dim-list'><li><span class='xr-has-index'>time</span>: 11716</li><li><span class='xr-has-index'>latitude</span>: 169</li><li><span class='xr-has-index'>longitude</span>: 301</li></ul></div><div class='xr-section-details'></div></li><li class='xr-section-item'><input id='section-114406a4-1174-44fd-82a7-d56f29c70972' class='xr-section-summary-in' type='checkbox'  checked><label for='section-114406a4-1174-44fd-82a7-d56f29c70972' class='xr-section-summary' >Coordinates: <span>(3)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>latitude</span></div><div class='xr-var-dims'>(latitude)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>18.0 18.08 18.17 ... 31.92 32.0</div><input id='attrs-326bf896-e366-4393-928c-e2185b97d9d7' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-326bf896-e366-4393-928c-e2185b97d9d7' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-d77dd6f1-cc9e-4544-a7e8-440bbe902f30' class='xr-var-data-in' type='checkbox'><label for='data-d77dd6f1-cc9e-4544-a7e8-440bbe902f30' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>Latitude</dd><dt><span>units :</span></dt><dd>degrees_north</dd><dt><span>axis :</span></dt><dd>Y</dd><dt><span>unit_long :</span></dt><dd>Degrees North</dd><dt><span>standard_name :</span></dt><dd>latitude</dd></dl></div><div class='xr-var-data'><pre>array([18.      , 18.083334, 18.166666, 18.25    , 18.333334, 18.416666,
        18.5     , 18.583334, 18.666666, 18.75    , 18.833334, 18.916666,
        19.      , 19.083334, 19.166666, 19.25    , 19.333334, 19.416666,
        19.5     , 19.583334, 19.666666, 19.75    , 19.833334, 19.916666,
@@ -899,11 +910,11 @@ Attributes:
        30.5     , 30.583334, 30.666666, 30.75    , 30.833334, 30.916666,
        31.      , 31.083334, 31.166666, 31.25    , 31.333334, 31.416666,
        31.5     , 31.583334, 31.666666, 31.75    , 31.833334, 31.916666,
-       32.      ], dtype=float32)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>longitude</span></div><div class='xr-var-dims'>(longitude)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>-100.0 -99.92 ... -75.08 -75.0</div><input id='attrs-c968ef4d-bc1d-4686-96d8-9bcc027584fd' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-c968ef4d-bc1d-4686-96d8-9bcc027584fd' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-43b85b2b-e4ee-4ff0-b792-a1674262a1b2' class='xr-var-data-in' type='checkbox'><label for='data-43b85b2b-e4ee-4ff0-b792-a1674262a1b2' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>Longitude</dd><dt><span>units :</span></dt><dd>degrees_east</dd><dt><span>axis :</span></dt><dd>X</dd><dt><span>unit_long :</span></dt><dd>Degrees East</dd><dt><span>standard_name :</span></dt><dd>longitude</dd></dl></div><div class='xr-var-data'><pre>array([-100.      ,  -99.916664,  -99.833336, ...,  -75.166664,  -75.083336,
-        -75.      ], dtype=float32)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>time</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>datetime64[ns]</div><div class='xr-var-preview xr-preview'>1993-01-01 ... 2025-01-28</div><input id='attrs-cdc0e1d9-1be7-449c-856e-d5a74eff6ba9' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-cdc0e1d9-1be7-449c-856e-d5a74eff6ba9' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-e3c8ab4a-0270-410b-9da4-5ebc0c11f9ea' class='xr-var-data-in' type='checkbox'><label for='data-e3c8ab4a-0270-410b-9da4-5ebc0c11f9ea' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>axis :</span></dt><dd>T</dd><dt><span>standard_name :</span></dt><dd>time</dd><dt><span>unit_long :</span></dt><dd>Hours Since 1950-01-01</dd><dt><span>long_name :</span></dt><dd>Time</dd></dl></div><div class='xr-var-data'><pre>array([&#x27;1993-01-01T00:00:00.000000000&#x27;, &#x27;1993-01-02T00:00:00.000000000&#x27;,
+       32.      ], dtype=float32)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>longitude</span></div><div class='xr-var-dims'>(longitude)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>-100.0 -99.92 ... -75.08 -75.0</div><input id='attrs-b5421a00-a3be-4f69-acaf-f301d5c31ab5' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-b5421a00-a3be-4f69-acaf-f301d5c31ab5' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-30df9c95-2894-4bcd-a20f-a8f35dd17405' class='xr-var-data-in' type='checkbox'><label for='data-30df9c95-2894-4bcd-a20f-a8f35dd17405' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>Longitude</dd><dt><span>units :</span></dt><dd>degrees_east</dd><dt><span>axis :</span></dt><dd>X</dd><dt><span>unit_long :</span></dt><dd>Degrees East</dd><dt><span>standard_name :</span></dt><dd>longitude</dd></dl></div><div class='xr-var-data'><pre>array([-100.      ,  -99.916664,  -99.833336, ...,  -75.166664,  -75.083336,
+        -75.      ], dtype=float32)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>time</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>datetime64[ns]</div><div class='xr-var-preview xr-preview'>1993-01-01 ... 2025-01-28</div><input id='attrs-32f2f4f8-1a43-4e8a-9170-c783597eae31' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-32f2f4f8-1a43-4e8a-9170-c783597eae31' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-a221d0bb-0236-4c06-a8fa-b31a65d45961' class='xr-var-data-in' type='checkbox'><label for='data-a221d0bb-0236-4c06-a8fa-b31a65d45961' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>axis :</span></dt><dd>T</dd><dt><span>standard_name :</span></dt><dd>time</dd><dt><span>unit_long :</span></dt><dd>Hours Since 1950-01-01</dd><dt><span>long_name :</span></dt><dd>Time</dd></dl></div><div class='xr-var-data'><pre>array([&#x27;1993-01-01T00:00:00.000000000&#x27;, &#x27;1993-01-02T00:00:00.000000000&#x27;,
        &#x27;1993-01-03T00:00:00.000000000&#x27;, ..., &#x27;2025-01-26T00:00:00.000000000&#x27;,
        &#x27;2025-01-27T00:00:00.000000000&#x27;, &#x27;2025-01-28T00:00:00.000000000&#x27;],
-      dtype=&#x27;datetime64[ns]&#x27;)</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-625bc3ae-7bd4-411b-93fe-f7c64501a2eb' class='xr-section-summary-in' type='checkbox'  checked><label for='section-625bc3ae-7bd4-411b-93fe-f7c64501a2eb' class='xr-section-summary' >Data variables: <span>(1)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span>zos</span></div><div class='xr-var-dims'>(time, latitude, longitude)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>dask.array&lt;chunksize=(10408, 169, 301), meta=np.ndarray&gt;</div><input id='attrs-8b73550d-a271-4e17-bcc9-c48864c11202' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-8b73550d-a271-4e17-bcc9-c48864c11202' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-f86bdbb4-a79c-4a28-be88-c57279085546' class='xr-var-data-in' type='checkbox'><label for='data-f86bdbb4-a79c-4a28-be88-c57279085546' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>Sea surface height</dd><dt><span>valid_min :</span></dt><dd>-6228</dd><dt><span>units :</span></dt><dd>m</dd><dt><span>valid_max :</span></dt><dd>5684</dd><dt><span>unit_long :</span></dt><dd>Meters</dd><dt><span>standard_name :</span></dt><dd>sea_surface_height_above_geoid</dd></dl></div><div class='xr-var-data'><table>
+      dtype=&#x27;datetime64[ns]&#x27;)</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-ec7e351d-621e-43be-bdc9-1059fbf448dc' class='xr-section-summary-in' type='checkbox'  checked><label for='section-ec7e351d-621e-43be-bdc9-1059fbf448dc' class='xr-section-summary' >Data variables: <span>(1)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span>zos</span></div><div class='xr-var-dims'>(time, latitude, longitude)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>dask.array&lt;chunksize=(10408, 169, 301), meta=np.ndarray&gt;</div><input id='attrs-65ddd678-8382-4f2b-aeed-01b1c063b7ba' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-65ddd678-8382-4f2b-aeed-01b1c063b7ba' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-6601b222-f15e-45a6-82a9-39de9eec43fc' class='xr-var-data-in' type='checkbox'><label for='data-6601b222-f15e-45a6-82a9-39de9eec43fc' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>Sea surface height</dd><dt><span>valid_min :</span></dt><dd>-6228</dd><dt><span>units :</span></dt><dd>m</dd><dt><span>valid_max :</span></dt><dd>5684</dd><dt><span>unit_long :</span></dt><dd>Meters</dd><dt><span>standard_name :</span></dt><dd>sea_surface_height_above_geoid</dd></dl></div><div class='xr-var-data'><table>
     <tr>
         <td>
             <table style="border-collapse: collapse;">
@@ -983,7 +994,7 @@ Attributes:
 </svg>
         </td>
     </tr>
-</table></div></li></ul></div></li><li class='xr-section-item'><input id='section-6e852c9a-c770-4b98-b179-0dd3528f8312' class='xr-section-summary-in' type='checkbox'  ><label for='section-6e852c9a-c770-4b98-b179-0dd3528f8312' class='xr-section-summary' >Indexes: <span>(3)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-index-name'><div>latitude</div></div><div class='xr-index-preview'>PandasIndex</div><input type='checkbox' disabled/><label></label><input id='index-1c49594a-4da8-47d2-8d6c-9d1de259babe' class='xr-index-data-in' type='checkbox'/><label for='index-1c49594a-4da8-47d2-8d6c-9d1de259babe' title='Show/Hide index repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-index-data'><pre>PandasIndex(Index([             18.0, 18.08333396911621, 18.16666603088379,
+</table></div></li></ul></div></li><li class='xr-section-item'><input id='section-fa6266b3-4df3-4168-8747-2f326f8b9ebf' class='xr-section-summary-in' type='checkbox'  ><label for='section-fa6266b3-4df3-4168-8747-2f326f8b9ebf' class='xr-section-summary' >Indexes: <span>(3)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-index-name'><div>latitude</div></div><div class='xr-index-preview'>PandasIndex</div><input type='checkbox' disabled/><label></label><input id='index-b3d9db61-cf84-46ff-883f-84c57860f1b0' class='xr-index-data-in' type='checkbox'/><label for='index-b3d9db61-cf84-46ff-883f-84c57860f1b0' title='Show/Hide index repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-index-data'><pre>PandasIndex(Index([             18.0, 18.08333396911621, 18.16666603088379,
                    18.25, 18.33333396911621, 18.41666603088379,
                     18.5, 18.58333396911621, 18.66666603088379,
                    18.75,
@@ -992,7 +1003,7 @@ Attributes:
                     31.5, 31.58333396911621, 31.66666603088379,
                    31.75, 31.83333396911621, 31.91666603088379,
                     32.0],
-      dtype=&#x27;float32&#x27;, name=&#x27;latitude&#x27;, length=169))</pre></div></li><li class='xr-var-item'><div class='xr-index-name'><div>longitude</div></div><div class='xr-index-preview'>PandasIndex</div><input type='checkbox' disabled/><label></label><input id='index-a35088c9-717e-41ca-bb3d-a19f73c34677' class='xr-index-data-in' type='checkbox'/><label for='index-a35088c9-717e-41ca-bb3d-a19f73c34677' title='Show/Hide index repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-index-data'><pre>PandasIndex(Index([            -100.0, -99.91666412353516, -99.83333587646484,
+      dtype=&#x27;float32&#x27;, name=&#x27;latitude&#x27;, length=169))</pre></div></li><li class='xr-var-item'><div class='xr-index-name'><div>longitude</div></div><div class='xr-index-preview'>PandasIndex</div><input type='checkbox' disabled/><label></label><input id='index-4a1d0ff8-dcdc-4eee-a146-dec89bde9748' class='xr-index-data-in' type='checkbox'/><label for='index-4a1d0ff8-dcdc-4eee-a146-dec89bde9748' title='Show/Hide index repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-index-data'><pre>PandasIndex(Index([            -100.0, -99.91666412353516, -99.83333587646484,
                    -99.75, -99.66666412353516, -99.58333587646484,
                     -99.5, -99.41666412353516, -99.33333587646484,
                    -99.25,
@@ -1001,14 +1012,14 @@ Attributes:
                     -75.5, -75.41666412353516, -75.33333587646484,
                    -75.25, -75.16666412353516, -75.08333587646484,
                     -75.0],
-      dtype=&#x27;float32&#x27;, name=&#x27;longitude&#x27;, length=301))</pre></div></li><li class='xr-var-item'><div class='xr-index-name'><div>time</div></div><div class='xr-index-preview'>PandasIndex</div><input type='checkbox' disabled/><label></label><input id='index-33d8ad77-f814-427d-b7d1-602a6708e075' class='xr-index-data-in' type='checkbox'/><label for='index-33d8ad77-f814-427d-b7d1-602a6708e075' title='Show/Hide index repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-index-data'><pre>PandasIndex(DatetimeIndex([&#x27;1993-01-01&#x27;, &#x27;1993-01-02&#x27;, &#x27;1993-01-03&#x27;, &#x27;1993-01-04&#x27;,
+      dtype=&#x27;float32&#x27;, name=&#x27;longitude&#x27;, length=301))</pre></div></li><li class='xr-var-item'><div class='xr-index-name'><div>time</div></div><div class='xr-index-preview'>PandasIndex</div><input type='checkbox' disabled/><label></label><input id='index-651698c2-e2e3-42e6-b76a-8c54765b5d09' class='xr-index-data-in' type='checkbox'/><label for='index-651698c2-e2e3-42e6-b76a-8c54765b5d09' title='Show/Hide index repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-index-data'><pre>PandasIndex(DatetimeIndex([&#x27;1993-01-01&#x27;, &#x27;1993-01-02&#x27;, &#x27;1993-01-03&#x27;, &#x27;1993-01-04&#x27;,
                &#x27;1993-01-05&#x27;, &#x27;1993-01-06&#x27;, &#x27;1993-01-07&#x27;, &#x27;1993-01-08&#x27;,
                &#x27;1993-01-09&#x27;, &#x27;1993-01-10&#x27;,
                ...
                &#x27;2025-01-19&#x27;, &#x27;2025-01-20&#x27;, &#x27;2025-01-21&#x27;, &#x27;2025-01-22&#x27;,
                &#x27;2025-01-23&#x27;, &#x27;2025-01-24&#x27;, &#x27;2025-01-25&#x27;, &#x27;2025-01-26&#x27;,
                &#x27;2025-01-27&#x27;, &#x27;2025-01-28&#x27;],
-              dtype=&#x27;datetime64[ns]&#x27;, name=&#x27;time&#x27;, length=11716, freq=None))</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-ec48e107-a6fb-4026-9ba6-b7870285df52' class='xr-section-summary-in' type='checkbox'  checked><label for='section-ec48e107-a6fb-4026-9ba6-b7870285df52' class='xr-section-summary' >Attributes: <span>(8)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'><dt><span>title :</span></dt><dd>daily mean fields from Global Ocean Physics Analysis and Forecast updated Daily</dd><dt><span>comment :</span></dt><dd>CMEMS product</dd><dt><span>Conventions :</span></dt><dd>CF-1.4</dd><dt><span>source :</span></dt><dd>MERCATOR GLORYS12V1</dd><dt><span>institution :</span></dt><dd>MERCATOR OCEAN</dd><dt><span>history :</span></dt><dd>2023/06/01 16:20:05 MERCATOR OCEAN Netcdf creation</dd><dt><span>references :</span></dt><dd>http://www.mercator-ocean.fr</dd><dt><span>copernicusmarine_version :</span></dt><dd>2.0.1</dd></dl></div></li></ul></div></div></div></div>
+              dtype=&#x27;datetime64[ns]&#x27;, name=&#x27;time&#x27;, length=11716, freq=None))</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-59ac2e16-865d-4f8c-98ed-da5a37157f4f' class='xr-section-summary-in' type='checkbox'  checked><label for='section-59ac2e16-865d-4f8c-98ed-da5a37157f4f' class='xr-section-summary' >Attributes: <span>(8)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'><dt><span>title :</span></dt><dd>daily mean fields from Global Ocean Physics Analysis and Forecast updated Daily</dd><dt><span>comment :</span></dt><dd>CMEMS product</dd><dt><span>Conventions :</span></dt><dd>CF-1.4</dd><dt><span>source :</span></dt><dd>MERCATOR GLORYS12V1</dd><dt><span>institution :</span></dt><dd>MERCATOR OCEAN</dd><dt><span>history :</span></dt><dd>2023/06/01 16:20:05 MERCATOR OCEAN Netcdf creation</dd><dt><span>references :</span></dt><dd>http://www.mercator-ocean.fr</dd><dt><span>copernicusmarine_version :</span></dt><dd>2.0.1</dd></dl></div></li></ul></div></div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1017,10 +1028,18 @@ Attributes:
 <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">axes</span><span class="p">(</span><span class="n">projection</span><span class="o">=</span><span class="n">ccrs</span><span class="o">.</span><span class="n">PlateCarree</span><span class="p">())</span>
 <span class="n">ds</span><span class="o">.</span><span class="n">zos</span><span class="p">[</span><span class="mi">0</span><span class="p">,:,:]</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">coastlines</span><span class="p">();</span>
+
+<span class="c1"># Save the figure</span>
+<span class="n">output_path</span> <span class="o">=</span> <span class="s1">&#39;figures/zos_plot_output.png&#39;</span>  <span class="c1"># Specify the desired output path and filename</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="n">output_path</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">300</span><span class="p">)</span>  <span class="c1"># Save with high resolution</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2"> Plot saved to: </span><span class="si">{</span><span class="n">output_path</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> Plot saved to: figures/zos_plot_output.png
+</pre></div>
+</div>
 <img alt="../_images/ebe686ebaa31a463ef1d050dcead25b5d8762f89b66ee4ff8349f0174ac8418d.png" src="../_images/ebe686ebaa31a463ef1d050dcead25b5d8762f89b66ee4ff8349f0174ac8418d.png" />
 </div>
 </div>
@@ -1179,20 +1198,26 @@ Attributes:
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Apply LOWESS to remove slow background trend</span>
-<span class="n">filtered</span> <span class="o">=</span> <span class="n">lowess</span><span class="p">(</span><span class="n">mean_zos_df</span><span class="p">[</span><span class="s1">&#39;zos&#39;</span><span class="p">],</span> <span class="n">mean_zos_df</span><span class="p">[</span><span class="s1">&#39;time&#39;</span><span class="p">],</span> <span class="n">frac</span><span class="o">=</span><span class="mf">0.05</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Set &#39;time&#39; column as index</span>
+<span class="n">mean_zos_df</span> <span class="o">=</span> <span class="n">mean_zos_df</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;time&#39;</span><span class="p">)</span>
+
+<span class="c1"># Apply LOWESS to remove slow background trend</span>
+<span class="n">filtered</span> <span class="o">=</span> <span class="n">lowess</span><span class="p">(</span><span class="n">mean_zos_df</span><span class="p">[</span><span class="s1">&#39;zos&#39;</span><span class="p">],</span> <span class="n">mean_zos_df</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">frac</span><span class="o">=</span><span class="mf">0.05</span><span class="p">)</span>
 
 <span class="c1"># Subtract trend</span>
 <span class="n">mean_zos_df</span><span class="p">[</span><span class="s1">&#39;detrended_zos&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">mean_zos_df</span><span class="p">[</span><span class="s1">&#39;zos&#39;</span><span class="p">]</span> <span class="o">-</span> <span class="n">filtered</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">]</span>
 
 <span class="c1"># Plot detrended data</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">mean_zos_df</span><span class="p">[</span><span class="s1">&#39;time&#39;</span><span class="p">],</span> <span class="n">mean_zos_df</span><span class="p">[</span><span class="s1">&#39;detrended_zos&#39;</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Detrended zos&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">mean_zos_df</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">mean_zos_df</span><span class="p">[</span><span class="s1">&#39;detrended_zos&#39;</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Detrended zos&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Detrended zos (Loop Current Signal)&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Time&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;zos (m)&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;figures/zos_mean_detrended.png&#39;</span><span class="p">)</span>
+
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -1203,11 +1228,23 @@ Attributes:
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mean_zos_df</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ensure the output directory exists</span>
+<span class="n">output_dir</span> <span class="o">=</span> <span class="s1">&#39;output&#39;</span>
+<span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">output_dir</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># Save only the &#39;time&#39;, &#39;zos&#39;, and &#39;detrended_zos&#39; columns without the index</span>
+<span class="n">file_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">output_dir</span><span class="p">,</span> <span class="s1">&#39;zos_daily.csv&#39;</span><span class="p">)</span>
+<span class="n">mean_zos_df</span><span class="p">[[</span> <span class="s1">&#39;zos&#39;</span><span class="p">,</span> <span class="s1">&#39;detrended_zos&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">file_path</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;File saved to: </span><span class="si">{</span><span class="n">file_path</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">mean_zos_df</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>File saved to: output\zos_daily.csv
+</pre></div>
+</div>
 <div class="output text_html"><div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -1226,39 +1263,38 @@ Attributes:
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>time</th>
       <th>zos</th>
       <th>detrended_zos</th>
+    </tr>
+    <tr>
+      <th>time</th>
+      <th></th>
+      <th></th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th>0</th>
-      <td>1993-01-01</td>
+      <th>1993-01-01</th>
       <td>0.002809</td>
       <td>0.009426</td>
     </tr>
     <tr>
-      <th>1</th>
-      <td>1993-01-02</td>
+      <th>1993-01-02</th>
       <td>0.001144</td>
       <td>0.007580</td>
     </tr>
     <tr>
-      <th>2</th>
-      <td>1993-01-03</td>
+      <th>1993-01-03</th>
       <td>0.016337</td>
       <td>0.022593</td>
     </tr>
     <tr>
-      <th>3</th>
-      <td>1993-01-04</td>
+      <th>1993-01-04</th>
       <td>0.005950</td>
       <td>0.012026</td>
     </tr>
     <tr>
-      <th>4</th>
-      <td>1993-01-05</td>
+      <th>1993-01-05</th>
       <td>0.015159</td>
       <td>0.021055</td>
     </tr>
@@ -1266,41 +1302,35 @@ Attributes:
       <th>...</th>
       <td>...</td>
       <td>...</td>
-      <td>...</td>
     </tr>
     <tr>
-      <th>11711</th>
-      <td>2025-01-24</td>
+      <th>2025-01-24</th>
       <td>0.051383</td>
       <td>-0.112541</td>
     </tr>
     <tr>
-      <th>11712</th>
-      <td>2025-01-25</td>
+      <th>2025-01-25</th>
       <td>0.053326</td>
       <td>-0.110714</td>
     </tr>
     <tr>
-      <th>11713</th>
-      <td>2025-01-26</td>
+      <th>2025-01-26</th>
       <td>0.065663</td>
       <td>-0.098493</td>
     </tr>
     <tr>
-      <th>11714</th>
-      <td>2025-01-27</td>
+      <th>2025-01-27</th>
       <td>0.045702</td>
       <td>-0.118568</td>
     </tr>
     <tr>
-      <th>11715</th>
-      <td>2025-01-28</td>
+      <th>2025-01-28</th>
       <td>0.044567</td>
       <td>-0.119818</td>
     </tr>
   </tbody>
 </table>
-<p>11716 rows × 3 columns</p>
+<p>11716 rows × 2 columns</p>
 </div></div></div>
 </div>
 </section>
@@ -1337,20 +1367,20 @@ Attributes:
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../atmosphere/atmosphere.html"
+       href="hab.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Data-Atmosphere</p>
+        <p class="prev-next-title">Red tides data</p>
       </div>
     </a>
     <a class="right-next"
-       href="../river/river.html"
+       href="../river/peace.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">River data</p>
+        <p class="prev-next-title">Peace River data</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

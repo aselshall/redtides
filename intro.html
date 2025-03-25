@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>&lt;no title&gt; &#8212; Home</title>
+    <title>Red tides &#8212; Home</title>
   
   
   
@@ -59,10 +59,12 @@
     <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'intro';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Data-Atmosphere" href="atmosphere/atmosphere.html" />
+    <link rel="next" title="Wind and water data" href="atmosphere/wind.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -170,9 +172,12 @@
     <div class="bd-toc-item navbar-nav active">
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Project outlines</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="atmosphere/atmosphere.html">Data - Atmospher</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ocean/ocean.html">Data - Ocean</a></li>
-<li class="toctree-l1"><a class="reference internal" href="river/river.html">Data - River</a></li>
+<li class="toctree-l1"><a class="reference internal" href="atmosphere/wind.html">Atmosphere</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ocean/hab.html">HABs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ocean/zos.html">zos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="river/peace.html">Peace River</a></li>
+<li class="toctree-l1"><a class="reference internal" href="machineLearning/data.html">ML-Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="machineLearning/ml.html">ML-Model</a></li>
 </ul>
 
     </div>
@@ -311,11 +316,19 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1><no title></h1>
+    <h1>Red tides</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#machine-learning-framework-for-red-tide-bloom-severity-classification-in-charlotte-harbor-west-florida-shelf">Machine learning framework for red tide bloom severity classification in Charlotte Harbor, West Florida Shelf</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -325,10 +338,20 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <p><a class="reference download internal" download="" href="_downloads/7ded0fc886ed399535462e8267d3f20f/Report.pdf"><span class="xref download myst"> Report</span></a></p>
-<p><img alt="Redtides" src="red.png" /></p>
+  <section id="red-tides">
+<h1>Red tides<a class="headerlink" href="#red-tides" title="Link to this heading">#</a></h1>
+<section id="machine-learning-framework-for-red-tide-bloom-severity-classification-in-charlotte-harbor-west-florida-shelf">
+<h2>Machine learning framework for red tide bloom severity classification in Charlotte Harbor, West Florida Shelf<a class="headerlink" href="#machine-learning-framework-for-red-tide-bloom-severity-classification-in-charlotte-harbor-west-florida-shelf" title="Link to this heading">#</a></h2>
+<p>Final Report for Task 9 of Water Quality Evaluation for Peace River Basin and Greater Charlotte Harbor Watershed in Southwest Florida, Florida Department of Environmental Protection (August 2023 – November 2025)</p>
+<p><strong>Author:</strong> Ahmed S. Elshall (<a class="reference external" href="mailto:aelshall&#37;&#52;&#48;fgcu&#46;edu">aelshall<span>&#64;</span>fgcu<span>&#46;</span>edu</a>)</p>
+<p>Draft full report can be downloaded as<a class="reference download internal" download="" href="_downloads/5c6813f49dfba292cc1008edce1c90e2/report.pdf"><span class="xref download myst">pdf</span></a> or <a class="reference download internal" download="" href="_downloads/a42ed8e7b0adaf75bedb34944cf127d0/report.docx"><span class="xref download myst">word</span></a></p>
+<p><strong>Abstract:</strong> This study developed a machine learning framework to predict Karenia brevis red tide bloom severity along the southwest coast of Florida, specifically in Charlotte Harbor. We employed a Random Forest Classifier using weekly environmental data (1992–2024), including river discharge, nutrient loading (TN and TP), wind speed and direction, water temperature, salinity, and sea surface height anomalies. The model achieved high predictive performance, demonstrating a balanced accuracy of 0.887, precision of 0.90, and recall of 0.81 for bloom events. Karenia brevis cell counts, and their lagged values were the most significant predictors, followed by river discharge and nutrient inputs, confirming their critical role in bloom dynamics. The model exhibited slight overfitting, indicated by high training accuracy compared to validation accuracy, suggesting opportunities for further model optimization. Partial dependence and feature importance analyses highlighted nutrient loading and river discharge as primary drivers influencing bloom probability, consistent with ecological expectations. Operational forecasts with a 1-week horizon are recommended for practical management, with weekly updates and periodic retraining to maintain predictive reliability.</p>
+<p><img alt="Redtides" src="_images/redtides.jpg" />
+<a class="reference external" href="https://earthobservatory.nasa.gov/images/151142/putting-the-red-in-red-tide">Image Credit: NASA Earth Observatory</a></p>
+</section>
 <div class="toctree-wrapper compound">
 </div>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -361,11 +384,11 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="right-next"
-       href="atmosphere/atmosphere.html"
+       href="atmosphere/wind.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Data-Atmosphere</p>
+        <p class="prev-next-title">Wind and water data</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -375,6 +398,21 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#machine-learning-framework-for-red-tide-bloom-severity-classification-in-charlotte-harbor-west-florida-shelf">Machine learning framework for red tide bloom severity classification in Charlotte Harbor, West Florida Shelf</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
